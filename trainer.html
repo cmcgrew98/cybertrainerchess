@@ -1,0 +1,3604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Trainer</title>
+<!-- CT-BUILD-57  2026-05-30 -->
+<!-- CT56c enables Study Mode engine annotation and saves annotated PGNs to Outputs/. -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23181818'/%3E%3Ctext y='.9em' font-size='82' x='8' fill='%23d4a44c'%3E♔%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Code+Pro:wght@400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:          #1a1a1a;
+    --panel:       #242424;
+    --panel2:      #2a2a2a;
+    --border:      #444444;
+    --accent:      #d4a44c;
+    --accent2:     #a07832;
+    --text:        #e8e2d9;
+    --text-dim:    #9a9490;
+    --text-bright: #f8f2ea;
+    --good:        #6aaa6a;
+    --warn:        #d4a44c;
+    --error:       #aa5a5a;
+    --radius:      6px;
+    --mono:        'Source Code Pro', monospace;
+    --serif:       'Playfair Display', Georgia, serif;
+    --sans:        'Lato', sans-serif;
+    --sq-light:    #d0d0d0;
+    --sq-dark:     #909090;
+    --sq-highlight:#c8a84b44;
+    --sq-selected: #c8a84b88;
+    --sq-legal:    #00000033;
+    --sq-last:     #c8a84b55;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 300;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* ── Header ── */
+  header {
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 20px;
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    flex-shrink: 0;
+  }
+  header h1 {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+  }
+  header span {
+    color: var(--text-dim);
+    font-size: 12px;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── Main layout ── */
+  .main {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+  }
+
+  /* ── Left: board column ── */
+  .board-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 12px 16px 16px;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  /* ── Chess board ── */
+  .board-wrap {
+    position: relative;
+    user-select: none;
+    border: 2px solid var(--border);
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+    margin-top: 8px;
+  }
+
+  .board-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 60px);
+    grid-template-rows: repeat(8, 60px);
+    position: relative;
+    z-index: 1;
+  }
+
+  .board-overlay-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: visible;
+    z-index: 5;
+  }
+
+  .board-overlay-circle,
+  .board-overlay-arrow {
+    vector-effect: non-scaling-stroke;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .sq {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    overflow: visible;
+    transition: background 0.1s;
+    box-sizing: content-box;
+  }
+  .sq.light { background: var(--sq-light); }
+  .sq.dark  { background: var(--sq-dark); }
+  .sq.last-move-to { box-shadow: inset 0 0 0 3px var(--accent); }
+  .sq.selected  { background: var(--sq-selected) !important; }
+  .sq.legal-target::after {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.22);
+    pointer-events: none;
+  }
+  .sq.legal-capture::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 0;
+    background: none;
+    border: 4px solid rgba(0,0,0,0.22);
+    border-radius: 0;
+    pointer-events: none;
+  }
+
+  /* Piece text shadows for readability */
+  .sq img.piece {
+    width: 56px;
+    height: 56px;
+    max-width: 56px;
+    max-height: 56px;
+    object-fit: contain;
+    pointer-events: none;
+    display: block;
+    flex-shrink: 0;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.35));
+  }
+
+  /* Rank/file labels */
+  .board-labels-files {
+    display: grid;
+    grid-template-columns: repeat(8, 60px);
+    padding: 0 2px;
+  }
+  .board-labels-files span {
+    text-align: center;
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
+  }
+  .study-nav {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 2px;
+  }
+  .study-nav button {
+    min-width: 74px;
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+  .study-ply-indicator {
+    min-width: 82px;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+  .board-labels-ranks {
+    position: absolute;
+    left: -14px;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .board-labels-ranks span {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    color: var(--text-dim);
+  }
+
+  /* ── Unified feedback / annotation / graph panel ── */
+  .feedback-result-strip {
+    padding: 6px 10px 4px 10px;
+    min-height: 24px;
+  }
+  .feedback-result {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+  }
+  .feedback-result.typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    width: 0;
+    animation: typeOn 0.45s steps(32, end) forwards;
+  }
+  .feedback-result.good  { color: #6dcc6d; }
+  .feedback-result.warn  { color: var(--accent); }
+  .feedback-result.error { color: #cc7777; }
+  .feedback-hint {
+    font-size: 11px;
+    color: #b0aaa4;
+    margin-top: 2px;
+  }
+  .tried-moves {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 6px;
+    margin-top: 6px;
+    font-size: 11px;
+    color: #b0aaa4;
+  }
+  .tried-moves-label {
+    color: var(--text-dim);
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .tried-move-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 2px 6px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #333333;
+    color: var(--text-bright);
+    font-family: var(--mono);
+    font-size: 10px;
+    line-height: 1.2;
+  }
+  .tried-move-chip.bonus { border-color: var(--good); }
+  .tried-move-chip.excellent { border-color: var(--good); }
+  .tried-move-chip.soft_fail { border-color: var(--accent); }
+  .tried-move-chip.hard_fail { border-color: var(--error); }
+  /* Tab bar */
+  .content-tab-bar {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+    padding: 0 6px;
+    gap: 2px;
+  }
+  .content-tab {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--text-dim);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    cursor: pointer;
+    margin-bottom: -1px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .content-tab:hover { color: var(--text); }
+  .content-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+  /* Tab bodies */
+  .content-tab-body {
+    padding: 8px 10px;
+  }
+  .feedback-annotation {
+    font-size: 15px;
+    color: var(--text-bright);
+    line-height: 1.65;
+    font-style: normal;
+    font-weight: 700;
+    min-height: 1.65em;
+  }
+  .checkbox-label {
+    flex-direction: row;
+    align-items: center;
+    gap: 7px;
+    font-size: 11px;
+    color: #aba49c;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+  }
+  .checkbox-label input { width: auto; }
+  .annotation-editor {
+    width: 100%;
+    min-height: 80px;
+    font-size: 13px;
+    font-style: italic;
+    background: var(--panel2);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 6px 8px;
+    resize: vertical;
+    box-sizing: border-box;
+  }
+  #eval-graph-svg { background: var(--panel2); border-radius: 3px; }
+  .analysis-summary {
+    border: 1px solid var(--border);
+    background: #303030;
+    border-radius: var(--radius);
+    padding: 7px 8px;
+    margin-bottom: 7px;
+    display: none;
+    gap: 6px;
+    flex-direction: column;
+  }
+  .analysis-summary.visible { display: flex; }
+  .analysis-summary-title {
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .analysis-summary-line {
+    font-size: 12px;
+    color: var(--text-bright);
+    line-height: 1.35;
+  }
+  .analysis-filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .analysis-filter {
+    border: 1px solid var(--border);
+    background: var(--panel2);
+    color: var(--text);
+    font-size: 10px;
+    padding: 4px 8px;
+    border-radius: 11px;
+  }
+  .analysis-filter.active {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+
+
+  /* ── Collapsible sections ── */
+  .section-title.collapsible {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+  }
+  .section-title.collapsible:hover { color: var(--text); }
+  .collapse-arrow {
+    font-size: 14px;
+    color: var(--text);
+    transition: transform 0.2s;
+  }
+  .section.collapsed .section-body  { display: none; }
+  .section.collapsed .collapse-arrow { transform: rotate(-90deg); }
+
+  /* ── Right: info column ── */
+  .info-col {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 8px 14px 14px 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  /* ── Section cards (same as Popmax) ── */
+  .section {
+    background: var(--panel2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .section-title {
+    padding: 6px 10px;
+    background: #2e2e2e;
+    border-bottom: 1px solid var(--border);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #b0aaa4;
+  }
+  .section-body {
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  /* ── Score display ── */
+  .score-display {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .score-number {
+    font-family: var(--serif);
+    font-size: 36px;
+    color: var(--accent);
+    font-weight: 600;
+    line-height: 1;
+  }
+  .score-label {
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 0.04em;
+  }
+  .score-norm {
+    font-size: 12px;
+    color: var(--good);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+  .score-formula {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-top: 2px;
+  }
+
+  /* ── Move counter ── */
+  .move-counter {
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+  .move-counter strong {
+    color: var(--text-bright);
+    font-weight: 700;
+  }
+
+  /* ── Game header info ── */
+  .game-info-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+  }
+  .game-info-label {
+    color: var(--text-dim);
+    letter-spacing: 0.04em;
+  }
+  .game-info-value {
+    color: var(--text-bright);
+    font-weight: 400;
+    text-align: right;
+  }
+
+  /* ── Form elements (same as Popmax) ── */
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-size: 11px;
+    color: #aba49c;
+    letter-spacing: 0.04em;
+  }
+  input[type="text"], textarea {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text-bright);
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 400;
+    padding: 4px 7px;
+    outline: none;
+    transition: border-color 0.15s;
+    width: 100%;
+  }
+  input[type="text"]:focus, textarea:focus { border-color: var(--accent); }
+  textarea {
+    font-family: var(--mono);
+    font-size: 11px;
+    resize: vertical;
+    min-height: 80px;
+  }
+
+  /* ── Buttons ── */
+  .btn-row {
+    display: flex;
+    gap: 8px;
+  }
+  button {
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 7px 16px;
+    transition: opacity 0.15s, transform 0.1s;
+  }
+  button:active { transform: scale(0.97); }
+  button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #1a1408;
+    flex: 1;
+  }
+  .btn-primary:hover:not(:disabled) { background: #c89a42; }
+
+  .btn-secondary {
+    background: var(--panel2);
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ── Status strip ── */
+  .status-strip {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 7px 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+  .status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--text-dim);
+    transition: background 0.3s;
+    flex-shrink: 0;
+  }
+  .status-dot.ready  { background: var(--good); }
+  .status-dot.active { background: var(--accent); animation: pulse 1.2s infinite; }
+  .status-dot.error  { background: var(--error); }
+  @keyframes typeOn {
+    from { width: 0; }
+    to   { width: 100%; }
+  }
+  @keyframes pulse {
+    0%,100% { opacity:1; } 50% { opacity:0.4; }
+  }
+  .status-text { font-size: 12px; color: var(--text-dim); }
+
+  /* ── Drag ghost ── */
+  #drag-ghost {
+    position: fixed;
+    pointer-events: none;
+    z-index: 2000;
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.7));
+    opacity: 0.92;
+  }
+  .piece-dragging { opacity: 0.15 !important; }
+
+  /* ── Toast ── */
+  #toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--panel2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 8px 20px;
+    font-size: 12px;
+    color: var(--text);
+    opacity: 0;
+    transition: opacity 0.25s, transform 0.25s;
+    pointer-events: none;
+    z-index: 100;
+  }
+  #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* ── Game over overlay ── */
+  .game-over-panel {
+    display: none;
+    text-align: center;
+    padding: 16px;
+    gap: 8px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .game-over-panel.visible { display: flex; }
+  .game-over-score {
+    font-family: var(--serif);
+    font-size: 48px;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .game-over-norm {
+    font-size: 14px;
+    color: var(--good);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .game-over-sub {
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+
+  /* ── Prepared side indicator ── */
+  .side-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .side-badge.white { background: #e0e0e0; color: #1a1a1a; }
+  .side-badge.black { background: #2a2a2a; color: #e0e0e0; border: 1px solid #555; }
+
+  /* ── Performance bar (lives in Score panel, right column) ── */
+  .perf-bar-wrap {
+    width: 100%;
+    padding: 4px 2px 2px 2px;
+  }
+  .perf-bar-svg {
+    width: 100%;
+    display: block;
+    overflow: visible;
+  }
+
+  /* ── Continue button (right panel, stable) ── */
+  #btn-continue {
+    background: var(--accent);
+    color: #1a1408;
+    border: none;
+    border-radius: var(--radius);
+    padding: 9px 0;
+    width: 100%;
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition: opacity 0.15s, transform 0.1s;
+  }
+  #btn-continue:hover { background: #c89a42; }
+  #btn-continue:active { transform: scale(0.97); }
+
+  /* ── Multi-game browser ── */
+  #section-browser { display: none; }
+  .game-list {
+    max-height: 280px;
+    overflow-y: auto;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin: 4px 0;
+  }
+  .game-row {
+    display: grid;
+    grid-template-columns: 24px 1fr 42px 28px;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 8px;
+    cursor: pointer;
+    border-bottom: 1px solid #2e2e2e;
+    font-size: 11px;
+    transition: background 0.1s;
+  }
+  .game-row:last-child { border-bottom: none; }
+  .game-row:hover { background: #2e2e2e; }
+  .game-row.active { background: #333; border-left: 3px solid var(--accent); padding-left: 5px; }
+  .game-row .gr-num { color: var(--text-dim); font-size: 10px; text-align: right; }
+  .game-row .gr-players { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .game-row .gr-result { color: var(--text-dim); font-size: 10px; text-align: center; }
+  .game-row .gr-ann { text-align: center; font-size: 11px; }
+  .mode-chooser {
+    margin-top: 8px;
+    padding: 9px 10px;
+    background: #303030;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .mode-choice-text {
+    font-size: 12px;
+    color: var(--text-bright);
+    font-weight: 700;
+    line-height: 1.35;
+  }
+  .mode-choice-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .mode-choice-actions button {
+    width: 100%;
+    min-height: 36px;
+    font-size: 12px;
+    padding: 9px 10px;
+  }
+  .mode-choice-actions button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+  .browser-meta { font-size: 10px; color: var(--text-dim); padding: 2px 0 4px 0; }
+  .browser-instruction {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-bright);
+    background: #333333;
+    border-left: 3px solid var(--accent);
+    border-radius: 3px;
+    padding: 7px 8px;
+    margin: 2px 0 6px 0;
+    line-height: 1.35;
+  }
+  .skip-warning { font-size: 10px; color: var(--warn); padding: 2px 0; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Cyber Trainer</h1>
+  <span>MASTER GAME STUDY</span>
+  <span style="margin-left:auto; font-size:11px;" id="engine-status-hdr">Engine: —</span>
+</header>
+
+<div class="main">
+
+  <!-- ── Left: Board ── -->
+  <div class="board-col">
+    <div class="board-wrap" id="board-wrap">
+      <div class="board-labels-ranks" id="rank-labels"></div>
+      <div class="board-grid" id="board"></div>
+      <svg class="board-overlay-svg" id="board-overlay-svg" aria-hidden="true"></svg>
+    </div>
+    <div class="board-labels-files" id="file-labels"></div>
+    <div class="study-nav" id="study-nav" aria-label="Study Mode navigation">
+      <button class="btn-secondary" id="btn-study-back" onclick="studyStep(-1)">← Back</button>
+      <div class="study-ply-indicator" id="study-ply-indicator">0 / 0</div>
+      <button class="btn-secondary" id="btn-study-forward" onclick="studyStep(1)">Forward →</button>
+    </div>
+
+  </div>
+
+  <!-- ── Right: Info ── -->
+  <div class="info-col">
+
+    <!-- Score / Performance bar -->
+    <div class="section" id="score-section">
+      <div class="section-title">Score</div>
+      <!-- Performance bar — shown during play -->
+      <div class="perf-bar-wrap" id="perf-bar-wrap" style="display:none;padding:4px 10px 8px 10px;">
+        <svg class="perf-bar-svg" id="perf-bar-svg" height="52" viewBox="0 0 480 52"
+             xmlns="http://www.w3.org/2000/svg">
+        </svg>
+      </div>
+      <!-- Placeholder before game loads -->
+      <div id="score-placeholder" class="section-body" style="padding:6px 10px;">
+        <div style="font-size:11px;color:var(--text-dim);">Load a game to begin.</div>
+      </div>
+      <!-- Game-over panel — shown at game end -->
+      <div class="game-over-panel" id="game-over-panel">
+        <div style="font-size:10px;color:var(--text-dim);letter-spacing:0.1em;text-transform:uppercase;">Final Score</div>
+        <div class="game-over-score" id="game-over-score"></div>
+        <div class="game-over-norm" id="game-over-norm"></div>
+        <div class="game-over-sub" id="game-over-sub"></div>
+        <button class="btn-secondary" onclick="returnToSelection()" style="margin-top:6px;">Choose Another Game</button>
+      </div>
+    </div>
+
+
+    <!-- Game info -->
+    <div class="section" id="game-info-section" style="display:none;">
+      <div class="section-title">Game</div>
+      <div class="section-body" style="padding:5px 10px;">
+        <div id="game-info-line" style="font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"></div>
+        <div id="game-info-right" style="font-size:11px;color:var(--text-dim);display:flex;justify-content:space-between;align-items:center;margin-top:2px;"></div>
+      </div>
+    </div>
+
+    <!-- Play options — visible during play -->
+    <div class="section" id="play-options-section" style="display:none;">
+      <div class="section-title">Play Options</div>
+      <div class="section-body" style="padding:7px 10px;">
+        <label class="checkbox-label" title="When checked, even unannotated exact matches pause before the opponent reply. Annotated matches always pause.">
+          <input type="checkbox" id="pause-after-match" onchange="saveUiPrefs()">
+          <span>PAUSE AFTER EVERY MATCH</span>
+        </label>
+        <label class="checkbox-label" title="When checked, a hard fail can show the opponent's engine refutation as a temporary red arrow.">
+          <input type="checkbox" id="show-refutation" onchange="saveUiPrefs()">
+          <span>SHOW REFUTATION</span>
+        </label>
+        <button class="btn-secondary" id="btn-quit-game" onclick="quitCurrentGame()" style="font-size:11px;padding:5px 10px;width:100%;">Quit Current Game</button>
+      </div>
+    </div>
+
+    <!-- Feedback / annotation / graph — unified panel shown during play -->
+    <div class="section" id="feedback-section" style="display:none;">
+      <!-- Result strip: always visible, never in a tab -->
+      <div class="feedback-result-strip" id="feedback-result-strip">
+        <div class="feedback-result" id="feedback-result"></div>
+        <div class="feedback-hint" id="feedback-hint"></div>
+        <div class="tried-moves" id="tried-moves" style="display:none;"></div>
+      </div>
+      <!-- Tab bar -->
+      <div class="content-tab-bar" id="content-tab-bar">
+        <button class="content-tab active" id="tab-btn-annotation" onclick="switchContentTab('annotation')">Annotation</button>
+        <button class="content-tab" id="tab-btn-graph" onclick="switchContentTab('graph')">Graph</button>
+      </div>
+      <!-- Annotation tab body -->
+      <div class="content-tab-body" id="tab-annotation">
+        <div class="feedback-annotation" id="feedback-annotation"></div>
+        <textarea class="annotation-editor" id="annotation-editor" style="display:none;" placeholder="Add annotation..."></textarea>
+        <div id="annotation-save-row" style="display:none;">
+          <button class="btn-secondary" onclick="saveAnnotation()" style="font-size:11px;padding:4px 10px;">Save</button>
+        </div>
+      </div>
+      <!-- Graph tab body -->
+      <div class="content-tab-body" id="tab-graph" style="display:none;">
+        <div class="analysis-summary" id="analysis-summary">
+          <div class="analysis-summary-title">Analysis Summary</div>
+          <div class="analysis-summary-line" id="analysis-summary-overall"></div>
+          <div class="analysis-summary-line" id="analysis-summary-white"></div>
+          <div class="analysis-summary-line" id="analysis-summary-black"></div>
+          <div class="analysis-filter-row" id="analysis-filter-row">
+            <button class="analysis-filter active" id="analysis-filter-all" onclick="setAnalysisFilter('all')">All</button>
+            <button class="analysis-filter" id="analysis-filter-inaccuracy" onclick="setAnalysisFilter('inaccuracy')">Inaccuracies</button>
+            <button class="analysis-filter" id="analysis-filter-mistake" onclick="setAnalysisFilter('mistake')">Mistakes</button>
+            <button class="analysis-filter" id="analysis-filter-blunder" onclick="setAnalysisFilter('blunder')">Blunders</button>
+          </div>
+        </div>
+        <svg id="eval-graph-svg" width="100%" height="260"
+             viewBox="0 0 480 260" preserveAspectRatio="none"
+             xmlns="http://www.w3.org/2000/svg"
+             style="display:block;border-radius:3px;overflow:visible;">
+        </svg>
+        <div id="eval-graph-hint" style="font-size:10px;color:var(--text-dim);text-align:center;margin-top:2px;"></div>
+      </div>
+    </div>
+
+    <!-- Continue button — stable position in right panel -->
+    <div id="continue-section" style="display:none;">
+      <button id="btn-continue" onclick="onContinue()" style="width:100%;">Continue →</button>
+    </div>
+
+    <!-- Move counter — shown during play -->
+    <div id="move-counter-section" style="display:none;padding:2px 0;">
+      <div class="move-counter" id="move-counter"></div>
+    </div>
+
+
+    <!-- Multi-game browser — shown after file load -->
+    <div class="section" id="section-browser">
+      <div class="section-title collapsible" onclick="toggleSection('section-browser')">
+        <span id="browser-title">Game Library</span>
+        <span class="collapse-arrow">▾</span>
+      </div>
+      <div class="section-body" id="section-browser-body" style="padding:6px 10px;">
+        <div class="browser-meta" id="browser-meta"></div>
+        <div class="browser-instruction" id="browser-instruction">Select a game from the list below, then choose a mode.</div>
+        <div class="skip-warning" id="browser-skip"></div>
+        <div class="game-list" id="game-list"></div>
+        <div class="mode-chooser" id="browser-mode-chooser">
+          <div class="mode-choice-text" id="browser-mode-choice-text">Select a game, then choose Training Mode or Study Mode.</div>
+          <div class="mode-choice-actions">
+            <button class="btn-primary" id="btn-browser-train" onclick="startSelectedBrowserGame('training')" disabled>Start Training Mode</button>
+            <button class="btn-secondary" id="btn-browser-study" onclick="startSelectedBrowserGame('study')" disabled>Start Study Mode</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Load game — collapsible -->
+    <div class="section" id="section-load">
+      <div class="section-title collapsible" onclick="toggleSection('section-load')">
+        <span>Load Game</span><span class="collapse-arrow">▾</span>
+      </div>
+      <div class="section-body" id="section-load-body">
+        <div class="btn-row">
+          <label style="flex:1;cursor:pointer;margin:0;">
+            <div class="btn-primary" style="text-align:center;padding:7px 8px;font-size:12px;">&#x1F4C2; Open PGN File</div>
+            <input type="file" id="file-input" accept=".pgn,.txt" onchange="onFileSelected(event)" style="display:none;">
+          </label>
+          <button class="btn-secondary" onclick="clearPgn()" style="font-size:12px;padding:7px 12px;">Clear Paste Box</button>
+        </div>
+        <textarea id="pgn-input" placeholder="Paste a PGN here..." style="min-height:64px;"></textarea>
+        <div class="mode-chooser" id="paste-mode-chooser">
+          <div class="mode-choice-text">For a pasted PGN, choose how to open it.</div>
+          <div class="mode-choice-actions">
+            <button class="btn-primary" id="btn-load" onclick="loadGame()">Start Training Mode</button>
+            <button class="btn-secondary" id="btn-study-load" onclick="loadStudyGame()">Start Study Mode</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Engine — collapsible -->
+    <div class="section" id="section-engine">
+      <div class="section-title collapsible" onclick="toggleSection('section-engine')">
+        <span>Engine <span id="engine-status-hdr" style="font-weight:400;font-size:10px;color:var(--text-dim);margin-left:6px;">—</span></span>
+        <span class="collapse-arrow">▾</span>
+      </div>
+      <div class="section-body" id="section-engine-body">
+        <label>
+          <span>STOCKFISH PATH</span>
+          <input type="text" id="engine-path" placeholder="C:\path\to\stockfish.exe">
+        </label>
+        <div style="display:flex; gap:8px;">
+          <label style="flex:1;">
+            <span>ANNOTATION DEPTH (PLY)</span>
+            <input type="text" id="eval-depth" value="25" style="width:100%;">
+          </label>
+          <label style="flex:1;">
+            <span>THRESHOLD (CP)</span>
+            <input type="text" id="eval-threshold" value="25" style="width:100%;">
+          </label>
+        </div>
+        <div class="btn-row">
+          <button class="btn-secondary" onclick="saveConfig()">Save</button>
+          <button class="btn-secondary" id="btn-annotate" onclick="annotateGame()" disabled title="Load a game first">Annotate Game</button>
+        </div>
+        <div id="annotate-progress" style="display:none;margin-top:6px;">
+          <div style="display:flex;align-items:center;gap:6px;">
+            <div style="flex:1;height:6px;background:var(--panel2);border-radius:3px;overflow:hidden;">
+              <div id="annotate-progress-bar" style="height:100%;width:0%;background:#d4a44c;border-radius:3px;transition:width 0.3s;"></div>
+            </div>
+            <span id="annotate-progress-text" style="font-size:10px;color:var(--text-dim);white-space:nowrap;min-width:80px;text-align:right;"></span>
+          </div>
+        </div>
+        <div id="save-pgn-row" style="display:none;margin-top:6px;">
+          <button class="btn-secondary" id="btn-save-pgn" onclick="saveAnnotatedPgn()" style="width:100%;">Save as PGN</button>
+          <div id="save-pgn-status" style="font-size:10px;color:var(--text-dim);margin-top:3px;text-align:center;"></div>
+        </div>
+        <div class="status-strip" style="margin-top:4px;">
+          <div class="status-dot" id="engine-dot"></div>
+          <div class="status-text" id="engine-status-text">Engine not connected.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Server status -->
+    <div class="status-strip">
+      <div class="status-dot" id="status-dot"></div>
+      <div class="status-text" id="status-text">Connecting to server...</div>
+    </div>
+
+  </div><!-- /info-col -->
+</div><!-- /main -->
+
+<div id="toast"></div>
+
+<script>
+// ═══════════════════════════════════════════════════════════════════
+//  Constants & state
+// ═══════════════════════════════════════════════════════════════════
+const SERVER = 'http://localhost:7332';
+
+// Cburnett piece set — local SVG files in pieces/ subfolder (CC BY-SA 3.0, Colin Burnett)
+// Fully offline — no internet connection required.
+const PIECE_URLS = {
+  'K': 'pieces/Chess_klt45.svg',
+  'Q': 'pieces/Chess_qlt45.svg',
+  'R': 'pieces/Chess_rlt45.svg',
+  'B': 'pieces/Chess_blt45.svg',
+  'N': 'pieces/Chess_nlt45.svg',
+  'P': 'pieces/Chess_plt45.svg',
+  'k': 'pieces/Chess_kdt45.svg',
+  'q': 'pieces/Chess_qdt45.svg',
+  'r': 'pieces/Chess_rdt45.svg',
+  'b': 'pieces/Chess_bdt45.svg',
+  'n': 'pieces/Chess_ndt45.svg',
+  'p': 'pieces/Chess_pdt45.svg'
+};
+
+let state = {
+  sessionId:     null,
+  mode:          'idle',   // 'idle'|'training'|'study'
+  studyMainline: [],
+  studyPly:      0,
+  studyStartingFen: 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1',
+  currentFen:    'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1',
+  preparedSide:  'white',
+  gameOpenerShown: false,  // true after the very first opp_open button has fired
+  masterRating:  2400,
+  totalMoves:    0,
+  creditsMoves:  0,   // C
+  totalGuesses:  0,   // M
+  gameOver:      false,
+  selectedSq:    null,
+  legalTargets:  [],
+  lastMoveFrom:  null,
+  lastMoveTo:    null,
+  awaitingGuess: false,
+  lastPgn:       '',
+  // Continue gate
+  pendingAutoMoves:  null,   // auto_played array waiting for Continue
+  pendingFinalFen:   null,   // new_fen after auto moves
+  pendingCallback:   null,   // function to call after animation
+  pendingOppAnn:     '',     // opponent-move annotation staged with pending opponent move
+  pendingOppMove:    null,   // {move, onDone} staged for opp_move Continue
+  continueAction:    null,   // 'advance'|'bonus_retry'|null
+  pauseAfterMatch:   false,  // user preference: pause after exact match annotations
+  showRefutation:    false,  // user preference: show temporary red refutation arrows after hard fails
+  evalData:          [],     // [{ply, cp, mate}] from server
+  analysisSummary:   null,   // Lichess-style accuracy/error summary from server
+  analysisFilter:    'all',  // all|inaccuracy|mistake|blunder
+  totalPlies:        0,
+  moveIndex:         0,      // current ply for graph marker
+  activeTab:         'annotation',
+  pendingBonusRetract: null,
+  triedMoves:        [],     // SAN moves already attempted at current prepared-side position
+  boardOverlays:     [],     // manual/PGN overlays for the current visible position only
+  positionOverlays:  {},     // ply-indexed manual/PGN overlays loaded from or saved to PGN
+  refutationOverlay: null,   // temporary red arrow for the current hard-fail refutation
+  pendingRefutationReturn: null, // temporary hard-fail refutation view return state
+  // Bar
+  barFloor:    200,
+  barCeiling:  2400,
+};
+
+const BOARD_OVERLAY_COLORS = {
+  red:   '#882020',
+  blue:  '#003088',
+  green: '#15781B',
+  gold:  '#e68f00',
+};
+
+const overlayGesture = {
+  active: false,
+  fromSq: null,
+  toSq: null,
+  color: 'gold',
+  movedPx: 0,
+  suppressClick: false,
+};
+
+// ═══════════════════════════════════════════════════════════════════
+//  Board rendering
+// ═══════════════════════════════════════════════════════════════════
+
+function parseFen(fen) {
+  const parts  = fen.split(' ');
+  const ranks  = parts[0].split('/');
+  const board  = [];
+  for (const rank of ranks) {
+    const row = [];
+    for (const ch of rank) {
+      if (isNaN(ch)) {
+        row.push(ch);
+      } else {
+        for (let i = 0; i < parseInt(ch); i++) row.push('');
+      }
+    }
+    board.push(row);
+  }
+  return board; // board[0] = rank 8, board[7] = rank 1
+}
+
+function sqName(row, col) {
+  // row 0 = rank 8 (top when white at bottom), col 0 = file a
+  // When prepared side is black, board is flipped
+  if (state.preparedSide === 'white') {
+    return 'abcdefgh'[col] + (8 - row);
+  } else {
+    return 'abcdefgh'[7 - col] + (row + 1);
+  }
+}
+
+function renderBoard(fen) {
+  const boardEl  = document.getElementById('board');
+  const board    = parseFen(fen);
+  const flipped  = state.preparedSide === 'black';
+  boardEl.innerHTML = '';
+
+  for (let visualRow = 0; visualRow < 8; visualRow++) {
+    for (let visualCol = 0; visualCol < 8; visualCol++) {
+      const dataRow = flipped ? 7 - visualRow : visualRow;
+      const dataCol = flipped ? 7 - visualCol : visualCol;
+      const piece   = board[dataRow][dataCol];
+      const sq      = sqName(visualRow, visualCol);
+      const isLight = (dataRow + dataCol) % 2 === 0;
+
+      const el = document.createElement('div');
+      el.className = 'sq ' + (isLight ? 'light' : 'dark');
+      el.dataset.sq = sq;
+
+      if (piece && PIECE_URLS[piece]) {
+        const img = document.createElement('img');
+        img.className = 'piece';
+        img.src = PIECE_URLS[piece];
+        img.alt = piece;
+        el.appendChild(img);
+      }
+
+      // Highlights
+      if (sq === state.lastMoveTo) el.classList.add('last-move-to');
+      if (sq === state.selectedSq)  el.classList.add('selected');
+      if (state.legalTargets.includes(sq)) {
+        el.classList.add(piece ? 'legal-capture' : 'legal-target');
+      }
+
+      el.addEventListener('click', () => onSquareClick(sq));
+
+      // Drag start on mousedown — ghost appears before async fetch completes
+      el.addEventListener('mousedown', e => {
+        if (isBoardOverlayGestureEvent(e)) return;
+        if (e.button !== 0 || !canInteract()) return;
+        const pc = getPieceAt(state.currentFen, sq);
+        if (!isOurPiece(pc)) return;
+        e.preventDefault();   // prevent text selection during drag
+        beginDrag(sq, pc, e.clientX, e.clientY);
+      });
+
+      // Touch drag start
+      el.addEventListener('touchstart', e => {
+        if (!canInteract()) return;
+        const pc = getPieceAt(state.currentFen, sq);
+        if (!isOurPiece(pc)) return;
+        const t = e.touches[0];
+        beginDrag(sq, pc, t.clientX, t.clientY);
+      }, { passive: true });
+
+      boardEl.appendChild(el);
+    }
+  }
+  state.currentFen = fen;
+  redrawBoardOverlays();
+}
+
+function buildLabels() {
+  const rankEl = document.getElementById('rank-labels');
+  const fileEl = document.getElementById('file-labels');
+  rankEl.innerHTML = '';
+  fileEl.innerHTML = '';
+  const flipped = state.preparedSide === 'black';
+
+  for (let i = 0; i < 8; i++) {
+    const rank = document.createElement('span');
+    rank.textContent = flipped ? i + 1 : 8 - i;
+    rankEl.appendChild(rank);
+  }
+  for (let i = 0; i < 8; i++) {
+    const file = document.createElement('span');
+    file.textContent = flipped ? 'hgfedcba'[i] : 'abcdefgh'[i];
+    fileEl.appendChild(file);
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════
+//  Board overlays — CT55 current-position drawing + PGN persistence
+// ═══════════════════════════════════════════════════════════════════
+
+function normaliseOverlayColor(color) {
+  return BOARD_OVERLAY_COLORS[color] ? color : 'green';
+}
+
+function overlayColorForEvent(e) {
+  // Lichess-style color protocol:
+  // no modifier = green, Alt = blue, Ctrl = red, Alt+Ctrl = gold.
+  if (e.altKey && e.ctrlKey) return 'gold';
+  if (e.altKey) return 'blue';
+  if (e.ctrlKey) return 'red';
+  return 'green';
+}
+
+function isBoardOverlayGestureEvent(e) {
+  // Right mouse is the normal Lichess-style gesture. Ctrl+left is a fallback
+  // for trackpads and systems where right-drag is awkward.
+  return e.button === 2 || (e.button === 0 && e.ctrlKey);
+}
+
+function boardOverlaySquareCenter(square) {
+  const wrap = document.getElementById('board-wrap');
+  const sqEl = document.querySelector(`[data-sq="${square}"]`);
+  if (!wrap || !sqEl) return null;
+  const wr = wrap.getBoundingClientRect();
+  const sr = sqEl.getBoundingClientRect();
+  return {
+    x: sr.left - wr.left + sr.width / 2,
+    y: sr.top  - wr.top  + sr.height / 2,
+    size: Math.min(sr.width, sr.height),
+  };
+}
+
+function boardOverlayKey(overlay) {
+  if (!overlay || !overlay.type) return '';
+  if (overlay.type === 'circle') {
+    return `circle:${overlay.square}:${normaliseOverlayColor(overlay.color)}`;
+  }
+  if (overlay.type === 'arrow') {
+    return `arrow:${overlay.from}:${overlay.to}:${normaliseOverlayColor(overlay.color)}`;
+  }
+  return '';
+}
+
+function sanitiseBoardOverlay(overlay) {
+  if (!overlay || !overlay.type) return null;
+  if (overlay.type === 'circle' && /^[a-h][1-8]$/.test(overlay.square || '')) {
+    return { type: 'circle', square: overlay.square, color: normaliseOverlayColor(overlay.color) };
+  }
+  if (overlay.type === 'arrow' && /^[a-h][1-8]$/.test(overlay.from || '') && /^[a-h][1-8]$/.test(overlay.to || '') && overlay.from !== overlay.to) {
+    return { type: 'arrow', from: overlay.from, to: overlay.to, color: normaliseOverlayColor(overlay.color) };
+  }
+  return null;
+}
+
+function cleanBoardOverlays(overlays) {
+  const out = [];
+  const seen = new Set();
+  for (const ov of (Array.isArray(overlays) ? overlays : [])) {
+    const safe = sanitiseBoardOverlay(ov);
+    if (!safe) continue;
+    const key = boardOverlayKey(safe);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(safe);
+  }
+  return out;
+}
+
+function cloneBoardOverlays(overlays) {
+  return cleanBoardOverlays(overlays).map(o => ({...o}));
+}
+
+function currentOverlayPly() {
+  return Math.max(0, state.moveIndex || 0);
+}
+
+function hasAnyPositionOverlays() {
+  return Object.values(state.positionOverlays || {}).some(v => Array.isArray(v) && v.length > 0);
+}
+
+function showSavePgnButton(message = '') {
+  const row = document.getElementById('save-pgn-row');
+  const btn = document.getElementById('btn-save-pgn');
+  const status = document.getElementById('save-pgn-status');
+  if (row) row.style.display = '';
+  if (btn) btn.disabled = false;
+  if (status && message) status.textContent = message;
+}
+
+function showPositionOverlaysForCurrentPly() {
+  const key = String(currentOverlayPly());
+  state.boardOverlays = cloneBoardOverlays((state.positionOverlays || {})[key] || []);
+  clearRefutationOverlay();
+  redrawBoardOverlays();
+}
+
+function rememberCurrentPositionOverlays(overlays) {
+  const key = String(currentOverlayPly());
+  state.positionOverlays[key] = cloneBoardOverlays(overlays);
+}
+
+async function persistCurrentPositionOverlays() {
+  rememberCurrentPositionOverlays(state.boardOverlays || []);
+  showSavePgnButton('Drawings changed — Save as PGN to export them.');
+  if (!state.sessionId) return;
+  try {
+    await fetch(`${SERVER}/update_position_overlays`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        session_id: state.sessionId,
+        ply: currentOverlayPly(),
+        overlays: state.boardOverlays || [],
+      }),
+    });
+  } catch(e) {
+    toast('Could not persist board drawing to server session.');
+  }
+}
+
+function setRefutationOverlay(overlay) {
+  state.refutationOverlay = sanitiseBoardOverlay(overlay);
+  redrawBoardOverlays();
+}
+
+function clearRefutationOverlay() {
+  state.refutationOverlay = null;
+}
+
+function clearBoardOverlayState() {
+  state.boardOverlays = [];
+  state.positionOverlays = {};
+  state.refutationOverlay = null;
+  state.pendingRefutationReturn = null;
+  overlayGesture.active = false;
+  overlayGesture.fromSq = null;
+  overlayGesture.toSq = null;
+  redrawBoardOverlays();
+}
+
+function firstRedArrowOverlay(overlays) {
+  return cleanBoardOverlays(overlays || []).find(ov =>
+    ov.type === 'arrow' && normaliseOverlayColor(ov.color) === 'red') || null;
+}
+
+function refutationOverlayForHardFail(d) {
+  if (d && d.refutation && d.refutation.overlay) return sanitiseBoardOverlay(d.refutation.overlay);
+  // A saved/current red arrow is treated as a prepared refutation marker.
+  return firstRedArrowOverlay(state.boardOverlays || []);
+}
+
+function redrawBoardOverlays() {
+  const svg = document.getElementById('board-overlay-svg');
+  const wrap = document.getElementById('board-wrap');
+  if (!svg || !wrap) return;
+
+  const wr = wrap.getBoundingClientRect();
+  const width = Math.max(1, wr.width);
+  const height = Math.max(1, wr.height);
+  svg.innerHTML = '';
+  svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+  svg.setAttribute('width', width);
+  svg.setAttribute('height', height);
+
+  const overlays = [...(state.boardOverlays || [])];
+  if (state.showRefutation && state.refutationOverlay) overlays.push(state.refutationOverlay);
+  const preview = activeBoardOverlayPreview();
+  if (preview) overlays.push(preview);
+  for (const overlay of overlays) drawBoardOverlay(svg, overlay);
+}
+
+function drawBoardOverlay(svg, overlay) {
+  const ns = 'http://www.w3.org/2000/svg';
+  const safe = sanitiseBoardOverlay(overlay);
+  if (!safe) return;
+  const colorName = safe.color;
+  const colorHex = BOARD_OVERLAY_COLORS[colorName];
+  const opacity = '0.42';
+
+  if (safe.type === 'circle') {
+    const c = boardOverlaySquareCenter(safe.square);
+    if (!c) return;
+    const strokeWidth = Math.max(6, c.size * 0.12) * 0.75;
+    const ring = document.createElementNS(ns, 'circle');
+    ring.setAttribute('class', 'board-overlay-circle');
+    ring.setAttribute('cx', c.x.toFixed(2));
+    ring.setAttribute('cy', c.y.toFixed(2));
+    ring.setAttribute('r', Math.max(1, (c.size / 2) - (strokeWidth / 2)).toFixed(2));
+    ring.setAttribute('fill', 'none');
+    ring.setAttribute('stroke', colorHex);
+    ring.setAttribute('stroke-opacity', opacity);
+    ring.setAttribute('stroke-width', strokeWidth.toFixed(2));
+    svg.appendChild(ring);
+    return;
+  }
+
+  if (safe.type === 'arrow') {
+    const a = boardOverlaySquareCenter(safe.from);
+    const b = boardOverlaySquareCenter(safe.to);
+    if (!a || !b) return;
+    const dx = b.x - a.x;
+    const dy = b.y - a.y;
+    const len = Math.hypot(dx, dy);
+    if (len < 1) return;
+    const unitX = dx / len;
+    const unitY = dy / len;
+    const perpX = -unitY;
+    const perpY = unitX;
+    // One filled polygon avoids marker/shaft overlap, so the whole arrow has
+    // uniform color and opacity with no darkened join under the arrowhead.
+    const shaftHalf = Math.max(2.5, a.size * 0.050);
+    const headLength = Math.min(a.size * 0.48, Math.max(a.size * 0.30, len * 0.45));
+    const headHalf = Math.max(shaftHalf * 2.60, a.size * 0.160);
+    const startX = a.x;
+    const startY = a.y;
+    const tipX = b.x;
+    const tipY = b.y;
+    const baseX = b.x - unitX * headLength;
+    const baseY = b.y - unitY * headLength;
+    const points = [
+      [startX + perpX * shaftHalf, startY + perpY * shaftHalf],
+      [baseX + perpX * shaftHalf, baseY + perpY * shaftHalf],
+      [baseX + perpX * headHalf,  baseY + perpY * headHalf],
+      [tipX, tipY],
+      [baseX - perpX * headHalf,  baseY - perpY * headHalf],
+      [baseX - perpX * shaftHalf, baseY - perpY * shaftHalf],
+      [startX - perpX * shaftHalf, startY - perpY * shaftHalf],
+    ];
+    const path = document.createElementNS(ns, 'path');
+    path.setAttribute('class', 'board-overlay-arrow');
+    path.setAttribute('d', points.map((pt, i) => `${i === 0 ? 'M' : 'L'} ${pt[0].toFixed(2)} ${pt[1].toFixed(2)}`).join(' ') + ' Z');
+    path.setAttribute('fill', colorHex);
+    path.setAttribute('fill-opacity', opacity);
+    path.setAttribute('stroke', 'none');
+    svg.appendChild(path);
+  }
+}
+
+function activeBoardOverlayPreview() {
+  if (!overlayGesture.active || !overlayGesture.fromSq || !overlayGesture.toSq) return null;
+  if (overlayGesture.fromSq === overlayGesture.toSq) {
+    return { type: 'circle', square: overlayGesture.fromSq, color: overlayGesture.color };
+  }
+  return { type: 'arrow', from: overlayGesture.fromSq, to: overlayGesture.toSq, color: overlayGesture.color };
+}
+
+function setBoardOverlays(overlays, opts = {}) {
+  state.boardOverlays = cloneBoardOverlays(overlays);
+  rememberCurrentPositionOverlays(state.boardOverlays);
+  if (opts.persist) persistCurrentPositionOverlays();
+  redrawBoardOverlays();
+}
+
+function clearBoardOverlays(opts = {}) {
+  state.boardOverlays = [];
+  rememberCurrentPositionOverlays([]);
+  overlayGesture.active = false;
+  overlayGesture.fromSq = null;
+  overlayGesture.toSq = null;
+  if (opts.persist !== false) persistCurrentPositionOverlays();
+  redrawBoardOverlays();
+}
+
+function toggleBoardOverlay(overlay) {
+  const safe = sanitiseBoardOverlay(overlay);
+  if (!safe) return;
+  const next = cloneBoardOverlays(state.boardOverlays || []);
+  const key = boardOverlayKey(safe);
+  const existing = next.findIndex(o => boardOverlayKey(o) === key);
+  if (existing >= 0) next.splice(existing, 1);
+  else next.push(safe);
+  state.boardOverlays = next;
+  rememberCurrentPositionOverlays(next);
+  redrawBoardOverlays();
+  persistCurrentPositionOverlays();
+}
+
+function beginBoardOverlayGesture(e) {
+  if (!isBoardOverlayGestureEvent(e)) return;
+  const sqEl = sqElFromPoint(e.clientX, e.clientY);
+  if (!sqEl || !sqEl.dataset || !sqEl.dataset.sq) return;
+  e.preventDefault();
+  e.stopPropagation();
+  overlayGesture.active = true;
+  overlayGesture.fromSq = sqEl.dataset.sq;
+  overlayGesture.toSq = sqEl.dataset.sq;
+  overlayGesture.color = overlayColorForEvent(e);
+  overlayGesture.movedPx = 0;
+  overlayGesture.suppressClick = true;
+  redrawBoardOverlays();
+}
+
+function updateBoardOverlayGesture(e) {
+  if (!overlayGesture.active) return;
+  overlayGesture.movedPx += Math.abs(e.movementX || 0) + Math.abs(e.movementY || 0);
+  const sqEl = sqElFromPoint(e.clientX, e.clientY);
+  if (sqEl && sqEl.dataset && sqEl.dataset.sq) {
+    overlayGesture.toSq = sqEl.dataset.sq;
+    redrawBoardOverlays();
+  }
+}
+
+function endBoardOverlayGesture(e) {
+  if (!overlayGesture.active) return;
+  e.preventDefault();
+  e.stopPropagation();
+  const sqEl = sqElFromPoint(e.clientX, e.clientY);
+  const toSq = sqEl && sqEl.dataset ? sqEl.dataset.sq : overlayGesture.toSq;
+  const fromSq = overlayGesture.fromSq;
+  const color = overlayGesture.color;
+  overlayGesture.active = false;
+  overlayGesture.fromSq = null;
+  overlayGesture.toSq = null;
+  if (fromSq && toSq) {
+    if (fromSq === toSq || overlayGesture.movedPx <= 4) {
+      toggleBoardOverlay({ type: 'circle', square: fromSq, color });
+    } else {
+      toggleBoardOverlay({ type: 'arrow', from: fromSq, to: toSq, color });
+    }
+  }
+  setTimeout(() => { overlayGesture.suppressClick = false; }, 0);
+}
+
+// Expose the generic API for later Target/Hint/Threat modes and manual smoke tests.
+window.setBoardOverlays = setBoardOverlays;
+window.clearBoardOverlays = clearBoardOverlays;
+window.clearBoardOverlayState = clearBoardOverlayState;
+
+// ═══════════════════════════════════════════════════════════════════
+//  Performance bar
+// ═══════════════════════════════════════════════════════════════════
+
+function updatePerfBar(sc) {
+  const wrap = document.getElementById('perf-bar-wrap');
+  const svg  = document.getElementById('perf-bar-svg');
+  console.log('[bar] sc=', sc ? JSON.stringify({f:sc.bar_floor,c:sc.bar_ceiling,tot:sc.total_moves}) : 'null');
+  if (!sc || !wrap || !svg) return;
+
+  const R          = sc.master_rating || state.masterRating || 2400;
+  const FLOOR      = 200;
+  const MAX_RATING = Math.round(FLOOR + 1.25 * (R - FLOOR));
+  const floor      = (sc.bar_floor   !== undefined) ? sc.bar_floor   : FLOOR;
+  const ceil       = (sc.bar_ceiling !== undefined) ? sc.bar_ceiling : R;
+
+  wrap.style.display = '';
+
+  // SVG layout — extra height for labels below bar
+  const W = 480, H = 52;
+  const BAR_Y = 16, BAR_H = 14, BAR_R = 7;
+  const TICK_Y1 = BAR_Y + BAR_H + 3;   // tick top — just below bar
+  const TICK_Y2 = BAR_Y + BAR_H + 8;   // tick bottom
+  const LABEL_Y = BAR_Y + BAR_H + 18;  // label baseline — below tick
+  const PAD_L = 4, PAD_R = 4;
+  const BAR_W = W - PAD_L - PAD_R;
+
+  function toX(rating) {
+    return PAD_L + ((rating - FLOOR) / (MAX_RATING - FLOOR)) * BAR_W;
+  }
+
+  const ns = 'http://www.w3.org/2000/svg';
+  svg.innerHTML = '';
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+
+  // Track (dark background)
+  const track = document.createElementNS(ns, 'rect');
+  track.setAttribute('x', PAD_L);   track.setAttribute('y', BAR_Y);
+  track.setAttribute('width', BAR_W); track.setAttribute('height', BAR_H);
+  track.setAttribute('rx', BAR_R);  track.setAttribute('fill', '#333');
+  svg.appendChild(track);
+
+  // Live range bar — clean uninterrupted gold, no marks on it
+  const fx = toX(floor), cx = toX(ceil);
+  const barW = Math.max(2 * BAR_R, cx - fx);
+  const bar = document.createElementNS(ns, 'rect');
+  bar.setAttribute('x', fx);    bar.setAttribute('y', BAR_Y);
+  bar.setAttribute('width', barW); bar.setAttribute('height', BAR_H);
+  bar.setAttribute('rx', BAR_R); bar.setAttribute('fill', '#d4a44c');
+  svg.appendChild(bar);
+
+  // Rating ticks and numeric labels BELOW the bar.
+  // Intervals: 600, 1000, 1400, 1800, 2200, 2600.
+  // Only show if strictly inside the bar's rendered gold range (not at the edges).
+  // Also skip labels that would fall outside the full track.
+  const TICK_RATINGS = [600, 1000, 1400, 1800, 2200, 2600];
+  const MARGIN = 18; // min px from bar edge before showing label, to avoid clutter
+  for (const r of TICK_RATINGS) {
+    const rx = toX(r);
+    // Skip if outside track bounds
+    if (rx < PAD_L + 2 || rx > PAD_L + BAR_W - 2) continue;
+    // Skip if too close to either end of the gold bar
+    if (rx < fx + MARGIN || rx > cx - MARGIN) continue;
+
+    const tick = document.createElementNS(ns, 'line');
+    tick.setAttribute('x1', rx); tick.setAttribute('x2', rx);
+    tick.setAttribute('y1', TICK_Y1); tick.setAttribute('y2', TICK_Y2);
+    tick.setAttribute('stroke', '#666'); tick.setAttribute('stroke-width', '1');
+    svg.appendChild(tick);
+
+    const lbl = document.createElementNS(ns, 'text');
+    lbl.setAttribute('x', rx); lbl.setAttribute('y', LABEL_Y);
+    lbl.setAttribute('text-anchor', 'middle');
+    lbl.setAttribute('font-size', '8');
+    lbl.setAttribute('font-family', 'Lato, sans-serif');
+    lbl.setAttribute('fill', '#777');
+    lbl.textContent = r;
+    svg.appendChild(lbl);
+  }
+
+  // Floor / ceiling labels at ends of gold bar
+  const makeEndLabel = (text, x, anchor) => {
+    const t = document.createElementNS(ns, 'text');
+    t.setAttribute('x', x); t.setAttribute('y', LABEL_Y);
+    t.setAttribute('text-anchor', anchor);
+    t.setAttribute('font-size', '9');
+    t.setAttribute('font-family', 'Lato, sans-serif');
+    t.setAttribute('fill', '#aaa');
+    t.textContent = text;
+    svg.appendChild(t);
+  };
+  makeEndLabel(Math.round(floor), fx, 'middle');
+  if (Math.abs(cx - fx) > 40) makeEndLabel(Math.round(ceil), cx, 'middle');
+}
+
+// ═══════════════════════════════════════════════════════════════════
+//  Continue button
+// ═══════════════════════════════════════════════════════════════════
+
+function showContinue(action) {
+  state.continueAction = action;
+  const btn = document.getElementById('btn-continue');
+  const labels = {
+    'advance':    'Continue \u2192',
+    'advance_auto': 'Continue \u2192',
+    'master_show': 'Continue \u2192',
+    'bonus_retry':'Try for the Match \u2192',
+    'bonus_retract': 'Continue \u2192',
+    'opp_done':   'Continue \u2192',
+    'opp_move':   'Show opponent\u2019s reply \u2192',
+    'opp_open':   'Start training! \u2192',
+    'return_refutation': 'Return to the game position \u2192',
+  };
+  btn.textContent = labels[action] || 'Continue →';
+  document.getElementById('continue-section').style.display = '';
+}
+
+function hideContinue() {
+  state.continueAction = null;
+  const cs = document.getElementById('continue-section');
+  if (cs) cs.style.display = 'none';
+}
+
+function toggleSection(id) {
+  document.getElementById(id).classList.toggle('collapsed');
+}
+
+function collapseForGame() {
+  state.mode = 'training';
+  const studyNav = document.getElementById('study-nav');
+  if (studyNav) studyNav.style.display = 'none';
+  const scoreSection = document.getElementById('score-section');
+  if (scoreSection) scoreSection.style.display = '';
+  // Collapse Load and Engine panels when a game starts
+  document.getElementById('section-load').classList.add('collapsed');
+  document.getElementById('section-engine').classList.add('collapsed');
+  document.getElementById('section-browser').classList.add('collapsed');
+  // Show feedback and move counter sections
+  document.getElementById('feedback-section').style.display = '';
+  document.getElementById('move-counter-section').style.display = '';
+  document.getElementById('play-options-section').style.display = '';
+  switchContentTab('annotation');
+  // continue-section visibility controlled by showContinue/hideContinue
+  // Hide placeholder, show bar
+  const ph = document.getElementById('score-placeholder');
+  if (ph) ph.style.display = 'none';
+}
+
+function collapseForStudy() {
+  state.mode = 'study';
+  document.getElementById('section-load').classList.add('collapsed');
+  document.getElementById('section-engine').classList.add('collapsed');
+  document.getElementById('section-browser').classList.add('collapsed');
+  document.getElementById('feedback-section').style.display = '';
+  document.getElementById('move-counter-section').style.display = 'none';
+  document.getElementById('play-options-section').style.display = 'none';
+  document.getElementById('continue-section').style.display = 'none';
+  document.getElementById('perf-bar-wrap').style.display = 'none';
+  const scoreSection = document.getElementById('score-section');
+  if (scoreSection) scoreSection.style.display = 'none';
+  const studyNav = document.getElementById('study-nav');
+  if (studyNav) studyNav.style.display = 'flex';
+  switchContentTab('annotation');
+}
+
+function expandForLoad() {
+  // Re-open Load panel (or browser if file is loaded), hide feedback/move-counter
+  if (_browserFileId) {
+    // Multi-game session: re-expand browser for next game selection
+    document.getElementById('section-browser').classList.remove('collapsed');
+  } else {
+    document.getElementById('section-load').classList.remove('collapsed');
+  }
+  document.getElementById('feedback-section').style.display = 'none';
+  document.getElementById('move-counter-section').style.display = 'none';
+  document.getElementById('play-options-section').style.display = 'none';
+  const studyNav = document.getElementById('study-nav');
+  if (studyNav) studyNav.style.display = 'none';
+  const scoreSection = document.getElementById('score-section');
+  if (scoreSection) scoreSection.style.display = '';
+  const ph = document.getElementById('score-placeholder');
+  if (ph) ph.style.display = '';
+  document.getElementById('perf-bar-wrap').style.display = 'none';
+}
+
+function onContinue() {
+  const action = state.continueAction;
+  hideContinue();
+
+  if (action === 'bonus_retry') {
+    // Disabled — retry mechanic deferred. Fall through to advance.
+    state.continueAction = 'advance';
+  }
+
+  if (action === 'bonus_retract') {
+    _fireBonusRetract();
+    return;
+  }
+
+  if (action === 'master_show') {
+    _fireMasterShow();
+    return;
+  }
+
+  if (action === 'return_refutation') {
+    _fireReturnFromRefutation();
+    return;
+  }
+
+  if (action === 'advance') {
+    _fireAdvance();
+    return;
+  }
+
+  if (action === 'advance_auto') {
+    _fireAdvance({autoOpponent: true});
+    return;
+  }
+
+  if (action === 'opp_done') {
+    _fireAdvance();
+    return;
+  }
+
+  if (action === 'opp_move' || action === 'opp_open') {
+    // Animate the pending opponent move, then stage the next one
+    _animatePendingOppMove();
+    return;
+  }
+}
+
+function _fireAdvance(opts = {}) {
+  const autoMoves = state.pendingAutoMoves || [];
+  const finalFen  = state.pendingFinalFen;
+  const cb        = state.pendingCallback;
+  state.pendingAutoMoves = null;
+  state.pendingFinalFen  = null;
+  state.pendingCallback  = null;
+  playAutoMoves(autoMoves, finalFen, cb, opts);
+}
+
+function _fireReturnFromRefutation() {
+  const rr = state.pendingRefutationReturn;
+  if (!rr) {
+    clearRefutationOverlay();
+    state.awaitingGuess = true;
+    renderBoard(state.currentFen);
+    return;
+  }
+  state.pendingRefutationReturn = null;
+  state.currentFen = rr.preFen;
+  state.lastMoveFrom = rr.lastMoveFrom || null;
+  state.lastMoveTo = rr.lastMoveTo || null;
+  state.boardOverlays = cloneBoardOverlays(rr.boardOverlays || []);
+  clearRefutationOverlay();
+  state.selectedSq = null;
+  state.legalTargets = [];
+  state.awaitingGuess = true;
+  renderBoard(rr.preFen);
+  setFeedback('error',
+    '\u2717 Hard fail \u2014 penalty recorded.',
+    '',
+    rr.returnHint || 'Return complete. Try again from the game position.');
+}
+
+function _fireMasterShow() {
+  const ms = state.pendingMasterShow;
+  if (!ms) { _fireAdvance(); return; }
+  resetTriedMoves();
+  state.pendingMasterShow = null;
+  const masterFrom = ms.masterUci.slice(0, 2);
+  const masterTo   = ms.masterUci.slice(2, 4);
+  // Render the pre-master FEN; no master-move annotation is shown yet,
+  // because the annotation must describe the board the user can see.
+  state.currentFen = ms.preFen;
+  renderBoard(ms.preFen);
+  const masterPiece = getPieceAt(ms.preFen, masterFrom);
+  animatePiece(masterFrom, masterTo, masterPiece, 750, () => {
+    state.currentFen   = ms.masterFen;
+    state.lastMoveFrom = masterFrom;
+    state.lastMoveTo   = masterTo;
+    showPositionOverlaysForCurrentPly();
+    renderBoard(ms.masterFen);
+
+    state.pendingAutoMoves = ms.autoMoves;
+    state.pendingFinalFen  = ms.finalFen;
+    state.pendingOppAnn    = ms.oppAnn;
+    state.pendingCallback  = (opts) => {
+      if (ms.gameOver) { showGameOver(ms.finalScore, ms.norm); return; }
+      state.awaitingGuess = true;
+      updateMoveCounter();
+      if (!opts || !opts.preserveFeedback)
+        setFeedback('', 'Your turn to guess.', '', 'Click a piece to select it.');
+    };
+
+    const note = ms.masterAnn || '';
+    if (note) {
+      // Now the master's move is visible, so it is safe and useful to show
+      // the annotation attached to that move. Continue should play the
+      // opponent reply directly, without a second staging click.
+      setFeedback('error',
+        "\u2717 The master's move was " + (ms.masterSan || ms.masterUci) + '.',
+        note,
+        'Click Continue to see the opponent reply.');
+      showContinue('advance_auto');
+    } else {
+      // No annotation for the revealed master move: continue directly into
+      // the opponent reply sequence after the reveal animation.
+      setTimeout(() => _fireAdvance({autoOpponent: true}), 300);
+    }
+  });
+}
+
+function _fireBonusRetract() {
+  const br = state.pendingBonusRetract;
+  if (!br) { _fireAdvance(); return; }
+  resetTriedMoves();
+  state.pendingBonusRetract = null;
+  // Step 1: retract user's piece back to its origin
+  const userPiece = getPieceAt(br.userMoveFen || br.preFen, br.userTo);
+  animatePiece(br.userTo, br.userFrom, userPiece, 600, () => {
+    // Step 2: pause, then play master's move from pre-move position
+    setTimeout(() => {
+      const masterFrom = br.masterUci.slice(0, 2);
+      const masterTo   = br.masterUci.slice(2, 4);
+      // Render board at pre-move position (user's piece back at origin)
+      state.currentFen = br.preFen;
+      renderBoard(br.preFen);
+      const masterPiece = getPieceAt(br.preFen, masterFrom);
+      animatePiece(masterFrom, masterTo, masterPiece, 750, () => {
+        state.currentFen = br.masterFen;
+        state.lastMoveFrom = masterFrom;
+        state.lastMoveTo   = masterTo;
+        showPositionOverlaysForCurrentPly();
+        renderBoard(br.masterFen);
+        // Step 3: continue gracefully into the opponent reply sequence.
+        // Bonus-awarded positions have already displayed the user's bonus and
+        // the master's continuation; if there is no annotation to read, do not
+        // insert a second "Show opponent's reply" click here.
+        setTimeout(() => {
+          playAutoMoves(state.pendingAutoMoves || [], state.pendingFinalFen, state.pendingCallback, {autoOpponent: true});
+          state.pendingAutoMoves = null;
+          state.pendingFinalFen  = null;
+          state.pendingCallback  = null;
+        }, 300);
+      });
+    }, 300);
+  });
+}
+
+
+// ═══════════════════════════════════════════════════════════════════
+//  Square interaction — click-click and drag-and-drop
+// ═══════════════════════════════════════════════════════════════════
+
+function getPieceAt(fen, sq) {
+  const file    = sq.charCodeAt(0) - 97;
+  const rank    = parseInt(sq[1]) - 1;
+  const dataRow = 7 - rank;
+  const board   = parseFen(fen);
+  return (board[dataRow] && board[dataRow][file]) || '';
+}
+
+function isOurPiece(pc) {
+  if (!pc) return false;
+  const isWhite = pc === pc.toUpperCase();
+  return (state.preparedSide === 'white' && isWhite) ||
+         (state.preparedSide === 'black' && !isWhite);
+}
+
+function canInteract() {
+  return !!(state.mode === 'training' && state.sessionId && !state.gameOver && state.awaitingGuess);
+}
+
+// ── Drag state ────────────────────────────────────────────────────────
+const drag = {
+  active:    false,   // drag in progress
+  fromSq:    null,    // square the piece was lifted from
+  ghost:     null,    // the floating img element
+  suppClick: false,   // suppress the click that fires after mouseup
+  movedPx:   0,       // total pixels moved — threshold to distinguish click from drag
+};
+
+function sqElFromPoint(x, y) {
+  for (const el of document.elementsFromPoint(x, y)) {
+    if (el.dataset && el.dataset.sq) return el;
+    if (el.parentElement && el.parentElement.dataset && el.parentElement.dataset.sq)
+      return el.parentElement;
+  }
+  return null;
+}
+
+function dimSourcePiece(sq, dim) {
+  const img = document.querySelector(`[data-sq="${sq}"] img.piece`);
+  if (img) img.classList.toggle('piece-dragging', dim);
+}
+
+function createGhost(pieceChar, x, y) {
+  const old = document.getElementById('drag-ghost');
+  if (old) old.remove();
+  const g = document.createElement('img');
+  g.id  = 'drag-ghost';
+  g.src = PIECE_URLS[pieceChar] || '';
+  g.style.left = (x - 32) + 'px';
+  g.style.top  = (y - 32) + 'px';
+  document.body.appendChild(g);
+  drag.ghost = g;
+}
+
+function moveGhost(x, y) {
+  if (drag.ghost) {
+    drag.ghost.style.left = (x - 32) + 'px';
+    drag.ghost.style.top  = (y - 32) + 'px';
+  }
+}
+
+function destroyGhost() {
+  if (drag.ghost) { drag.ghost.remove(); drag.ghost = null; }
+}
+
+async function beginDrag(sq, pieceChar, clientX, clientY) {
+  drag.active    = true;
+  drag.fromSq    = sq;
+  drag.suppClick = false;
+  drag.movedPx   = 0;
+
+  // Ghost appears immediately — feels instant
+  createGhost(pieceChar, clientX, clientY);
+  dimSourcePiece(sq, true);
+
+  // Fetch legal moves in background; highlights appear when ready
+  state.selectedSq   = sq;
+  state.legalTargets = [];
+  try {
+    const r = await fetch(`${SERVER}/legal_moves?session_id=${state.sessionId}&from_sq=${sq}`);
+    const d = await r.json();
+    if (drag.active && drag.fromSq === sq && d.targets) {
+      state.legalTargets = d.targets;
+      renderBoard(state.currentFen);   // show legal-target dots
+    }
+  } catch(e) {}
+}
+
+async function endDrag(clientX, clientY) {
+  if (!drag.active) return;
+  destroyGhost();
+  dimSourcePiece(drag.fromSq, false);
+
+  const toEl = sqElFromPoint(clientX, clientY);
+  const toSq = toEl ? toEl.dataset.sq : null;
+  const from = drag.fromSq;
+
+  drag.active    = false;
+  drag.fromSq    = null;
+  drag.suppClick = drag.movedPx > 6;  // suppress click if we actually dragged
+
+  if (toSq && from && toSq !== from && state.legalTargets.includes(toSq)) {
+    state.selectedSq   = null;
+    state.legalTargets = [];
+    renderBoard(state.currentFen);
+    await submitMove(from, toSq);
+  } else {
+    // Dropped on invalid square — keep selection visible so user can click-move
+    renderBoard(state.currentFen);
+  }
+}
+
+// Global mouse listeners
+document.addEventListener('mousemove', e => {
+  if (overlayGesture.active) { updateBoardOverlayGesture(e); return; }
+  if (!drag.active) return;
+  drag.movedPx += Math.abs(e.movementX) + Math.abs(e.movementY);
+  moveGhost(e.clientX, e.clientY);
+});
+document.addEventListener('mouseup', e => {
+  if (overlayGesture.active) { endBoardOverlayGesture(e); return; }
+  if (drag.active) endDrag(e.clientX, e.clientY);
+});
+
+// Global touch listeners
+document.addEventListener('touchmove', e => {
+  if (!drag.active) return;
+  e.preventDefault();
+  const t = e.touches[0];
+  drag.movedPx += 10;
+  moveGhost(t.clientX, t.clientY);
+}, { passive: false });
+document.addEventListener('touchend', e => {
+  if (!drag.active) return;
+  const t = e.changedTouches[0];
+  endDrag(t.clientX, t.clientY);
+});
+
+// ── Click-click (unchanged logic, suppressed after drag) ──────────────
+async function onSquareClick(sq) {
+  if (overlayGesture.suppressClick) { overlayGesture.suppressClick = false; return; }
+  if (!canInteract()) return;
+  if (drag.suppClick) { drag.suppClick = false; return; }  // was a drag, not a click
+
+  // Click on a legal target — submit move
+  if (state.selectedSq && state.legalTargets.includes(sq)) {
+    const from = state.selectedSq;
+    state.selectedSq   = null;
+    state.legalTargets = [];
+    renderBoard(state.currentFen);
+    await submitMove(from, sq);
+    return;
+  }
+
+  // Select a piece
+  state.selectedSq   = null;
+  state.legalTargets = [];
+  const piece = getPieceAt(state.currentFen, sq);
+  if (!isOurPiece(piece)) { renderBoard(state.currentFen); return; }
+  try {
+    const r = await fetch(`${SERVER}/legal_moves?session_id=${state.sessionId}&from_sq=${sq}`);
+    const d = await r.json();
+    if (d.targets && d.targets.length > 0) {
+      state.selectedSq   = sq;
+      state.legalTargets = d.targets;
+    }
+  } catch(e) {}
+  renderBoard(state.currentFen);
+}
+
+
+// ═══════════════════════════════════════════════════════════════════
+//  Multi-game browser
+// ═══════════════════════════════════════════════════════════════════
+
+let _browserFileId = null;
+let _browserActiveRow = null;
+let _browserSelectedGameIndex = null;
+let _lastGameIndex = 0;
+
+function showGameBrowser(d) {
+  _browserFileId = d.file_id;
+  // Populate meta line
+  const meta = document.getElementById('browser-meta');
+  meta.textContent = `${d.count} game${d.count !== 1 ? 's' : ''} loaded`;
+  // Skipped games warning
+  const skipEl = document.getElementById('browser-skip');
+  if (d.skipped && d.skipped.length > 0) {
+    skipEl.textContent = `${d.skipped.length} game${d.skipped.length > 1 ? 's' : ''} skipped (missing headers)`;
+  } else {
+    skipEl.textContent = '';
+  }
+  // Populate game list
+  const list = document.getElementById('game-list');
+  list.innerHTML = '';
+  for (const g of d.games) {
+    const row = document.createElement('div');
+    row.className = 'game-row';
+    row.dataset.index = g.index;
+    const result = g.result === '1-0' ? '●○' : g.result === '0-1' ? '○●' : '½½';
+    const ann = g.annotated ? '✎' : '';
+    row.innerHTML =
+      `<span class="gr-num">${g.index + 1}</span>` +
+      `<span class="gr-players">${g.white} – ${g.black}</span>` +
+      `<span class="gr-result">${result}</span>` +
+      `<span class="gr-ann" title="${g.annotated ? 'Has annotations' : ''}">${ann}</span>`;
+    row.addEventListener('click', () => selectBrowserGame(g.index, row));
+    list.appendChild(row);
+  }
+  // Update browser title
+  document.getElementById('browser-title').textContent = 'Game Library';
+  // Show browser section, collapse load section
+  document.getElementById('section-browser').style.display = 'block';
+  document.getElementById('section-browser').classList.remove('collapsed');
+  document.getElementById('section-load').classList.add('collapsed');
+  const firstRow = list.querySelector('.game-row');
+  if (firstRow) selectBrowserGame(parseInt(firstRow.dataset.index || '0', 10), firstRow);
+}
+
+function selectBrowserGame(gameIndex, rowEl) {
+  _browserSelectedGameIndex = gameIndex;
+  if (_browserActiveRow) _browserActiveRow.classList.remove('active');
+  _browserActiveRow = rowEl || document.querySelector(`.game-row[data-index="${gameIndex}"]`);
+  if (_browserActiveRow) _browserActiveRow.classList.add('active');
+  const text = document.getElementById('browser-mode-choice-text');
+  if (text) text.textContent = `Game ${gameIndex + 1} selected. Choose Training Mode or Study Mode.`;
+  const trainBtn = document.getElementById('btn-browser-train');
+  const studyBtn = document.getElementById('btn-browser-study');
+  if (trainBtn) trainBtn.disabled = false;
+  if (studyBtn) studyBtn.disabled = false;
+}
+
+function startSelectedBrowserGame(mode) {
+  if (_browserSelectedGameIndex === null || _browserSelectedGameIndex === undefined) {
+    toast('Select a game first.');
+    return;
+  }
+  const row = _browserActiveRow || document.querySelector(`.game-row[data-index="${_browserSelectedGameIndex}"]`);
+  if (mode === 'study') startStudyFromBrowser(_browserSelectedGameIndex, row);
+  else startGameFromBrowser(_browserSelectedGameIndex, row);
+}
+
+async function startGameFromBrowser(gameIndex, rowEl) {
+  if (!_browserFileId) return;
+  // Highlight active row
+  if (_browserActiveRow) _browserActiveRow.classList.remove('active');
+  _browserActiveRow = rowEl;
+  rowEl.classList.add('active');
+  try {
+    const r = await fetch(`${SERVER}/start_game`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({file_id: _browserFileId, game_index: gameIndex}),
+    });
+    _lastGameIndex = gameIndex;
+    const d = await r.json();
+    if (d.error) { toast(d.error); return; }
+    await handleLoadResponse(d);
+    // Auto-collapse browser after game loads — keeps Continue button visible
+    document.getElementById('section-browser').classList.add('collapsed');
+    // Update title to show active game number
+    const titleEl = document.getElementById('browser-title');
+    if (titleEl) titleEl.textContent = `Game Library (${gameIndex + 1} of ${document.querySelectorAll('.game-row').length})`;
+  } catch(e) {
+    toast('Could not reach server: ' + e.message);
+  }
+}
+
+async function startStudyFromBrowser(gameIndex, rowEl) {
+  if (!_browserFileId) return;
+  if (_browserActiveRow) _browserActiveRow.classList.remove('active');
+  _browserActiveRow = rowEl;
+  rowEl.classList.add('active');
+  try {
+    const r = await fetch(`${SERVER}/start_study_game`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({file_id: _browserFileId, game_index: gameIndex}),
+    });
+    _lastGameIndex = gameIndex;
+    const d = await r.json();
+    if (d.error) { toast(d.error); return; }
+    await handleStudyLoadResponse(d);
+    document.getElementById('section-browser').classList.add('collapsed');
+    const titleEl = document.getElementById('browser-title');
+    if (titleEl) titleEl.textContent = `Game Library (${gameIndex + 1} of ${document.querySelectorAll('.game-row').length})`;
+  } catch(e) {
+    toast('Could not reach server: ' + e.message);
+  }
+}
+
+async function submitMove(fromSq, toSq) {
+  const uci = fromSq + toSq;
+  console.log('[submitMove] from=%s to=%s uci=%s sessionId=%s fen=%s',
+    fromSq, toSq, uci, state.sessionId, state.currentFen);
+  setFeedback('', '', 'Evaluating…', '');
+
+  try {
+    const r = await fetch(`${SERVER}/submit_move`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({session_id: state.sessionId, uci_move: uci, show_refutation: state.showRefutation}),
+    });
+    const d = await r.json();
+    console.log('[submitMove] response:', JSON.stringify(d).slice(0, 200));
+    if (d.error) {
+      toast(d.error);
+      // Restore interaction so user isn't stuck
+      state.awaitingGuess = true;
+      state.selectedSq = null; state.legalTargets = [];
+      renderBoard(state.currentFen);
+      return;
+    }
+    try {
+      handleMoveResult(d, fromSq, toSq);
+    } catch(innerErr) {
+      console.error('[handleMoveResult] crashed:', innerErr);
+      toast('Display error — try your move again.');
+      state.awaitingGuess = true;
+      state.selectedSq = null; state.legalTargets = [];
+      renderBoard(state.currentFen);
+    }
+  } catch(e) {
+    console.error('[submitMove] network error:', e);
+    toast('Server error: ' + (e.message || 'Could not reach server.'));
+    state.awaitingGuess = true;
+    state.selectedSq = null; state.legalTargets = [];
+    renderBoard(state.currentFen);
+  }
+}
+
+function handleMoveResult(d, fromSq, toSq) {
+  const result = d.result;
+
+  // Engine not ready
+  if (result === 'no_engine') {
+    setFeedback('warn', '\u26a0 Engine not ready yet.',
+      '', 'Wait for Stockfish to initialise, then try again.');
+    state.selectedSq = null; state.legalTargets = [];
+    renderBoard(state.currentFen); return;
+  }
+
+  updateScore(d.score);
+  if (d.score) updatePerfBar(d.score);
+    if (d.evals) { state.evalData = d.evals; drawEvalGraph(state.evalData, state.totalPlies, state.moveIndex || 0); }
+
+  // ── EXACT MATCH ──────────────────────────────────────────────
+  if (result === 'exact') {
+    state.pendingRefutationReturn = null;
+    resetTriedMoves();
+    console.log('[exact] user_move_fen=%s new_fen=%s auto_played=%s ann=%s',
+      d.user_move_fen ? d.user_move_fen.slice(0,30) : 'MISSING',
+      d.new_fen ? d.new_fen.slice(0,30) : 'MISSING',
+      JSON.stringify((d.auto_played||[]).map(m=>m.uci)),
+      d.annotation ? 'yes' : 'no');
+
+    state.lastMoveFrom  = fromSq;
+    state.lastMoveTo    = toSq;
+    state.awaitingGuess = false;
+    state.moveIndex     = (state.moveIndex || 0) + 1;   // advance ply marker
+    state.positionOverlays = d.overlays_by_ply || state.positionOverlays || {};
+    showPositionOverlaysForCurrentPly();
+    if (state.activeTab === 'graph')
+      drawEvalGraph(state.evalData, state.totalPlies, state.moveIndex);
+    setFeedback('good', "\u2713 Match \u2014 the master's move!", d.annotation || '', '');
+    if (d.user_move_fen) { state.currentFen = d.user_move_fen; renderBoard(d.user_move_fen); }
+
+    state.pendingAutoMoves = d.auto_played || [];
+    state.pendingFinalFen  = d.new_fen;
+    state.pendingOppAnn    = d.opp_annotation || '';
+    state.pendingCallback  = (opts) => {
+      if (d.game_over) { showGameOver(d.final_score, d.norm); return; }
+      state.awaitingGuess = true;
+      updateMoveCounter();
+      if (!opts || !opts.preserveFeedback)
+        setFeedback('', 'Your turn to guess.', '', 'Click a piece to select it.');
+    };
+    if (d.annotation) {
+      // Annotated matches always pause so the user can read the note. The
+      // Continue click itself plays the opponent reply; it does not merely
+      // stage a second "Show opponent's reply" button.
+      showContinue('advance_auto');
+    } else if (state.pauseAfterMatch) {
+      // Optional deliberate pacing even when there is no annotation.
+      showContinue('advance_auto');
+    } else {
+      // Default: a successful unannotated match does not require an extra
+      // click. Leave the match visible briefly, then play the opponent reply.
+      setTimeout(() => _fireAdvance({autoOpponent: true}), 650);
+    }
+
+  // ── BONUS ─────────────────────────────────────────────────────
+  } else if (result === 'bonus') {
+    const cp = d.delta_cp ? Math.abs(Math.round(d.delta_cp)) : 0;
+    if (d.awarded) {
+      state.pendingRefutationReturn = null;
+      addTriedMove('bonus', d);
+      state.lastMoveFrom  = fromSq;
+      state.lastMoveTo    = toSq;
+      state.awaitingGuess = false;
+      state.moveIndex     = (state.moveIndex || 0) + 1;   // advance ply marker
+      state.positionOverlays = d.overlays_by_ply || state.positionOverlays || {};
+      clearRefutationOverlay();
+      redrawBoardOverlays();
+      if (state.activeTab === 'graph')
+        drawEvalGraph(state.evalData, state.totalPlies, state.moveIndex);
+      // Show user's bonus move on the board
+      if (d.user_move_fen) { state.currentFen = d.user_move_fen; renderBoard(d.user_move_fen); }
+      setFeedback('good',
+        '\u2605 Bonus! Your move is ' + cp + 'cp stronger \u2014 +0.25 credit awarded.',
+        '', 'Click Continue to see the master\u2019s continuation.');
+      // Note: d.annotation (master's move annotation) intentionally withheld here —
+      // showing it before the user has guessed the master's move is a hint.
+      // On Continue: retract user move, play master move, then stage opponent
+      state.pendingAutoMoves = d.auto_played || [];
+      state.pendingFinalFen  = d.new_fen;
+      state.pendingOppAnn    = d.opp_annotation || '';
+      state.pendingCallback  = (opts) => {
+        if (d.game_over) { showGameOver(d.final_score, d.norm); return; }
+        state.awaitingGuess = true;
+        updateMoveCounter();
+        if (!opts || !opts.preserveFeedback)
+          setFeedback('', 'Your turn to guess.', '', 'Click a piece to select it.');
+      };
+      // Store bonus retraction info for _fireAdvance
+      state.pendingBonusRetract = {
+        userFrom: fromSq, userTo: toSq,
+        masterUci: d.master_uci, masterFen: d.master_fen,
+        preFen: d.pre_move_fen,  // FEN before user's move — retract target
+        userMoveFen: d.user_move_fen  // FEN after user's move — piece lookup
+      };
+      showContinue('bonus_retract');
+    } else {
+      state.pendingRefutationReturn = null;
+      clearRefutationOverlay();
+      addTriedMove('excellent', d);
+      clearRefutationOverlay();
+      setFeedback('good',
+        '\u2191 Excellent! Your move is stronger than the master\u2019s \u2014 but find the master\u2019s move to score.',
+        '',
+        cp ? 'Your move is ' + cp + 'cp above the master\'s choice. Try again.' : 'Try again.');
+      // Note: d.annotation intentionally withheld — showing it is a hint about the master's move.
+      state.selectedSq = null; state.legalTargets = [];
+      renderBoard(state.currentFen);
+    }
+
+    // ── SOFT FAIL ───────────────────────────────────────────────
+  } else if (result === 'soft_fail') {
+    state.pendingRefutationReturn = null;
+    addTriedMove('soft_fail', d);
+    const cp = d.delta_cp ? Math.round(d.delta_cp) : 0;
+    clearRefutationOverlay();
+    setFeedback('warn',
+      '\u2248 Close \u2014 within threshold, no penalty.',
+      '',
+      cp ? 'Your move is ' + cp + 'cp below the master\'s choice \u2014 within threshold. Try again.' : 'Try again.');
+    state.selectedSq = null; state.legalTargets = [];
+    renderBoard(state.currentFen);
+
+  // ── HARD FAIL ───────────────────────────────────────────────
+  } else if (result === 'hard_fail') {
+    addTriedMove('hard_fail', d);
+    const cp = d.delta_cp ? Math.round(d.delta_cp) : 0;
+    const baseHint = (cp ? 'Your move is ' + cp + 'cp below the master\'s choice. ' : 'Missed the threshold. ');
+    const refOverlay = refutationOverlayForHardFail(d);
+    const refHint = d.refutation && d.refutation.san ? ' Refutation: ' + d.refutation.san + '.' : ' Refutation arrow shown.';
+    state.selectedSq = null; state.legalTargets = [];
+
+    if (refOverlay && d.user_move_fen) {
+      state.pendingRefutationReturn = {
+        preFen: state.currentFen,
+        boardOverlays: cloneBoardOverlays(state.boardOverlays || []),
+        lastMoveFrom: state.lastMoveFrom,
+        lastMoveTo: state.lastMoveTo,
+        returnHint: baseHint + 'Try again from the game position.'
+      };
+      state.awaitingGuess = false;
+      state.lastMoveFrom = fromSq;
+      state.lastMoveTo = toSq;
+      state.boardOverlays = [];
+      state.currentFen = d.user_move_fen;
+      setRefutationOverlay(refOverlay);
+      renderBoard(d.user_move_fen);
+      setFeedback('error',
+        '\u2717 Hard fail \u2014 penalty recorded.',
+        '',
+        baseHint + refHint.trim());
+      showContinue('return_refutation');
+    } else {
+      state.pendingRefutationReturn = null;
+      clearRefutationOverlay();
+      setFeedback('error',
+        '\u2717 Hard fail \u2014 penalty recorded.',
+        '',
+        baseHint + 'Try again.');
+      renderBoard(state.currentFen);
+    }
+
+  // ── TWO HARD FAILS ────────────────────────────────────────────
+  } else if (result === 'two_hard_fails') {
+    state.pendingRefutationReturn = null;
+    addTriedMove('hard_fail', d);
+    state.lastMoveFrom  = fromSq;
+    state.lastMoveTo    = toSq;
+    state.awaitingGuess = false;
+    state.moveIndex     = (state.moveIndex || 0) + 1;   // advance ply marker
+    state.positionOverlays = d.overlays_by_ply || state.positionOverlays || {};
+    clearRefutationOverlay();
+    redrawBoardOverlays();
+    if (state.activeTab === 'graph')
+      drawEvalGraph(state.evalData, state.totalPlies, state.moveIndex);
+    const cp = d.delta_cp ? Math.round(d.delta_cp) : 0;
+    setFeedback('error',
+      "\u2717 The master's move was " + d.master_san + '.',
+      '',
+      cp ? 'Your move is ' + cp + 'cp below the master\'s choice. Click Continue to see the master move.' : 'Click Continue to see the master move.');
+
+    state.pendingMasterShow = {
+      preFen:     state.currentFen,
+      masterUci:  d.master_uci,
+      masterSan:  d.master_san,
+      masterFen:  d.master_fen,
+      masterAnn:  d.annotation || '',
+      autoMoves:  d.auto_played || [],
+      finalFen:   d.new_fen,
+      oppAnn:     d.opp_annotation || '',
+      gameOver:   d.game_over,
+      finalScore: d.final_score,
+      norm:       d.norm,
+    };
+    showContinue('master_show');
+  }
+}
+
+function animatePiece(fromSq, toSq, pieceChar, durationMs, onDone) {
+  const fromEl = document.querySelector(`[data-sq="${fromSq}"]`);
+  const toEl   = document.querySelector(`[data-sq="${toSq}"]`);
+  if (!fromEl || !toEl || !PIECE_URLS[pieceChar]) { onDone(); return; }
+  const fr = fromEl.getBoundingClientRect();
+  const tr = toEl.getBoundingClientRect();
+  const anim = document.createElement('img');
+  anim.src = PIECE_URLS[pieceChar];
+  const sx = fr.left + (fr.width  - 56) / 2;
+  const sy = fr.top  + (fr.height - 56) / 2;
+  const ex = tr.left + (tr.width  - 56) / 2;
+  const ey = tr.top  + (tr.height - 56) / 2;
+  anim.style.cssText = `position:fixed;pointer-events:none;z-index:1000;width:56px;height:56px;` +
+    `object-fit:contain;filter:drop-shadow(0 3px 6px rgba(0,0,0,0.55));left:${sx}px;top:${sy}px;`;
+  document.body.appendChild(anim);
+  const srcImg = fromEl.querySelector('img.piece');
+  if (srcImg) srcImg.style.opacity = '0';
+  const t0 = performance.now();
+  function frame(now) {
+    const t = Math.min((now - t0) / durationMs, 1);
+    const e = t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2,3)/2;
+    anim.style.left = (sx + (ex-sx)*e) + 'px';
+    anim.style.top  = (sy + (ey-sy)*e) + 'px';
+    if (t < 1) requestAnimationFrame(frame);
+    else { anim.remove(); onDone(); }
+  }
+  requestAnimationFrame(frame);
+}
+
+function playAutoMoves(autoMoves, finalFen, callback, opts = {}) {
+  // Every opponent move requires Continue before animating (item 1b).
+  // Opponent annotations are shown only AFTER the opponent move lands, so
+  // annotation text always describes the position visible on the board.
+  if (!autoMoves || autoMoves.length === 0) {
+    state.currentFen = finalFen;
+    renderBoard(finalFen);
+    callback();
+    return;
+  }
+  let i = 0;
+  let preserveFeedbackAfterSequence = false;
+
+  function stageNext(previousMoveHadAnnotation = false) {
+    if (previousMoveHadAnnotation) preserveFeedbackAfterSequence = true;
+    if (i >= autoMoves.length) {
+      // All moves done — fire callback (re-enables guessing). If the last
+      // opponent move had annotation, preserve that annotation while enabling
+      // the user's next guess.
+      state.currentFen = finalFen;
+      renderBoard(finalFen);
+      callback({preserveFeedback: preserveFeedbackAfterSequence});
+      return;
+    }
+    const m = autoMoves[i];
+    // Gate on Continue — action 'opp_move' will animate this move.
+    state.pendingOppMove = { move: m, onDone: (hadAnnotation) => { i++; stageNext(hadAnnotation); } };
+    // "Start training!" only on the very first opponent move at game start
+    // (playing Black, i===0 in the auto sequence, flag not yet set).
+    // i>0 means we're staging a multi-move sequence mid-game — never the opener.
+    const isOpener = (!!opts.openingSequence && i === 0 && state.preparedSide === 'black' && !state.gameOpenerShown);
+    if (isOpener) {
+      state.gameOpenerShown = true;
+      setFeedback('', 'White moves first.', '', 'Click Start training to see White\u2019s opening move.');
+      showContinue('opp_open');
+    } else if (opts.autoOpponent) {
+      // Match auto-advance mode: after a successful exact match, do not
+      // require an additional Continue click merely to show the opponent's
+      // reply. The opponent annotation is still displayed after the move
+      // lands, so the text matches the visible board position.
+      setTimeout(_animatePendingOppMove, 250);
+    } else {
+      showContinue('opp_move');
+    }
+  }
+
+  // Small pause after user move so the piece lands visually before Continue appears
+  setTimeout(() => stageNext(false), 300);
+}
+
+function _animatePendingOppMove() {
+  if (!state.pendingOppMove) return;
+  const { move: m, onDone } = state.pendingOppMove;
+  state.pendingOppMove = null;
+  const from = m.uci.slice(0, 2);
+  const to   = m.uci.slice(2, 4);
+  const pc   = getPieceAt(state.currentFen, from);
+  state.lastMoveFrom = from;
+  state.lastMoveTo   = to;
+  animatePiece(from, to, pc, 750, () => {
+    state.currentFen = m.fen_after;
+    state.moveIndex  = (state.moveIndex || 0) + 1;   // advance ply marker for opp move
+    if (m.overlays) {
+      state.positionOverlays[String(state.moveIndex)] = cloneBoardOverlays(m.overlays);
+    }
+    showPositionOverlaysForCurrentPly();
+    if (state.activeTab === 'graph')
+      drawEvalGraph(state.evalData, state.totalPlies, state.moveIndex);
+    renderBoard(m.fen_after);
+    const ann = m.annotation || '';
+    if (ann) setFeedback('', 'Opponent\'s reply:', ann, 'Your turn to guess.');
+    onDone(!!ann);
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════════
+//  Game loading
+// ═══════════════════════════════════════════════════════════════════
+
+async function loadGame() {
+  const pgn = document.getElementById('pgn-input').value.trim();
+  if (!pgn) { toast('Please paste a PGN first.'); return; }
+  if (pgn.length > 640 * 1024) { toast('PGN too large.'); return; }
+  console.log('[loadGame] sending to', SERVER + '/load_game', 'pgn length:', pgn.length);
+  try {
+    clearBoardOverlayState();
+    state.lastPgn = pgn;
+    const r = await fetch(`${SERVER}/load_game`, {
+      method: 'POST', headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({pgn}),
+    });
+    console.log('[loadGame] response status:', r.status, r.statusText);
+    const text = await r.text();
+    console.log('[loadGame] raw response:', text.slice(0, 300));
+    const d = JSON.parse(text);
+    if (d.error) { toast(d.error); return; }
+    await handleLoadResponse(d);
+  } catch(e) { toast('Network error: ' + e.message); }
+}
+
+async function loadStudyGame() {
+  const pgn = document.getElementById('pgn-input').value.trim();
+  if (!pgn) { toast('Please paste a PGN first.'); return; }
+  if (pgn.length > 640 * 1024) { toast('PGN too large.'); return; }
+  console.log('[loadStudyGame] sending to', SERVER + '/load_study_game', 'pgn length:', pgn.length);
+  try {
+    clearBoardOverlayState();
+    state.lastPgn = pgn;
+    const r = await fetch(`${SERVER}/load_study_game`, {
+      method: 'POST', headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({pgn}),
+    });
+    const text = await r.text();
+    const d = JSON.parse(text);
+    if (d.error) { toast(d.error); return; }
+    await handleStudyLoadResponse(d);
+  } catch(e) { toast('Network error: ' + e.message); }
+}
+
+async function handleLoadResponse(d) {
+    if (d.error) { toast(d.error); document.getElementById('btn-load').disabled = false; return; }
+
+    // Reset state
+    state.sessionId    = d.session_id;
+    state.mode         = 'training';
+    state.studyMainline = [];
+    state.studyPly      = 0;
+    state.studyStartingFen = d.starting_fen;
+    state.preparedSide     = d.prepared_side;
+    state.gameOpenerShown  = false;
+    state.masterRating = d.master_rating;
+    state.totalMoves   = d.total_moves;
+    state.creditsMoves = 0;
+    state.totalGuesses = 0;
+    state.gameOver     = false;
+    state.selectedSq   = null;
+    state.legalTargets = [];
+    state.lastMoveFrom = null;
+    state.lastMoveTo   = null;
+    state.awaitingGuess = false;
+    state.moveIndex     = 0;   // reset ply marker for new game
+    state.pendingAutoMoves = null; state.pendingFinalFen = null;
+    state.pendingCallback  = null; state.pendingOppAnn  = '';
+    state.continueAction   = null;
+    state.pendingRefutationReturn = null;
+    state.triedMoves       = [];
+    state.positionOverlays = d.overlays_by_ply || {};
+    state.refutationOverlay = null;
+    renderTriedMoves();
+    hideContinue();
+    // Collapse Load/Engine, show feedback section
+    collapseForGame();
+    // Enable annotate button; check if game is already fully annotated
+    const annotBtn = document.getElementById('btn-annotate');
+    const savePgnRow = document.getElementById('save-pgn-row');
+    savePgnRow.style.display = 'none';
+    document.getElementById('save-pgn-status').textContent = '';
+    if (hasAnyPositionOverlays()) showSavePgnButton('PGN drawings detected.');
+    state.evalData   = d.evals || [];
+    state.analysisSummary = d.analysis_summary || null;
+    state.totalPlies = d.total_plies || 0;
+    const playedEvalCount = state.evalData.filter(e => Number(e.ply || 0) > 0).length;
+    const evCoverage = state.totalPlies > 0 ? playedEvalCount / state.totalPlies : 0;
+    if (evCoverage >= 0.95) {
+      // Already fully annotated — build graph immediately, offer Re-annotate
+      annotBtn.disabled   = false;
+      annotBtn.textContent = 'Re-annotate';
+      const prog = document.getElementById('annotate-progress');
+      const txt  = document.getElementById('annotate-progress-text');
+      const bar  = document.getElementById('annotate-progress-bar');
+      prog.style.display  = '';
+      bar.style.width     = '100%';
+      txt.textContent     = `${state.evalData.length}\u202f/\u202f${state.totalPlies} ply`;
+    } else {
+      annotBtn.disabled    = false;
+      annotBtn.textContent = 'Annotate Game';
+      document.getElementById('annotate-progress').style.display = 'none';
+    }
+    // Init bar
+    const R = d.master_rating || 2400;
+    state.barFloor   = 200;
+    state.barCeiling = R;
+
+    // Restore live score, hide game-over panel
+    document.getElementById('game-over-panel').classList.remove('visible');
+
+    buildLabels();
+    showGameInfo(d);
+    const initScore = {score: 0, credits: 0, bonus_credits: 0, guesses: 0,
+                       master_rating: d.master_rating,
+                       bar_floor: 200, bar_ceiling: d.master_rating,
+                       moves_left: d.total_moves, total_moves: d.total_moves};
+    updateScore(initScore);
+    updatePerfBar(initScore);
+    updateMoveCounter();
+    state.evalData = d.evals || [];   // already set above but keep in sync
+    showEvalGraph(state.evalData, d.total_plies || 0, 0, d.analysis_summary || null);
+
+    // Render starting position then play auto moves
+    renderBoard(d.starting_fen);
+    showPositionOverlaysForCurrentPly();
+
+    if (d.game_over) {
+      showGameOver({score: 0, credits: 0, guesses: 0}, '');
+      return;
+    }
+
+    // Play any leading opponent moves
+    playAutoMoves(d.auto_played || [], d.current_fen, (opts) => {
+      state.awaitingGuess = true;
+      updateMoveCounter();
+      if (!opts || !opts.preserveFeedback)
+        setFeedback('', 'Your turn to guess.', '', 'Click a piece to select it.');
+    }, {openingSequence: true});
+
+}
+
+async function handleStudyLoadResponse(d) {
+  if (d.error) { toast(d.error); return; }
+  state.sessionId    = d.session_id;
+  state.mode         = 'study';
+  state.studyMainline = d.study_mainline || [];
+  state.studyPly      = 0;
+  state.studyStartingFen = d.starting_fen;
+  state.preparedSide     = d.prepared_side || 'white';
+  state.masterRating = d.master_rating || 2400;
+  state.totalMoves   = d.total_moves || 0;
+  state.totalPlies   = d.total_plies || state.studyMainline.length;
+  state.evalData     = d.evals || [];
+  state.analysisSummary = d.analysis_summary || null;
+  state.gameOver     = false;
+  state.selectedSq   = null;
+  state.legalTargets = [];
+  state.lastMoveFrom = null;
+  state.lastMoveTo   = null;
+  state.awaitingGuess = false;
+  state.moveIndex     = 0;
+  state.pendingAutoMoves = null; state.pendingFinalFen = null;
+  state.pendingCallback  = null; state.pendingOppAnn  = '';
+  state.pendingOppMove = null; state.pendingBonusRetract = null;
+  state.pendingMasterShow = null; state.pendingRefutationReturn = null;
+  state.continueAction = null;
+  state.triedMoves = [];
+  state.positionOverlays = d.overlays_by_ply || {};
+  state.refutationOverlay = null;
+  renderTriedMoves();
+  hideContinue();
+  collapseForStudy();
+  document.getElementById('game-over-panel').classList.remove('visible');
+  const annotBtn = document.getElementById('btn-annotate');
+  const savePgnRow = document.getElementById('save-pgn-row');
+  if (savePgnRow) savePgnRow.style.display = 'none';
+  const saveStatus = document.getElementById('save-pgn-status');
+  if (saveStatus) saveStatus.textContent = '';
+  const studyPlayedEvalCount = state.evalData.filter(e => Number(e.ply || 0) > 0).length;
+  const evCoverage = state.totalPlies > 0 ? studyPlayedEvalCount / state.totalPlies : 0;
+  if (annotBtn) {
+    annotBtn.disabled = false;
+    annotBtn.textContent = evCoverage >= 0.95 ? 'Re-annotate' : 'Annotate Game';
+    annotBtn.title = 'Run engine annotation for this study game using the selected annotation depth.';
+  }
+  const prog = document.getElementById('annotate-progress');
+  const txt = document.getElementById('annotate-progress-text');
+  const bar = document.getElementById('annotate-progress-bar');
+  if (evCoverage >= 0.95 && prog && txt && bar) {
+    prog.style.display = '';
+    bar.style.width = '100%';
+    txt.textContent = `${studyPlayedEvalCount} / ${state.totalPlies} ply`;
+  } else if (prog) {
+    prog.style.display = 'none';
+  }
+  buildLabels();
+  showGameInfo(d);
+  showEvalGraph(state.evalData, state.totalPlies || state.studyMainline.length, 0, d.analysis_summary || null);
+  showStudyPly(0);
+}
+
+function studyMoveLabel(move, ply) {
+  if (!move) return 'Initial position';
+  const moveNo = Math.ceil((ply || move.ply || 1) / 2);
+  const dots = move.color === 'black' ? '...' : '.';
+  return `${moveNo}${dots} ${move.san || move.uci || ''}`;
+}
+
+function showStudyPly(ply, opts = {}) {
+  if (!opts.preserveTab) switchContentTab('annotation');
+  const maxPly = state.studyMainline ? state.studyMainline.length : 0;
+  const nextPly = Math.max(0, Math.min(maxPly, ply));
+  state.studyPly = nextPly;
+  state.moveIndex = nextPly;
+  state.selectedSq = null;
+  state.legalTargets = [];
+  clearRefutationOverlay();
+  if (nextPly === 0) {
+    state.currentFen = state.studyStartingFen;
+    state.lastMoveFrom = null;
+    state.lastMoveTo = null;
+    renderBoard(state.studyStartingFen);
+    showPositionOverlaysForCurrentPly();
+    setFeedback('', 'Study Mode', '', 'Use the board arrows to step through the mainline.');
+  } else {
+    const move = state.studyMainline[nextPly - 1];
+    state.currentFen = move.fen_after;
+    state.lastMoveFrom = (move.uci || '').slice(0, 2) || null;
+    state.lastMoveTo   = (move.uci || '').slice(2, 4) || null;
+    renderBoard(move.fen_after);
+    showPositionOverlaysForCurrentPly();
+    setFeedback('', studyMoveLabel(move, nextPly), move.annotation || '', move.annotation ? '' : 'No annotation on this ply.');
+  }
+  updateStudyNav();
+  if (state.activeTab === 'graph') drawEvalGraph(state.evalData, state.totalPlies || maxPly, state.studyPly);
+}
+
+function studyStep(delta) {
+  if (state.mode !== 'study') return;
+  showStudyPly((state.studyPly || 0) + delta);
+}
+
+function updateStudyNav() {
+  const nav = document.getElementById('study-nav');
+  if (nav) nav.style.display = state.mode === 'study' ? 'flex' : 'none';
+  const maxPly = state.studyMainline ? state.studyMainline.length : 0;
+  const indicator = document.getElementById('study-ply-indicator');
+  if (indicator) indicator.textContent = `${state.studyPly || 0} / ${maxPly}`;
+  const back = document.getElementById('btn-study-back');
+  const fwd = document.getElementById('btn-study-forward');
+  if (back) back.disabled = (state.studyPly || 0) <= 0;
+  if (fwd) fwd.disabled = (state.studyPly || 0) >= maxPly;
+}
+
+function clearActiveGameState() {
+  state.sessionId = null;
+  state.mode = 'idle';
+  state.studyMainline = [];
+  state.studyPly = 0;
+  state.awaitingGuess = false;
+  state.gameOver = false;
+  state.selectedSq = null;
+  state.legalTargets = [];
+  state.pendingAutoMoves = null;
+  state.pendingFinalFen = null;
+  state.pendingCallback = null;
+  state.pendingOppAnn = '';
+  state.pendingOppMove = null;
+  state.pendingBonusRetract = null;
+  state.pendingMasterShow = null;
+  state.pendingRefutationReturn = null;
+  state.continueAction = null;
+  state.analysisSummary = null;
+  state.analysisFilter = 'all';
+  renderAnalysisSummary(null);
+  resetTriedMoves();
+  clearBoardOverlayState();
+  hideContinue();
+  updateStudyNav();
+}
+
+function returnToSelection() {
+  clearActiveGameState();
+  document.getElementById('game-over-panel').classList.remove('visible');
+  document.getElementById('feedback-section').style.display = 'none';
+  document.getElementById('move-counter-section').style.display = 'none';
+  document.getElementById('play-options-section').style.display = 'none';
+  const studyNav = document.getElementById('study-nav');
+  if (studyNav) studyNav.style.display = 'none';
+  const scoreSection = document.getElementById('score-section');
+  if (scoreSection) scoreSection.style.display = '';
+  document.getElementById('perf-bar-wrap').style.display = 'none';
+  const ph = document.getElementById('score-placeholder');
+  if (ph) ph.style.display = '';
+  const gi = document.getElementById('game-info-section');
+  if (gi) gi.style.display = 'none';
+
+  // Keep the current database loaded, but expose both the game browser and
+  // the Load Game panel so the user can choose another game or another file.
+  if (_browserFileId) {
+    const browser = document.getElementById('section-browser');
+    browser.style.display = 'block';
+    browser.classList.remove('collapsed');
+    const instr = document.getElementById('browser-instruction');
+    if (instr) instr.textContent = 'Select a game from the list below, then choose a mode.';
+  }
+  const loadSection = document.getElementById('section-load');
+  if (loadSection) loadSection.classList.remove('collapsed');
+  const engineSection = document.getElementById('section-engine');
+  if (engineSection) engineSection.classList.add('collapsed');
+}
+
+function quitCurrentGame() {
+  returnToSelection();
+  toast('Current game closed. Choose another game or load a new PGN.');
+}
+
+// Backward-compatible alias for older buttons/bookmarks; current UI uses returnToSelection().
+async function restartGame() { returnToSelection(); }
+
+function clearPgn() {
+  document.getElementById('pgn-input').value = '';
+}
+
+async function onFileSelected(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  clearBoardOverlayState();
+  if (file.size > 640 * 1024) {
+    toast('File too large. Maximum is 640KB (64 games).'); return;
+  }
+  const reader = new FileReader();
+  reader.onload = async (e) => {
+    const pgn = e.target.result;
+    // Multi-game file: send to /load_pgn_file
+    try {
+      console.log('[onFileSelected] sending', pgn.length, 'chars to /load_pgn_file');
+      setFeedback('', '', 'Parsing PGN file…', '');
+      const r = await fetch(`${SERVER}/load_pgn_file`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({pgn}),
+      });
+      console.log('[onFileSelected] response status:', r.status, r.statusText);
+      const text = await r.text();
+      console.log('[onFileSelected] response:', text.slice(0, 200));
+      const d = JSON.parse(text);
+      if (d.error) { toast(d.error); setFeedback('', '', '', ''); return; }
+      console.log('[onFileSelected] games:', d.count, 'skipped:', (d.skipped||[]).length);
+      setFeedback('', '', '', '');
+      showGameBrowser(d);
+    } catch(e) {
+      console.error('[onFileSelected] EXCEPTION:', e.stack || e);
+      toast('Could not reach server: ' + e.message);
+    }
+  };
+  reader.readAsText(file);
+}
+
+// ═══════════════════════════════════════════════════════════════════
+//  UI updates
+// ═══════════════════════════════════════════════════════════════════
+
+function escapeHtml(s) {
+  return String(s || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function resetTriedMoves() {
+  state.triedMoves = [];
+  renderTriedMoves();
+}
+
+function triedMoveMeta(category) {
+  const meta = {
+    bonus:     { icon: '★', label: 'bonus' },       // awarded +0.25 only
+    excellent: { icon: '↑', label: 'excellent' },   // better than master, below bonus threshold
+    soft_fail: { icon: '≈', label: 'close' },
+    hard_fail: { icon: '✗', label: 'hard' },
+  };
+  return meta[category] || { icon: '•', label: category || 'tried' };
+}
+
+function addTriedMove(category, d) {
+  const san = d && (d.user_san || d.user_uci);
+  const uci = d && d.user_uci;
+  if (!san) return;
+  if (!state.triedMoves) state.triedMoves = [];
+  // Suppress duplicate attempts at the same current position.  The move is
+  // already represented in the list, and trying it again does not add useful
+  // information.  Prefer UCI for identity, falling back to SAN if needed.
+  const key = uci || san;
+  const alreadyTried = state.triedMoves.some(m => (m.uci || m.san) === key);
+  if (alreadyTried) {
+    renderTriedMoves();
+    return;
+  }
+  state.triedMoves.push({ san, uci: uci || '', category, deltaCp: d.delta_cp });
+  renderTriedMoves();
+}
+
+function renderTriedMoves() {
+  const el = document.getElementById('tried-moves');
+  if (!el) return;
+  const moves = state.triedMoves || [];
+  if (moves.length === 0) {
+    el.style.display = 'none';
+    el.innerHTML = '';
+    return;
+  }
+  const chips = moves.map(m => {
+    const meta = triedMoveMeta(m.category);
+    const title = m.deltaCp === undefined || m.deltaCp === null ? '' : ` title="${escapeHtml(Math.round(m.deltaCp) + 'cp versus master')}"`;
+    return `<span class="tried-move-chip ${escapeHtml(m.category)}"${title}>${meta.icon} ${escapeHtml(m.san)} <span style="color:var(--text-dim);font-family:var(--sans);">${escapeHtml(meta.label)}</span></span>`;
+  }).join('');
+  el.innerHTML = `<span class="tried-moves-label">Tried this position:</span>${chips}`;
+  el.style.display = '';
+}
+
+function showGameInfo(d) {
+  document.getElementById('game-info-section').style.display = '';
+  const esc = s => String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const white  = d.white  || '?';
+  const black  = d.black  || '?';
+  const event  = (d.event && d.event !== '?') ? d.event : '';
+  const date   = (d.date  && !d.date.includes('?')) ? d.date : '';
+  const result = (d.result && d.result !== '*') ? d.result : '';
+  const moves  = d.total_plies ? Math.ceil(d.total_plies / 2) + 'm' : '';
+  const evShort = event.length > 22 ? event.slice(0,21) + '…' : event;
+  const linEl = document.getElementById('game-info-line');
+  const rgtEl = document.getElementById('game-info-right');
+  if (linEl) linEl.innerHTML =
+    `<span style="color:var(--text-bright);font-weight:600;">${esc(white)} – ${esc(black)}</span>`
+    + (evShort ? ` <span style="color:var(--text-dim);">${esc(evShort)}</span>` : '');
+  const right = [date, result, moves].filter(Boolean).join(' · ');
+  if (rgtEl) rgtEl.innerHTML =
+    `<span class="side-badge ${d.prepared_side}">${d.prepared_side}</span>`
+    + (right ? `<span>${esc(right)}</span>` : '');
+}
+
+function updateScore(sc) {
+  if (!sc) return;
+  // score-number/formula/norm removed in CT-BUILD-7 (bar replaces live number display)
+  // Just keep bar state in sync
+  if (sc.bar_floor   !== undefined) state.barFloor   = sc.bar_floor;
+  if (sc.bar_ceiling !== undefined) state.barCeiling = sc.bar_ceiling;
+}
+
+function updateMoveCounter() {
+  const el = document.getElementById('move-counter');
+  if (!el || !state.sessionId) return;
+  el.innerHTML = `Training <strong>${state.preparedSide}</strong> · ${state.totalMoves} moves to guess`;
+}
+
+
+// ═══════════════════════════════════════════════════════════════════
+//  Eval graph
+// ═══════════════════════════════════════════════════════════════════
+
+function evalCpForGraphPoint(e) {
+  if (!e) return null;
+  if (e.mate != null) {
+    const m = Number(e.mate);
+    if (m > 0) return 9999;
+    if (m < 0) return -9999;
+    // Defensive fallback for old/generated [%eval #0] values.  Prefer the
+    // server-supplied cp sign if present; otherwise plot neutral rather than
+    // inventing a Black advantage from unsigned mate zero.
+    if (e.cp != null) return Number(e.cp) >= 0 ? 9999 : -9999;
+    return 0;
+  }
+  return e.cp;
+}
+
+function fmtAccuracy(v) {
+  return (v === null || v === undefined || Number.isNaN(Number(v))) ? '—' : `${Number(v).toFixed(1)}%`;
+}
+
+function fmtCount(n, word) {
+  const x = Number(n || 0);
+  return `${x} ${word}${x === 1 ? '' : 's'}`;
+}
+
+function renderAnalysisSummary(summary) {
+  state.analysisSummary = summary || null;
+  const box = document.getElementById('analysis-summary');
+  if (!box) return;
+  if (!summary || !summary.ok) {
+    box.classList.remove('visible');
+    return;
+  }
+  box.classList.add('visible');
+  const overall = document.getElementById('analysis-summary-overall');
+  const white = document.getElementById('analysis-summary-white');
+  const black = document.getElementById('analysis-summary-black');
+  const w = summary.white || {};
+  const b = summary.black || {};
+  const partial = summary.complete ? '' : ' · partial';
+  if (overall) overall.textContent = `Overall accuracy: ${fmtAccuracy(summary.overall_accuracy)}${partial}`;
+  if (white) white.textContent = `White: ${fmtAccuracy(w.accuracy)} · ${fmtCount(w.inaccuracy, 'inaccuracy')} · ${fmtCount(w.mistake, 'mistake')} · ${fmtCount(w.blunder, 'blunder')}`;
+  if (black) black.textContent = `Black: ${fmtAccuracy(b.accuracy)} · ${fmtCount(b.inaccuracy, 'inaccuracy')} · ${fmtCount(b.mistake, 'mistake')} · ${fmtCount(b.blunder, 'blunder')}`;
+  updateAnalysisFilterButtons();
+}
+
+function setAnalysisFilter(filter) {
+  const next = (state.analysisFilter === filter && filter !== 'all') ? 'all' : filter;
+  state.analysisFilter = next || 'all';
+  updateAnalysisFilterButtons();
+  drawEvalGraph(state.evalData, state.totalPlies, state.moveIndex || 0);
+}
+
+function updateAnalysisFilterButtons() {
+  const filters = ['all', 'inaccuracy', 'mistake', 'blunder'];
+  for (const f of filters) {
+    const el = document.getElementById(`analysis-filter-${f}`);
+    if (el) el.classList.toggle('active', (state.analysisFilter || 'all') === f);
+  }
+}
+
+function onEvalGraphMarkerClick(ply) {
+  const target = Number(ply || 0);
+  if (!target) return;
+  if (state.mode === 'study') {
+    showStudyPly(target, {preserveTab: true});
+    drawEvalGraph(state.evalData, state.totalPlies, state.moveIndex || target);
+  } else {
+    toast('Graph marker navigation is available in Study Mode.');
+  }
+}
+
+function analysisMarkerTitle(m) {
+  const cat = String(m.category || 'move');
+  const moveNo = m.move_number || Math.ceil((m.ply || 1) / 2);
+  const dots = m.color === 'black' ? '...' : '.';
+  const san = m.san || m.uci || '';
+  const loss = m.win_loss !== undefined ? ` · ${Number(m.win_loss).toFixed(1)} win% loss` : '';
+  return `${cat}: ${moveNo}${dots} ${san}${loss}`;
+}
+
+function drawEvalGraph(evals, totalPlies, currentPly) {
+  const svg = document.getElementById('eval-graph-svg');
+  const hint = document.getElementById('eval-graph-hint');
+  if (!svg) return;
+
+  const W = 480, H = 260;
+  const PAD_L = 32, PAD_R = 8, PAD_T = 8, PAD_B = 20;
+  const GW = W - PAD_L - PAD_R;
+  const GH = H - PAD_T - PAD_B;
+  const ZERO_Y = PAD_T + GH / 2;
+
+  // Lichess-matched scale: tanh(cp/500), but swings use 65% of half-height
+  // so large advantages don't dominate the full graph height (more conservative look).
+  const SCALE = 500;
+  const AMP   = GH / 2 * 0.65;   // 65% of half-height — closer to Lichess 2:1 feel
+  function cpToY(cp) {
+    return ZERO_Y - Math.tanh(cp / SCALE) * AMP;
+  }
+
+  const visibleEvals = (evals || []).filter(e => Number(e.ply || 0) > 0);
+  const n = Math.max(totalPlies || 0,
+    visibleEvals.length > 0 ? Math.max(...visibleEvals.map(e => e.ply)) : 0, 1);
+
+  function plyToX(ply) {
+    return PAD_L + ((ply - 0.5) / n) * GW;
+  }
+
+  let out = '';
+
+  // Gradient background: lighter grey at zero line, darker toward top/bottom edges.
+  // Gives fills stronger contrast at extreme evaluations (Lichess-style).
+  const gradId = 'evalBg';
+  out += `<defs>
+    <linearGradient id="${gradId}" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#252525"/>
+      <stop offset="0.5" stop-color="#454545"/>
+      <stop offset="1"   stop-color="#252525"/>
+    </linearGradient>
+  </defs>`;
+  out += `<rect x="${PAD_L}" y="${PAD_T}" width="${GW}" height="${GH}" fill="url(#${gradId})" rx="2"/>`;
+
+  // Center line
+  out += `<line x1="${PAD_L}" y1="${ZERO_Y}" x2="${PAD_L+GW}" y2="${ZERO_Y}" stroke="#666" stroke-width="0.75"/>`;
+
+  // Build point array — skip null-cp / null-mate entries (engine failed that ply)
+  const sorted = [...visibleEvals].sort((a, b) => a.ply - b.ply);
+  const pts = sorted
+    .filter(e => e.cp != null || e.mate != null)
+    .map(e => {
+      const cp = evalCpForGraphPoint(e);
+      return { x: plyToX(e.ply), y: cpToY(cp), cp, mate: e.mate, ply: e.ply };
+    })
+    .filter(p => p.cp != null && !Number.isNaN(Number(p.cp)));
+
+  if (pts.length >= 2) {
+    // Build an expanded point list that includes explicit zero-crossing
+    // intersection points.  This ensures the white fill never dips below
+    // ZERO_Y and the black fill never rises above it — even between samples.
+    const expanded = [];
+    for (let i = 0; i < pts.length; i++) {
+      if (i > 0) {
+        const a = pts[i-1], b = pts[i];
+        const aAbove = a.y <= ZERO_Y, bAbove = b.y <= ZERO_Y;
+        if (aAbove !== bAbove) {
+          // Linear interpolation to find where the line crosses ZERO_Y
+          const t = (ZERO_Y - a.y) / (b.y - a.y);
+          const xi = a.x + t * (b.x - a.x);
+          expanded.push({ x: xi, y: ZERO_Y });
+        }
+      }
+      expanded.push(pts[i]);
+    }
+
+    const x0 = expanded[0].x.toFixed(1);
+    const xN = expanded[expanded.length-1].x.toFixed(1);
+
+    // White fill — polygon hugs the gold line above zero, zero line below
+    let wp = `M${x0},${ZERO_Y}`;
+    for (const p of expanded) wp += ` L${p.x.toFixed(1)},${Math.min(p.y, ZERO_Y).toFixed(1)}`;
+    wp += ` L${xN},${ZERO_Y} Z`;
+
+    // Black fill — polygon hugs the gold line below zero, zero line above
+    let bp = `M${x0},${ZERO_Y}`;
+    for (const p of expanded) bp += ` L${p.x.toFixed(1)},${Math.max(p.y, ZERO_Y).toFixed(1)}`;
+    bp += ` L${xN},${ZERO_Y} Z`;
+
+    // Gold polyline — drawn from original pts (no need for expanded)
+    const lp = pts.map((p, i) =>
+      `${i===0?'M':'L'}${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ');
+
+    out += `<path d="${wp}" fill="#e8e8e8" opacity="0.95"/>`;
+    out += `<path d="${bp}" fill="#111111" opacity="0.9"/>`;
+    out += `<path d="${lp}" fill="none" stroke="#d4a44c" stroke-width="1.5" stroke-linejoin="round"/>`;
+  }
+
+
+  // Analysis markers: inaccuracies / mistakes / blunders.  In Study Mode,
+  // clicking a marker jumps the board to that ply.
+  const markerSummary = state.analysisSummary || {};
+  const markerFilter = state.analysisFilter || 'all';
+  const markers = Array.isArray(markerSummary.markers) ? markerSummary.markers : [];
+  const evalPointByPly = new Map(pts.map(p => [Number(p.ply), p]));
+  const markerRadius = { inaccuracy: 3.2, mistake: 4.2, blunder: 5.2 };
+  for (const m of markers) {
+    if (markerFilter !== 'all' && m.category !== markerFilter) continue;
+    const pt = evalPointByPly.get(Number(m.ply));
+    if (!pt) continue;
+    const r = markerRadius[m.category] || 3.2;
+    const strokeW = m.category === 'blunder' ? 2.2 : 1.6;
+    const title = escapeHtml(analysisMarkerTitle(m));
+    out += `<circle class="analysis-graph-marker ${escapeHtml(m.category)}" cx="${pt.x.toFixed(1)}" cy="${pt.y.toFixed(1)}" r="${r}" fill="#1a1a1a" stroke="#d4a44c" stroke-width="${strokeW}" opacity="0.95" style="cursor:pointer;pointer-events:auto;" onclick="onEvalGraphMarkerClick(${Number(m.ply)})"><title>${title}</title></circle>`;
+  }
+
+  // Current ply marker
+  if (currentPly > 0 && currentPly <= n) {
+    const mx = plyToX(currentPly);
+    out += `<line x1="${mx.toFixed(1)}" y1="${PAD_T}" x2="${mx.toFixed(1)}" y2="${PAD_T+GH}" stroke="#d4a44c" stroke-width="1" stroke-dasharray="2,2" opacity="0.7"/>`;
+  }
+
+  // Y-axis labels. With SCALE=500: ±100cp → ~19% height, ±300cp → ~51%.
+  // Label as ±1 and ±3 pawns at those positions — matches Lichess visual feel.
+  const yTicks = [
+    { cp:  300, label: '+3' },
+    { cp:  100, label: '+1' },
+    { cp:    0, label:  '0' },
+    { cp: -100, label: '\u22121' },
+    { cp: -300, label: '\u22123' },
+  ];
+  for (const t of yTicks) {
+    const ly = cpToY(t.cp);
+    if (ly < PAD_T + 4 || ly > PAD_T + GH - 4) continue;
+    out += `<line x1="${PAD_L-2}" y1="${ly.toFixed(1)}" x2="${PAD_L}" y2="${ly.toFixed(1)}" stroke="#888" stroke-width="0.75"/>`;
+    out += `<text x="${PAD_L-4}" y="${(ly+3).toFixed(1)}" font-size="7" fill="#aaa" text-anchor="end" font-family="monospace">${t.label}</text>`;
+  }
+
+  // X-axis move-number labels
+  const step = n <= 40 ? 10 : n <= 80 ? 20 : 30;
+  for (let p = step; p <= n; p += step) {
+    const lx = plyToX(p);
+    const mn = Math.ceil(p / 2);
+    out += `<text x="${lx.toFixed(1)}" y="${H-4}" font-size="7" fill="#aaa" text-anchor="middle" font-family="monospace">${mn}</text>`;
+  }
+
+  svg.innerHTML = out;
+
+  if (evals.length === 0) {
+    hint.textContent = 'Graph builds as you play (requires engine).';
+  } else {
+    // Show mate scores in hint if any
+    const mateCount = evals.filter(e => e.mate != null).length;
+    const mateNote  = mateCount ? ` \u00b7 ${mateCount} mate score${mateCount>1?'s':''}` : '';
+    hint.textContent = `${evals.length} of ${n} plies evaluated${mateNote}.`;
+  }
+}
+
+function switchContentTab(tab) {
+  // Switch between annotation and graph tabs
+  document.getElementById('tab-annotation').style.display = tab === 'annotation' ? '' : 'none';
+  document.getElementById('tab-graph').style.display      = tab === 'graph'      ? '' : 'none';
+  document.getElementById('tab-btn-annotation').classList.toggle('active', tab === 'annotation');
+  document.getElementById('tab-btn-graph').classList.toggle('active', tab === 'graph');
+  state.activeTab = tab;
+  if (tab === 'graph') {
+    renderAnalysisSummary(state.analysisSummary);
+    drawEvalGraph(state.evalData, state.totalPlies, state.moveIndex || 0);
+  }
+}
+
+function showEvalGraph(evals, totalPlies, currentPly, analysisSummary = null) {
+  state.evalData   = evals || [];
+  state.totalPlies = totalPlies || 0;
+  if (analysisSummary) renderAnalysisSummary(analysisSummary);
+  else renderAnalysisSummary(state.analysisSummary);
+  // Auto-switch to graph only if complete eval set exists.  Root eval at ply 0
+  // may make the eval array one longer than the played-ply count.
+  const playedEvalCount = state.evalData.filter(e => Number(e.ply || 0) > 0).length;
+  const complete = playedEvalCount > 0 && playedEvalCount >= state.totalPlies;
+  if (complete) {
+    switchContentTab('graph');
+  }
+  if (state.activeTab === 'graph') {
+    drawEvalGraph(state.evalData, state.totalPlies, currentPly || 0);
+  }
+}
+
+function setFeedback(cls, result, annotation, hint) {
+  // Ensure feedback section is visible
+  const sec = document.getElementById('feedback-section');
+  if (sec) sec.style.display = '';
+  const r = document.getElementById('feedback-result');
+  const a = document.getElementById('feedback-annotation');
+  const h = document.getElementById('feedback-hint');
+  if (!r) return;
+  // Animate result strip
+  if (result && cls) {
+    r.className = 'feedback-result';
+    void r.offsetWidth;
+    r.className = 'feedback-result typewriter' + (cls ? ' ' + cls : '');
+  } else {
+    r.className = 'feedback-result';
+  }
+  r.textContent = result || '';
+  h.textContent = hint || '';
+  // Annotation tab: show text (blank = no annotation at this ply, per Lichess convention)
+  if (a) a.textContent = annotation || '';
+  // Power user edit mode: sync textarea too
+  const ed = document.getElementById('annotation-editor');
+  if (ed && ed.style.display !== 'none') ed.value = annotation || '';
+  // Switch to annotation tab if we have a result to show (unless graph is active by choice)
+  if (result && state.activeTab !== 'graph') switchContentTab('annotation');
+}
+
+function saveAnnotation() {
+  // Placeholder — power user edit save (sprint 2)
+  toast('Annotation saved (not yet persisted to PGN).');
+}
+
+function showGameOver(sc, norm) {
+  state.gameOver = true; state.awaitingGuess = false;
+  resetTriedMoves();
+  clearBoardOverlayState();
+  const score = sc ? sc.score : 0;
+  document.getElementById('game-over-score').textContent = score;
+  document.getElementById('game-over-norm').textContent  = norm || normLabel(score);
+  const bonus = (sc && sc.bonus_credits) ? ` + ${sc.bonus_credits} bonus` : '';
+  document.getElementById('game-over-sub').textContent =
+    sc ? `${sc.credits} / ${sc.guesses} credited${bonus}` : '';
+  // Hide active play controls, show game-over panel
+  document.getElementById('perf-bar-wrap').style.display = 'none';
+  document.getElementById('play-options-section').style.display = 'none';
+  document.getElementById('move-counter-section').style.display = 'none';
+  document.getElementById('game-over-panel').classList.add('visible');
+  hideContinue();
+  setFeedback('good', 'Game complete!', '', '');
+}
+
+function normLabel(score) {
+  if (score >= 2200) return 'MASTER NORM';
+  if (score >= 2000) return 'CANDIDATE MASTER';
+  if (score >= 1800) return 'EXPERT NORM';
+  return '';
+}
+
+// ═══════════════════════════════════════════════════════════════════
+//  Config / engine
+// ═══════════════════════════════════════════════════════════════════
+
+function loadUiPrefs() {
+  const saved = localStorage.getItem('ct_pause_after_every_match_v2');
+  state.pauseAfterMatch = saved === null ? false : saved === 'true';
+  const cb = document.getElementById('pause-after-match');
+  if (cb) cb.checked = state.pauseAfterMatch;
+
+  const savedRef = localStorage.getItem('ct_show_refutation_v1');
+  state.showRefutation = savedRef === null ? false : savedRef === 'true';
+  const refCb = document.getElementById('show-refutation');
+  if (refCb) refCb.checked = state.showRefutation;
+}
+
+function saveUiPrefs() {
+  const cb = document.getElementById('pause-after-match');
+  state.pauseAfterMatch = !!(cb && cb.checked);
+  localStorage.setItem('ct_pause_after_every_match_v2', state.pauseAfterMatch ? 'true' : 'false');
+
+  const refCb = document.getElementById('show-refutation');
+  state.showRefutation = !!(refCb && refCb.checked);
+  localStorage.setItem('ct_show_refutation_v1', state.showRefutation ? 'true' : 'false');
+  redrawBoardOverlays();
+}
+
+function getAnnotationDepth(confirmSlow = true) {
+  const raw = parseInt(document.getElementById('eval-depth').value, 10);
+  const depth = Number.isFinite(raw) && raw > 0 ? raw : 25;
+  if (!confirmSlow) return depth;
+  if (depth > 45) {
+    const ok = confirm(
+      `Depth ${depth}? Have you considered when you plan to retire,
+` +
+      `and whether you'd like the analysis before then?
+
+` +
+      `Seriously — positions at this depth can take minutes each.
+` +
+      `Click OK only if you have truly heroic patience.`
+    );
+    if (!ok) return null;
+  } else if (depth > 35) {
+    const ok = confirm(
+      `Depth ${depth} is quite deep — each position may take 30–60 seconds.
+` +
+      `A full game annotation could take a very long time.
+
+Proceed?`
+    );
+    if (!ok) return null;
+  }
+  return depth;
+}
+
+async function saveConfig() {
+  const ep        = document.getElementById('engine-path').value.trim();
+  const depth     = getAnnotationDepth(true);
+  if (depth === null) return;
+  const threshold = parseInt(document.getElementById('eval-threshold').value) || 25;
+
+  try {
+    await fetch(`${SERVER}/save_config`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({config: {
+        engine_path:        ep,
+        eval_depth:         depth,
+        equal_threshold_cp: threshold,
+      }}),
+    });
+    toast('Config saved. Connecting engine...');
+    setTimeout(pollEngineStatus, 1500);
+  } catch(e) {
+    toast('Could not save config.');
+  }
+}
+
+async function annotateGame() {
+  if (!state.sessionId) { toast('No game loaded.'); return; }
+  const depth = getAnnotationDepth(true);
+  if (depth === null) return;
+  const btn  = document.getElementById('btn-annotate');
+  const wrap = document.getElementById('annotate-progress');
+  const bar  = document.getElementById('annotate-progress-bar');
+  const txt  = document.getElementById('annotate-progress-text');
+  let annotationCompleted = false;
+  btn.disabled    = true;
+  btn.textContent = 'Annotating\u2026';
+  wrap.style.display = '';
+  bar.style.transition = 'none';
+  bar.style.width  = '0%';
+  txt.textContent  = 'Starting\u2026';
+
+  // Switch to graph tab immediately so the user can watch it populate in real time
+  switchContentTab('graph');
+
+  try {
+    const r = await fetch(`${SERVER}/annotate_game`, {
+      method:  'POST',
+      headers: {'Content-Type': 'application/json'},
+      body:    JSON.stringify({session_id: state.sessionId, depth}),
+    });
+    if (!r.ok || !r.body) throw new Error(`HTTP ${r.status}`);
+
+    const reader  = r.body.getReader();
+    const decoder = new TextDecoder();
+    let   buf     = '';
+
+    while (true) {
+      const {done, value} = await reader.read();
+      if (done) break;
+      buf += decoder.decode(value, {stream: true});
+      // SSE lines: "data:{json}\n\n"
+      const parts = buf.split('\n\n');
+      buf = parts.pop();  // keep incomplete tail
+      for (const part of parts) {
+        const line = part.trim();
+        if (!line.startsWith('data:')) continue;
+        let msg;
+        try { msg = JSON.parse(line.slice(5)); } catch { continue; }
+
+        if (msg.type === 'root_eval') {
+          if (msg.eval) {
+            state.evalData = state.evalData || [];
+            const idx = state.evalData.findIndex(e => e.ply === msg.eval.ply);
+            if (idx >= 0) state.evalData[idx] = msg.eval;
+            else state.evalData.push(msg.eval);
+            state.totalPlies = msg.total || state.totalPlies;
+            if (state.activeTab === 'graph')
+              drawEvalGraph(state.evalData, state.totalPlies, state.moveIndex || 0);
+          }
+
+        } else if (msg.type === 'progress') {
+          const pct = msg.total ? (msg.done / msg.total * 100) : 0;
+          bar.style.width = pct.toFixed(1) + '%';
+          txt.textContent = `${msg.done}\u202f/\u202f${msg.total} ply`;
+          // Add this eval to state and redraw graph incrementally
+          if (msg.eval) {
+            state.evalData = state.evalData || [];
+            // Replace or append
+            const idx = state.evalData.findIndex(e => e.ply === msg.eval.ply);
+            if (idx >= 0) state.evalData[idx] = msg.eval;
+            else state.evalData.push(msg.eval);
+            state.totalPlies = msg.total;
+            if (state.activeTab === 'graph')
+              drawEvalGraph(state.evalData, state.totalPlies, state.moveIndex || 0);
+          }
+
+        } else if (msg.type === 'done') {
+          bar.style.width  = '100%';
+          const playedDone = (msg.evals || []).filter(e => Number(e.ply || 0) > 0).length;
+          txt.textContent  = `${playedDone}\u202f/\u202f${msg.total_plies} ply`;
+          state.evalData   = msg.evals || [];
+          state.totalPlies = msg.total_plies || 0;
+          state.analysisSummary = msg.analysis_summary || null;
+          renderAnalysisSummary(state.analysisSummary);
+          drawEvalGraph(state.evalData, state.totalPlies, state.moveIndex || 0);
+          // Reveal Save as PGN button; switch annotate button to Re-annotate
+          document.getElementById('save-pgn-row').style.display = '';
+          document.getElementById('save-pgn-status').textContent = '';
+          document.getElementById('btn-save-pgn').disabled = false;
+          btn.textContent = 'Re-annotate';
+          annotationCompleted = true;
+          toast('Annotation complete.');
+
+        } else if (msg.error) {
+          bar.style.width = '0%';
+          txt.textContent = 'Failed.';
+          toast(`Annotation error: ${msg.error}`);
+        }
+      }
+    }
+  } catch(e) {
+    bar.style.width = '0%';
+    txt.textContent = 'Failed.';
+    toast('Annotation failed \u2014 is the server running?');
+  }
+  btn.disabled    = false;
+  btn.textContent = annotationCompleted ? 'Re-annotate' : 'Annotate Game';
+}
+
+async function saveAnnotatedPgn() {
+  if (!state.sessionId) { toast('No game loaded.'); return; }
+  const btn    = document.getElementById('btn-save-pgn');
+  const status = document.getElementById('save-pgn-status');
+  btn.disabled    = true;
+  status.textContent = 'Saving\u2026';
+  try {
+    const r = await fetch(`${SERVER}/save_annotated_pgn`, {
+      method:  'POST',
+      headers: {'Content-Type': 'application/json'},
+      body:    JSON.stringify({session_id: state.sessionId}),
+    });
+    const d = await r.json();
+    if (d.error) {
+      status.textContent = `Error: ${d.error}`;
+      btn.disabled = false;
+    } else {
+      const drawings = d.drawings_written ? ` · ${d.drawings_written} drawing position${d.drawings_written === 1 ? '' : 's'}` : '';
+      status.textContent = `Saved as ${d.path || d.filename}${drawings}`;
+      // Leave button disabled — file is written, no need to write again
+      // (user can Re-annotate and save again if desired)
+    }
+  } catch(e) {
+    status.textContent = 'Save failed.';
+    btn.disabled = false;
+  }
+}
+
+async function pollEngineStatus() {
+  try {
+    const r = await fetch(`${SERVER}/engine_status`);
+    const d = await r.json();
+    const status = d.status || '';
+    document.getElementById('engine-status-text').textContent = status;
+    document.getElementById('engine-status-hdr').textContent  = 'Engine: ' + status;
+    const dot = document.getElementById('engine-dot');
+    if (status.includes('ready')) {
+      dot.className = 'status-dot ready';
+    } else if (status.includes('error') || status.includes('not found')) {
+      dot.className = 'status-dot error';
+    } else {
+      dot.className = 'status-dot';
+    }
+  } catch(e) {}
+}
+
+// ═══════════════════════════════════════════════════════════════════
+//  Toast
+// ═══════════════════════════════════════════════════════════════════
+
+function toast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 2800);
+}
+
+// ═══════════════════════════════════════════════════════════════════
+//  Server connection
+// ═══════════════════════════════════════════════════════════════════
+
+function setStatus(state, text) {
+  const dot = document.getElementById('status-dot');
+  const txt = document.getElementById('status-text');
+  dot.className = 'status-dot' + (state === 'ready' ? ' ready' : state === 'error' ? ' error' : '');
+  txt.textContent = text;
+}
+
+async function connectWithRetry(attempts = 8, delayMs = 600) {
+  for (let i = 0; i < attempts; i++) {
+    try {
+      const r = await fetch(`${SERVER}/config`);
+      if (r.ok) {
+        const cfg = await r.json();
+        if (cfg.engine_path)        document.getElementById('engine-path').value    = cfg.engine_path;
+        if (cfg.eval_depth)         document.getElementById('eval-depth').value     = cfg.eval_depth;
+        if (cfg.equal_threshold_cp) document.getElementById('eval-threshold').value = cfg.equal_threshold_cp;
+        setStatus('ready', 'Server connected.');
+        pollEngineStatus();
+        setInterval(pollEngineStatus, 5000);
+        return;
+      }
+    } catch(e) {}
+    setStatus('error', `Connecting... (${i+1}/${attempts})`);
+    await new Promise(res => setTimeout(res, delayMs));
+  }
+  setStatus('error', 'Cannot reach server — is trainer_server.py running?');
+}
+
+// ═══════════════════════════════════════════════════════════════════
+//  Init
+// ═══════════════════════════════════════════════════════════════════
+
+// Render empty board on load
+buildLabels();
+renderBoard(state.currentFen);
+loadUiPrefs();
+
+const boardWrapEl = document.getElementById('board-wrap');
+if (boardWrapEl) {
+  boardWrapEl.addEventListener('mousedown', beginBoardOverlayGesture);
+  boardWrapEl.addEventListener('contextmenu', e => {
+    const sqEl = sqElFromPoint(e.clientX, e.clientY);
+    if (sqEl) e.preventDefault();
+  });
+}
+window.addEventListener('resize', redrawBoardOverlays);
+
+// Shutdown on tab close
+window.addEventListener('beforeunload', () => {
+  navigator.sendBeacon(`${SERVER}/shutdown`);
+});
+
+connectWithRetry();
+</script>
+</body>
+</html>
