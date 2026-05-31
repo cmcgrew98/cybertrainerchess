@@ -1,0 +1,11 @@
+services:
+  cyber-trainer:
+    build: .
+    ports:
+      - "7332:7332"
+    volumes:
+      - ./Outputs:/app/Outputs          # persist annotated PGNs
+      - ./trainer_config.json:/app/trainer_config.json  # persist config
+    environment:
+      - CT_PORT=7332
+    restart: unless-stopped
