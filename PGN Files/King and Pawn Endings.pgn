@@ -1,0 +1,86 @@
+[Event "?"]
+[Site "?"]
+[Date "2015.11.20"]
+[Round "?"]
+[White "K+P"]
+[Black "P"]
+[Result "1-0"]
+[Annotator "McGrew 2015"]
+[SetUp "1"]
+[FEN "4k3/8/8/8/8/8/4P3/4K3 w - - 0 1"]
+[PlyCount "39"]
+[EventDate "2015.11.20"]
+[SourceDate "2015.11.20"]
+
+1. Kd2 {White's first objective is to get his King out in front of the pawn.
+Doing this does not always guarantee a win, but if the enemy King is in front
+of the pawn and not stuck in a bad position on his own back rank, the stronger
+side must have his King in front of the pawn to have any winning chances.   
+ For an example of what happens when White cannot achieve this setup, see the
+next game.} 1... Kd7 {Black brings his King toward the center as well.} 2. Ke3
+(2. Kd3 {also wins, though once the Kings come in closer contact, White may
+need to be more careful.}) 2... Ke6 {Black's King comes forward once more.} 3.
+Ke4 {This is not the only winning move, but it is in some ways the most
+accurate move. White takes what is called "the opposition," where the Kings
+face one another on a rank or a file with just one empty square between them.
+Whoever has to move has to give way.} 3... Kf6 {In this case, Black is the one
+who has to give way. Now White make progress by a nice little maneuver,
+inching forward diagonally first ...} 4. Kd5 Ke7 5. Ke5 {... and then taking
+the opposition again. Once more, Black must allow White's King to come forward.
+} 5... Kd7 6. Kf6 $1 Kc6 (6... Ke8 7. Ke6 {is won for White very simply. After}
+7... Kd8 8. e4 Ke8 {
+Black gains the opposition once more, but White has a free pawn move:} 9. e5 $1
+{Now Black must give way and White wins very simply:} 9... Kd8 10. Kf7 $18 {
+and White's King controls all of the squares in the pawn's path down to the
+back rank where it becomes a Queen.}) 7. Ke6 {Simple chess: White makes it
+even harder for Black's King to come around in front of the pawn.} 7... Kc5 {
+If Black had just one more free move to get his King to d4, White would be
+losing his pawn. But he doesn't.} 8. e4 $1 Kd4 9. e5 $1 {
+Now Black never gets back in front of the pawn.} 9... Ke4 10. Kd6 Kf5 11. e6
+Kf6 12. e7 (12. Kd7 $18 {also wins cleanly.}) 12... Kf7 13. Kd7 {
+The rest requires no comment.} 13... Kf6 14. e8=Q Kf5 15. Qe3 Kf6 16. Qf4+ Kg6
+17. Ke6 Kh5 18. Qg3 Kh6 19. Kf6 Kh5 20. Qg5# 1-0
+
+[Event "?"]
+[Site "?"]
+[Date "2015.11.20"]
+[Round "?"]
+[White "K+P"]
+[Black "K, second position"]
+[Result "1/2-1/2"]
+[Annotator "McGrew 2015"]
+[SetUp "1"]
+[FEN "4k3/8/8/8/8/4P3/8/4K3 w - - 0 1"]
+[PlyCount "23"]
+[EventDate "2015.11.20"]
+[SourceDate "2015.11.20"]
+
+1. Kd2 {In this position, the pawn is a bit further advanced. This means that
+White has greater difficulty getting his King in front of the pawn. In fact,
+in this one case, the King can get in front of the pawn only for a price ...}
+1... Kd7 2. Kd3 Ke7 $1 {This move looks mysterious until you remember the
+concept of taking the opposition. Black does not know what square White will
+come up to, d4 or e4, and he must be prepared to meet each of these by taking
+the opposition. So he waits, one rank back, forcing White to show his hand.} 3.
+Ke4 (3. Kd4 Kd6 $1) (3. Kc4 Ke6 $1 {takes the "diagonal opposition." You
+should verify for yourself that White cannot force a win now. Black's
+immediate plan is to play Ke5-e4, camping in front of the pawn. White can stop
+that, but then Black can take the (direct) opposition, e.g.} 4. Kd4 Kd6 5. Ke4
+Ke6 6. Kf4 Kf6 7. Ke4 Ke6 {and without moving the pawn forward, White cannot
+make any progress. So play transposes into the main line, where Black keeps
+the draw with precise play.}) 3... Ke6 $1 4. Kd4 Kd6 $1 5. e4 Ke6 $1 6. e5 {
+Black's King stands immediately in front of the pawn, but it is his move and
+he has to give way. He therefore chooses the one square where it is impossible,
+by the rules of chess, for White to take the opposition -- because White's own
+pawn is on the square his King would need.} 6... Ke7 {"Drop straight back when
+you can't stay on the blockade square." That is the rule to remember. If you
+do this, you will always draw this endgame.} 7. Kd5 Kd7 $1 {
+Of course: Black takes the opposition.} 8. e6+ Ke7 {Blockade -- not the only
+drawing move, but the best one  because it develops good habits for positions
+where doing this is critical.} 9. Ke5 Ke8 $1 {Drop straight back! Here, this
+move is absolutely critical -- going to either side would lose immediately.} (
+9... Kd8 $4 10. Kd6 Ke8 11. e7 Kf7 12. Kd7 {and White wins.}) 10. Kd6 Kd8 $1 {
+Take the opposition!} 11. e7+ Ke8 $1 {
+Blockade! Now White has only one move that does not lose his pawn, but ...} 12.
+Ke6 {... stalemate.} 1/2-1/2
+

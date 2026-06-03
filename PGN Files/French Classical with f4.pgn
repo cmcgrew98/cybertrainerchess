@@ -1,0 +1,667 @@
+[Event "CZE-ch U14"]
+[Site "Chrudim"]
+[Date "1993.??.??"]
+[Round "6"]
+[White "Vild, V."]
+[Black "Klimes, Martin"]
+[Result "0-1"]
+[ECO "C11"]
+[PlyCount "100"]
+[EventDate "1993.??.??"]
+[Source "ChessBase"]
+[SourceDate "1996.11.15"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 a6 6. Bd3 c5 7. Nf3 Nc6 8. O-O
+cxd4 9. Ne2 Bc5 10. Ng3 f6 11. Nh5 Qe7 12. exf6 gxf6 13. Kh1 Nf8 14. Re1 Bd7
+15. Nh4 e5 16. f5 O-O-O 17. Bh6 Rg8 18. a3 e4 19. Bf1 Ne5 20. b4 Bb6 21. Rc1
+Ba4 22. Qd2 e3 23. Qe2 Bb5 24. Qd1 Ng4 25. Bxf8 Rdxf8 26. Qf3 Qd6 27. Ng3 Bxf1
+28. Rxf1 Kb8 29. Qf4 Bc7 30. Qxd6 Bxd6 31. Nf3 Nf2+ 32. Kg1 d3 33. cxd3 Nxd3
+34. Rcd1 Nf4 35. Rfe1 Re8 36. Nh4 Bc7 37. Ne2 Bb6 38. Kh1 Nxe2 39. Rxe2 d4 40.
+Nf3 Rd8 41. Rd3 Rg7 42. Ne1 Rg5 43. g3 Rxf5 44. Kg2 Rfd5 45. Kf3 Kc7 46. Nc2
+Kd6 47. Ke4 Re8+ 48. Kf4 Rde5 49. Kf3 Rf5+ 50. Kg2 Ke5 0-1
+
+[Event "HUN-chT2 Maroczy 0405"]
+[Site "Hungary"]
+[Date "2005.04.10"]
+[Round "10"]
+[White "Birinyi, Istvan"]
+[Black "Barva, Attila"]
+[Result "0-1"]
+[ECO "C11"]
+[WhiteElo "2124"]
+[BlackElo "2372"]
+[PlyCount "76"]
+[EventDate "2004.09.26"]
+[Source "ChessBase"]
+[SourceDate "2007.11.25"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 a6 6. Nf3 b5 7. a3 c5 8. Be3 Nc6
+9. dxc5 Bxc5 10. Bxc5 Nxc5 11. Nd4 Bb7 12. Nxc6 Bxc6 13. Qd4 Qb6 14. b4 Na4 15.
+Qxb6 Nxb6 16. Bd3 Nc4 17. a4 bxa4 18. Bxc4 dxc4 19. Nxa4 Rb8 20. O-O Rxb4 21.
+Nc5 O-O 22. Rxa6 Rc8 23. Rfa1 h5 24. c3 Rb5 25. Na4 Rc7 26. Ra2 Rb3 27. Rc2 Kh7
+28. Nc5 Bb5 29. Nxe6 fxe6 30. Rxe6 Rf7 31. g3 Bd7 32. Rd6 Bf5 33. Rcd2 Rxc3 34.
+e6 Re7 35. R2d5 Kg6 36. Rc6 Rxe6 37. Rcc5 Rc1+ 38. Kf2 Rc2+ 0-1
+
+[Event "Budapest FS07 FM-B"]
+[Site "Budapest"]
+[Date "2005.07.10"]
+[Round "9"]
+[White "Wiid, Daleen"]
+[Black "Lakat, Gyula"]
+[Result "0-1"]
+[ECO "C11"]
+[WhiteElo "1990"]
+[BlackElo "1967"]
+[PlyCount "58"]
+[EventDate "2005.07.02"]
+[Source "ChessBase"]
+[SourceDate "2007.11.25"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 a6 6. a4 c5 7. Be3 Nc6 8. Nf3 Qa5
+9. Be2 cxd4 10. Nxd4 Bb4 11. Qd2 Nc5 12. Nb3 Nxb3 13. cxb3 O-O 14. Bd4 Rd8 15.
+Kf1 Nxd4 16. Qxd4 Bc5 17. Qd3 b5 18. Rc1 b4 19. Nb1 Qb6 20. Qg3 Bb7 21. Bd3 a5
+22. h4 Rac8 23. Re1 Ba6 24. Nd2 Bd4 25. h5 Rc2 26. Ke2 Bf2 27. Qh3 Bxe1 28.
+Rxe1 Qd4 29. Bxa6 Qxd2+ 0-1
+
+[Event "Avoine op 20th"]
+[Site "Avoine"]
+[Date "2005.07.26"]
+[Round "4"]
+[White "Menager, Erwan"]
+[Black "Schmittdiel, Eckhard"]
+[Result "0-1"]
+[ECO "C11"]
+[WhiteElo "2107"]
+[BlackElo "2417"]
+[PlyCount "96"]
+[EventDate "2005.07.23"]
+[Source "ChessBase"]
+[SourceDate "2006.11.23"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 a6 6. Nf3 b5 7. Be3 Nb6 8. Bd3
+Nc4 9. Bc1 c5 10. O-O Nc6 11. b3 cxd4 12. bxc4 bxc4 13. Ne2 Bc5 14. Ng3 g6 15.
+Kh1 cxd3 16. cxd3 Bd7 17. Bd2 O-O 18. Qc1 Be7 19. Ne2 Rc8 20. Qe1 f6 21. Qg3
+Bc5 22. h4 Kh8 23. Rac1 Qe7 24. Qh3 Ba7 25. h5 gxh5 26. Ng3 Be8 27. Rb1 Bg6 28.
+Rb3 Rb8 29. Rfb1 Bxd3 30. Rxb8 Bxb8 31. Rc1 Nd8 32. Nxh5 fxe5 33. fxe5 Nf7 34.
+Re1 Bf5 35. Qh2 Bg4 36. Nxd4 Nxe5 37. Nf4 Qf6 38. g3 Nf3 39. Nxf3 Bxf3+ 40. Kg1
+Ba7+ 41. Be3 d4 42. Bf2 Rg8 43. Nxe6 Rg6 44. Ng5 Rxg5 45. Qh4 Kg7 46. Rc1 Bb6
+47. Qh3 Rh5 48. Qd7+ Kh6 0-1
+
+[Event "ITA-ch U20"]
+[Site "Bratto"]
+[Date "2006.08.26"]
+[Round "8"]
+[White "Puleo, Diego"]
+[Black "De Nisi, Mario"]
+[Result "0-1"]
+[ECO "C11"]
+[WhiteElo "1767"]
+[BlackElo "1974"]
+[PlyCount "78"]
+[EventDate "2006.08.19"]
+[Source "ChessBase"]
+[SourceDate "2006.09.14"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 a6 6. f5 Nb6 7. fxe6 Bxe6 8. Nf3
+Be7 9. Ne2 g5 10. h4 g4 11. Ng5 Bf5 12. Ng3 Bd7 13. e6 Bxe6 14. Nxe6 fxe6 15.
+Qxg4 Kd7 16. Bf4 Nc6 17. O-O-O Qf8 18. c3 Rg8 19. Qf3 Re8 20. Re1 Bd6 21. Ne2
+Bxf4+ 22. Qxf4 e5 23. Qxf8 Rgxf8 24. g3 exd4 25. Bh3+ Kd6 26. Nxd4 Nxd4 27.
+cxd4 Nc4 28. b3 Na3 29. Rxe8 Rxe8 30. Kd2 Nb5 31. Re1 Rxe1 32. Kxe1 a5 33. Bc8
+b6 34. g4 h6 35. Kf2 Nxd4 36. Ke3 Ke5 37. g5 hxg5 38. hxg5 c5 39. g6 Kf6 0-1
+
+[Event "Boeblingen op 24th"]
+[Site "Boeblingen"]
+[Date "2007.12.27"]
+[Round "2"]
+[White "Hirneise, Jens"]
+[Black "Schmittdiel, Eckhard"]
+[Result "0-1"]
+[ECO "C11"]
+[WhiteElo "2119"]
+[BlackElo "2423"]
+[PlyCount "80"]
+[EventDate "2007.12.26"]
+[Source "ChessBase"]
+[SourceDate "2008.03.04"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 a6 6. Nce2 b5 7. Nf3 Be7 8. g3 b4
+9. Bg2 a5 10. O-O O-O 11. g4 c5 12. c3 Nb6 13. Ng3 Ba6 14. f5 Bxf1 15. Bxf1 Nc6
+16. Bd3 bxc3 17. bxc3 cxd4 18. cxd4 Nc4 19. Bc2 f6 20. exf6 Bxf6 21. fxe6 Qb6
+22. Rb1 Qa7 23. Nf5 g6 24. Nh6+ Kg7 25. Nf7 Nxd4 26. Kg2 Nxc2 27. Bh6+ Kg8 28.
+Qxc2 Rfb8 29. Bf4 Ne3+ 30. Bxe3 Qxe3 31. Qc6 Qe4 32. Rb7 Qxg4+ 33. Kf2 Bd4+ 34.
+Nxd4 Qxd4+ 35. Kg3 Qe3+ 36. Kg2 Qd2+ 37. Kg3 d4 38. Qd7 Qe3+ 39. Kg2 Qe4+ 40.
+Kg3 Rxb7 0-1
+
+[Event "TUR-ch op"]
+[Site "Antalya"]
+[Date "2008.02.09"]
+[Round "10.45"]
+[White "Tantas, Selim"]
+[Black "Ceylan, Imamettin"]
+[Result "0-1"]
+[ECO "C11"]
+[WhiteElo "1743"]
+[BlackElo "1914"]
+[PlyCount "58"]
+[EventDate "2008.02.04"]
+[Source "ChessBase"]
+[SourceDate "2008.03.04"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 a6 6. Bd3 c5 7. Nf3 Nc6 8. Be3
+cxd4 9. Nxd4 Bc5 10. Nxe6 fxe6 11. Qh5+ Kf8 12. Bxc5+ Nxc5 13. O-O-O Nxd3+ 14.
+Rxd3 Qe8 15. Qh3 Ne7 16. Rf1 Kg8 17. g4 h5 18. g5 Nf5 19. Rfd1 Kh7 20. Ne2 g6
+21. Kb1 b5 22. Ng3 Rf8 23. Rg1 Ng7 24. Rf3 Ra7 25. Nh1 Raf7 26. Rg4 Kg8 27. Rh4
+Nf5 28. Rxh5 gxh5 29. g6 Rg7 0-1
+
+[Event "POL-ch U18 Girls"]
+[Site "Leba"]
+[Date "2008.03.31"]
+[Round "3"]
+[White "Cieslar, Monika"]
+[Black "Wrobel, Aneta"]
+[Result "0-1"]
+[ECO "C11"]
+[WhiteElo "1771"]
+[BlackElo "1698"]
+[PlyCount "66"]
+[EventDate "2008.03.29"]
+[Source "ChessBase"]
+[SourceDate "2008.05.06"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 a6 6. Be3 c5 7. Qd2 cxd4 8. Bxd4
+Nc6 9. Bf2 b5 10. Nf3 Nc5 11. Bd3 b4 12. Ne2 Nxd3+ 13. Qxd3 a5 14. Ned4 Nxd4
+15. Qxd4 Ba6 16. Qb6 Qxb6 17. Bxb6 a4 18. Kd2 Rc8 19. Bd4 Be7 20. c3 Kd7 21.
+Rhc1 Rc6 22. cxb4 Bxb4+ 23. Bc3 Bxc3+ 24. Rxc3 Rxc3 25. bxc3 Rb8 26. Kc2 a3 27.
+Nd2 Rb2+ 28. Kc1 Bc4 29. Rb1 Rxa2 30. Nxc4 dxc4 31. Rb4 Rxg2 32. Rxc4 Rg1+ 33.
+Kc2 a2 0-1
+
+[Event "Dos Hermanas Internet qual-E 10th"]
+[Site "ICC INT"]
+[Date "2009.03.15"]
+[Round "7"]
+[White "Aguayo, Pablo"]
+[Black "Livendahl, Kristian"]
+[Result "0-1"]
+[ECO "C11"]
+[PlyCount "106"]
+[EventDate "2009.03.15"]
+[Source "ChessBase"]
+[SourceDate "2009.05.05"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 a6 6. Nce2 c5 7. c3 Nc6 8. Nf3 g6
+9. Be3 b6 10. Qd2 Bb7 11. Ng3 Qc7 12. Rc1 h6 13. Be2 O-O-O 14. O-O Kb8 15. b3
+Rc8 16. c4 dxc4 17. bxc4 cxd4 18. Nxd4 Nxd4 19. Bxd4 Bc5 20. Bf3 Rhd8 21. Ne2
+Bxf3 22. Rxf3 Ka7 23. Qe3 Bxd4 24. Nxd4 Nc5 25. Nb3 Rd7 26. Rh3 Rcd8 27. Nxc5
+bxc5 28. Rxh6 Rd1+ 29. Rxd1 Rxd1+ 30. Kf2 Qb6 31. Rh7 Rd7 32. Qb3 Qc6 33. Kg3
+Qe4 34. Qb2 Rd3+ 35. Kg4 Qf5+ 36. Kh4 Qxf4+ 37. g4 Rd4 38. h3 Rd7 39. Rh8 Rb7
+40. Qe2 Qd4 41. Kg5 Qd7 42. Kh6 f5 43. exf6 Qd6 44. Qe3 e5 45. g5 Rc7 46. Kxg6
+Qe6 47. h4 Qf7+ 48. Kf5 Qd7+ 49. Kg6 Qf7+ 50. Kf5 Qxc4 51. Qxe5 Qd3+ 52. Kg4
+Qd1+ 53. Kf5 Qf3+ 0-1
+
+[Event "EU Union-ch U09 11th"]
+[Site "Mureck"]
+[Date "2013.08.06"]
+[Round "7"]
+[White "Subelj, Jan"]
+[Black "Majoros, Rozsa Evelin"]
+[Result "0-1"]
+[ECO "C11"]
+[WhiteElo "1521"]
+[BlackElo "1483"]
+[PlyCount "194"]
+[EventDate "2013.07.31"]
+[Source "Chessbase"]
+[SourceDate "2013.08.22"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 a6 6. Nf3 b5 7. a3 c5 8. Be3 Nc6
+9. Be2 Qb6 10. dxc5 Bxc5 11. Bxc5 Qxc5 12. Qd2 O-O 13. Bd3 h6 14. Ne2 Nb6 15.
+b4 Qe7 16. Qe3 Nc4 17. Bxc4 dxc4 18. c3 Rd8 19. Ned4 Nxd4 20. Nxd4 Bb7 21. O-O
+Qh4 22. Qg3 Qxg3 23. hxg3 Be4 24. Rfe1 Bf5 25. Nxf5 exf5 26. Rad1 Rd3 27. Rxd3
+cxd3 28. Rd1 Rd8 29. Kf2 Kf8 30. Ke3 Ke7 31. Rxd3 Rc8 32. Kd2 Rc6 33. Rd4 f6
+34. exf6+ Kxf6 35. Kd3 g5 36. c4 bxc4+ 37. Rxc4 Rd6+ 38. Rd4 Rc6 39. a4 Re6 40.
+Kc4 Rc6+ 41. Kb3 Rb6 42. Rd5 Ke6 43. Re5+ Kf6 44. a5 Rd6 45. Kc3 Rc6+ 46. Rc5
+Re6 47. Re5 Rc6+ 48. Rc5 Re6 49. Kd3 Rd6+ 50. Ke2 Re6+ 51. Re5 Rc6 52. Rc5 Re6+
+53. Kf2 Re4 54. Rc6+ Kg7 55. fxg5 hxg5 56. Rb6 Rc4 57. Rxa6 Rxb4 58. Ra7+ Kg6
+59. a6 Ra4 60. Ra8 Kh5 61. Rf8 Kg4 62. Rf6 Ra3 63. Rg6 Ra4 64. Kg1 Ra2 65. Kh2
+Ra3 66. Rd6 Ra4 67. Rc6 Ra5 68. Re6 Ra1 69. Rg6 Ra3 70. Rd6 Ra4 71. Rg6 Ra3 72.
+Rf6 Ra4 73. Rh6 Ra3 74. Kg1 Ra2 75. Rg6 Ra5 76. Kf2 Ra3 77. Rc6 Ra2+ 78. Ke3
+Kxg3 79. Kd3 Ra3+ 80. Kc4 Kxg2 81. Rg6 Kf3 82. Kb4 Ra1 83. Kb5 g4 84. Rf6 f4
+85. Rc6 g3 86. Rc3+ Kg4 87. Kb6 Kh3 88. a7 Kh2 89. Rc2+ g2 90. Rb2 Rxa7 91.
+Kxa7 Kh1 92. Ka6 g1=Q 93. Rb4 f3 94. Rh4+ Qh2 95. Ra4 f2 96. Ra1+ Qg1 97. Ra5
+f1=Q+ 0-1
+
+[Event "Wichern op 2nd"]
+[Site "Hamburg"]
+[Date "1993.??.??"]
+[Round "1"]
+[White "Schmidt Wilke, Jens"]
+[Black "Glek, Igor V"]
+[Result "0-1"]
+[ECO "C11"]
+[BlackElo "2535"]
+[PlyCount "66"]
+[EventDate "1993.10.??"]
+[Source "ChessBase"]
+[SourceDate "1996.11.15"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 c5 6. Nf3 Nc6 7. Be3 a6 8. Qd2 b5
+9. h4 b4 10. Na4 cxd4 11. Nxd4 Bb7 12. b3 Qa5 13. h5 Rc8 14. Rh3 Nxd4 15. Bxd4
+Bc6 16. Nb2 Nc5 17. Bd3 Bb5 18. f5 Bxd3 19. Nxd3 Ne4 20. Qf4 Rxc2 21. fxe6 fxe6
+22. Qg4 Rc6 23. Rc1 Qb5 24. Ke2 Be7 25. Qxg7 Rf8 26. Rxc6 Qxc6 27. Ne1 Qc1 28.
+Nf3 Bg5 29. Qb7 Qc2+ 30. Ke1 Bd2+ 31. Ke2 Bc3+ 32. Ke3 Qf2+ 33. Kd3 Rxf3+ 0-1
+
+[Event "Haarlem AKN op 03rd"]
+[Site "Haarlem"]
+[Date "1994.??.??"]
+[Round "4"]
+[White "Lalic, Susan"]
+[Black "Glek, Igor V"]
+[Result "0-1"]
+[ECO "C11"]
+[WhiteElo "2370"]
+[BlackElo "2590"]
+[PlyCount "66"]
+[EventDate "1994.07.??"]
+[Source "ChessBase"]
+[SourceDate "1998.11.10"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 c5 6. Nf3 Nc6 7. Be3 a6 8. Qd2 b5
+9. dxc5 Bxc5 10. Bxc5 Nxc5 11. Bd3 Qb6 12. f5 b4 13. Ne2 exf5 14. Qg5 Nxd3+ 15.
+cxd3 O-O 16. d4 a5 17. O-O-O Nd8 18. Nf4 Ne6 19. Qg3 Nxf4 20. Qxf4 Be6 21. Kb1
+b3 22. a3 Rac8 23. Rc1 Rc2 24. Rhd1 Rxg2 25. Rg1 Rg4 26. Qd2 f4 27. Rc5 Bf5+
+28. Ka1 Rxg1+ 29. Nxg1 Qg6 30. Rc1 Rc8 31. Qxf4 Rxc1+ 32. Qxc1 Qg4 33. Qf1 Qxd4
+0-1
+
+[Event "Boeblingen op 11th"]
+[Site "Boeblingen"]
+[Date "1994.12.??"]
+[Round "?"]
+[White "Fahnenschmidt, Gerhard"]
+[Black "Glek, Igor V"]
+[Result "0-1"]
+[ECO "C11"]
+[WhiteElo "2395"]
+[BlackElo "2615"]
+[PlyCount "80"]
+[EventDate "1994.12.??"]
+[Source "ChessBase"]
+[SourceDate "2005.11.24"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 c5 6. Nf3 Nc6 7. Be3 a6 8. Qd2 b5
+9. dxc5 Bxc5 10. Ne2 Na5 11. b3 Be7 12. Ned4 Nc5 13. Bd3 Ne4 14. Bxe4 dxe4 15.
+Ng1 f6 16. exf6 gxf6 17. c3 Rg8 18. g3 e5 19. Nde2 Qxd2+ 20. Kxd2 Be6 21. Ke1
+Nb7 22. Rd1 Rc8 23. Kf2 Nd6 24. h3 h5 25. Rh2 Nf5 26. Rg2 Kf7 27. fxe5 fxe5 28.
+Bc1 Bc5+ 29. Ke1 Nh4 30. Rf2+ Bxf2+ 31. Kxf2 Nf5 32. h4 Ne7 33. Bg5 Nd5 34. Rc1
+Kg6 35. Kg2 Rgf8 36. Bd2 e3 37. Be1 Bf5 38. Nh3 Be4+ 39. Kh2 Rf1 40. Neg1 Nf6
+0-1
+
+[Event "Recklinghausen"]
+[Site "Recklinghausen"]
+[Date "1995.??.??"]
+[Round "?"]
+[White "Mainka, Romuald"]
+[Black "Glek, Igor V"]
+[Result "0-1"]
+[ECO "C11"]
+[WhiteElo "2530"]
+[BlackElo "2580"]
+[Annotator "Glek"]
+[PlyCount "64"]
+[EventDate "1995.08.??"]
+[Source "ChessBase"]
+[SourceDate "1996.02.01"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 c5 6. Nf3 Nc6 7. Be3 a6 8. Qd2 b5
+9. dxc5 Bxc5 10. Bxc5 Nxc5 11. Qf2 Qb6 12. Bd3 b4 13. Ne2 a5 14. O-O Ba6 15.
+Kh1 Ne7 $1 16. Rfd1 {N/} (16. Rad1 Na4 $1 $10 {Nunn,J-Glek,I/GER/1992/}) 16...
+h6 $1 (16... Na4 $6 17. Qxb6 Nxb6 18. b3 {/\a3!/}) 17. Ned4 O-O 18. Qh4 $6 (18.
+Nb3 $32 $10) 18... Ra7 $1 19. g4 $6 (19. Qe1 $15) 19... Ng6 $17 20. Bxg6 fxg6
+21. f5 $8 Raf7 $1 (21... gxf5 22. gxf5 (22. g5 $5) 22... exf5 23. Rg1 $36) 22.
+g5 $5 (22. fxe6 Nxe6 $17) (22. Rg1 exf5 23. gxf5 Rxf5 $1 $36) 22... Rxf5 $1 23.
+Nxf5 Rxf5 24. gxh6 $5 (24. Nd4 Rxg5 $19) 24... Rxf3 25. hxg7 (25. Rg1 Rf7 $1
+26. Rxg6 (26. hxg7 Rxg7 $19) 26... d4 $1) 25... Kxg7 26. Rg1 Ne4 27. Rae1 (27.
+Rxg6+ Kxg6 28. Rg1+ Qxg1+ $1 29. Kxg1 Ng5 $19) 27... Rf5 28. Rxe4 dxe4 29. Qe7+
+Rf7 30. Qg5 Be2 $1 31. Qxg6+ Kf8 32. Qh6+ Ke7 $1 (32... Ke7 33. Qg5+ Ke8 34.
+Qg8+ Rf8 35. Qg6+ Kd8 36. Qg5+ Kc8 $19) 0-1
+
+[Event "BEL-chT 9697"]
+[Site "Belgium"]
+[Date "1997.??.??"]
+[Round "1"]
+[White "Docx, Stefan"]
+[Black "Gurevich, Mikhail"]
+[Result "0-1"]
+[ECO "C11"]
+[WhiteElo "2315"]
+[BlackElo "2605"]
+[PlyCount "52"]
+[EventDate "1996.??.??"]
+[Source "ChessBase"]
+[SourceDate "1997.11.17"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 c5 6. Nf3 Nc6 7. Be3 a6 8. Qd2 b5
+9. Be2 b4 10. Nd1 Qb6 11. O-O a5 12. c4 Nxd4 13. Nxd4 cxd4 14. Bxd4 Bc5 15.
+Bxc5 Qxc5+ 16. Qe3 Ba6 17. Rc1 Rc8 18. cxd5 Qxc1 19. Bxa6 Qxe3+ 20. Nxe3 Rc5
+21. dxe6 fxe6 22. Bc4 Ke7 23. f5 Nxe5 24. Bxe6 Rd8 25. Bb3 Kf6 26. h4 Rd4 0-1
+
+[Event "NED-chT 9697"]
+[Site "Netherlands"]
+[Date "1996.??.??"]
+[Round "?"]
+[White "Van Blitterswijk, Stefan"]
+[Black "Gurevich, Mikhail"]
+[Result "0-1"]
+[ECO "C11"]
+[WhiteElo "2310"]
+[BlackElo "2590"]
+[PlyCount "50"]
+[EventDate "1996.??.??"]
+[Source "ChessBase"]
+[SourceDate "1999.11.16"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 c5 6. Nf3 Nc6 7. Be3 a6 8. Qd2 b5
+9. Be2 Be7 10. O-O O-O 11. Kh1 Bb7 12. Rae1 b4 13. Nd1 Qb6 14. f5 exf5 15. dxc5
+Bxc5 16. Bxc5 Nxc5 17. Qg5 f6 18. exf6 Rxf6 19. Ne3 Ne7 20. Bd3 Ne4 21. Bxe4
+dxe4 22. Nh4 h6 23. Qh5 Raf8 24. Nhxf5 Nxf5 25. Nxf5 Qc5 0-1
+
+[Event "Linares Anibal op 03rd"]
+[Site "Linares"]
+[Date "1996.??.??"]
+[Round "?"]
+[White "Kolev, Atanas"]
+[Black "Glek, Igor V"]
+[Result "0-1"]
+[ECO "C11"]
+[WhiteElo "2510"]
+[BlackElo "2635"]
+[PlyCount "64"]
+[EventDate "1996.01.??"]
+[Source "ChessBase"]
+[SourceDate "1996.05.01"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 c5 6. Nf3 Nc6 7. Be3 a6 8. Qd2 b5
+9. a3 Bb7 10. Be2 cxd4 11. Nxd4 Bc5 12. O-O Qb6 13. Rad1 Rc8 14. Bf2 O-O 15.
+Nxc6 Bxf2+ 16. Rxf2 Rxc6 17. Bd3 f6 18. exf6 Nxf6 19. h3 Rc7 20. Qe2 Rcf7 21.
+Rdf1 g6 22. Kh2 Nd7 23. Rf3 Qd6 24. g3 e5 25. fxe5 Nxe5 26. Rxf7 Rxf7 27. Rxf7
+Kxf7 28. Qf2+ Kg8 29. Ne2 d4 30. Ng1 Qc6 31. g4 Nxd3 32. cxd3 Qc7+ 0-1
+
+[Event "Chigorin Memorial 06th"]
+[Site "St Petersburg"]
+[Date "1998.11.02"]
+[Round "3"]
+[White "Yagupov, Igor"]
+[Black "Volkov, Sergey"]
+[Result "0-1"]
+[ECO "C11"]
+[WhiteElo "2450"]
+[BlackElo "2605"]
+[PlyCount "68"]
+[EventDate "1998.10.31"]
+[Source "ChessBase"]
+[SourceDate "1999.01.01"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 c5 6. Nf3 Nc6 7. Be3 a6 8. Qd2 b5
+9. Be2 Bb7 10. O-O b4 11. Nd1 Rc8 12. Nf2 Qb6 13. dxc5 Bxc5 14. Bxc5 Nxc5 15.
+Kh1 Ne4 16. Nxe4 dxe4 17. Ng5 e3 18. Qc1 h6 19. Nf3 O-O 20. Bd3 b3 21. axb3 Nb4
+22. Qd1 Rfd8 23. Ne1 Nxd3 24. cxd3 Qb4 25. Nf3 Qb5 26. Ne1 Be4 27. Qe2 Rxd3 28.
+Nxd3 Bxd3 29. Qf3 Be2 30. Ra5 Qxa5 31. Qxe2 Qd2 32. Qe1 e2 33. Rg1 Rd8 34. Qa1
+Rd5 0-1
+
+[Event "RUS-ch 53rd"]
+[Site "Samara"]
+[Date "2000.06.18"]
+[Round "2"]
+[White "Shaposhnikov, Evgeny"]
+[Black "Volkov, Sergey"]
+[Result "0-1"]
+[ECO "C11"]
+[WhiteElo "2503"]
+[BlackElo "2582"]
+[PlyCount "68"]
+[EventDate "2000.06.03"]
+[Source "ChessBase"]
+[SourceDate "2000.10.18"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 c5 6. Nf3 Nc6 7. Be3 a6 8. Qd2 b5
+9. Bd3 b4 10. Nd1 Qb6 11. Qf2 a5 12. O-O Ba6 13. Bxa6 Rxa6 14. c3 Be7 15. f5
+exf5 16. Bf4 cxd4 17. cxd4 O-O 18. Kh1 Bd8 19. Ne3 Ne7 20. Rad1 h6 21. g4 fxg4
+22. Nxg4 Nf5 23. Rg1 Kh8 24. Rg2 Rg8 25. Rdg1 Nf8 26. Qd2 Qe6 27. Ne3 Ng6 28.
+Ng4 Rc6 29. Be3 Be7 30. h4 h5 31. Nf2 Ngxh4 32. Nxh4 Nxh4 33. Rh2 Qf5 34. Qe2
+Rc2 0-1
+
+[Event "Linares 20th"]
+[Site "Linares"]
+[Date "2003.02.23"]
+[Round "2"]
+[White "Kasparov, Garry"]
+[Black "Radjabov, Teimour"]
+[Result "0-1"]
+[ECO "C11"]
+[WhiteElo "2847"]
+[BlackElo "2624"]
+[Annotator "Ftacnik,L"]
+[PlyCount "78"]
+[EventDate "2003.02.22"]
+[Source "ChessBase"]
+[SourceDate "2003.05.26"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 c5 6. Nf3 Nc6 7. Be3 a6 8. Qd2 b5
+9. a3 Qb6 10. Ne2 {With this move the game is leaving the known theoretical
+continuations and the closed center will contribute to the distinct character
+of the French defense.} 10... c4 11. g4 h5 (11... b4 12. Bg2 bxa3 13. bxa3 Rb8
+14. O-O $13) 12. gxh5 (12. g5 g6 13. Bg2 a5 $11) 12... Rxh5 13. Ng3 Rh8 14. f5
+$5 {Naturally Kasparov has with white pieces high ambitions against Radjabov
+and thus he sharply marches forward.} 14... exf5 (14... b4 15. fxe6 fxe6 16.
+axb4 Bxb4 17. c3 $14) 15. Nxf5 Nf6 16. Ng3 (16. exf6 Bxf5 17. fxg7 Bxg7 18. Rg1
+Bf6 $11) (16. Nxg7+ Bxg7 17. exf6 Bxf6 18. Bg2 Bg4 $11) 16... Ng4 17. Bf4 Be6
+18. c3 (18. Bg2 Be7 19. h3 Nh6 $13) 18... Be7 19. Ng5 O-O-O (19... Bxg5 20.
+Bxg5 Na5 21. Rd1 f6 22. exf6 Nxf6 $13) 20. Nxe6 fxe6 21. Be2 (21. Qe2 $5 Nh6
+22. O-O-O $14) 21... Ngxe5 $5 {So far nobody was sucessful against Kasparov
+without a sound portion of selfconfidence and risk. Black is chosing probably
+not the best, but surely the most provocative move.} (21... Nxh2 22. Nh5 g6 23.
+Nf6 Bxf6 24. exf6 Ng4 25. Rxh8 Rxh8 26. Bxg4 Rh1+ 27. Ke2 Rxa1 28. f7 Qd8 29.
+Bh6 Rh1 30. Qe3 $18) (21... Rxh2 22. Rxh2 Nxh2 23. O-O-O Na5 24. Qe3 $14) (
+21... Nh6 22. O-O-O $14) 22. Qe3 (22. dxe5 d4 23. cxd4 Rxd4 24. Qc1 (24. Qe3
+Rf8 25. Bg5 Bxg5 26. Qxg5 Qa5+ $19) 24... Na5 25. Be3 Nb3 26. Bxd4 (26. Qc3
+Nxa1 27. Bxd4 Qxd4 28. Qxd4 Nc2+ 29. Kf2 Nxd4 $19) 26... Qxd4 27. Qd1 Qe3 $19)
+(22. Bxe5 $5 Nxe5 23. dxe5 Qc7 24. O-O-O (24. Qe3 Bc5 25. Qg5 Be7 26. Qxg7 Rdg8
+27. Qf7 Rxg3 28. Qxe6+ Kb8 29. Qxa6 Qc5 30. O-O-O $16) 24... Qxe5 25. Kb1 $16)
+22... Nd7 23. Qxe6 Bh4 24. Qg4 (24. Qxd5 Rde8 25. Kd1 Nf6 26. Qf3 $16) 24... g5
+25. Bd2 (25. Bxg5 Rdg8 26. Qxh4 Rxh4 27. Bxh4 Qc7 $15) 25... Rde8 (25... Na5 $5
+26. O-O-O (26. Rf1 Nb3 $17) 26... Bxg3 27. Qxg3 Qg6 28. b4 cxb3 29. Bd3 Qc6 $15
+) 26. O-O-O Na5 27. Rdf1 $2 {Kasparov not only refused to accept the piece
+sacrifice, but in the sharp position commited the serious tactical oversight.
+It seems only logical, that white king will not feel very safe on the d1
+square.} (27. Kb1 Qg6+ 28. Ka2 Qe6 (28... Bxg3 29. hxg3 Rxh1 30. Rxh1 Qc2 31.
+Qxg5 (31. Qh5 Re7) 31... Rxe2 32. Rh8+ Kb7 (32... Kc7 33. Qd8+ Kc6 34. Rh6+ $18
+) 33. Qxd5+ Kb6 (33... Nc6 34. Qxd7+ Kb6 35. Rh6 $18) 34. Rh6+ (34. Qxd7 $2
+Qb3+ 35. Kb1 Qd1+ 36. Bc1 Rxb2+ $1 37. Kxb2 Qe2+ 38. Kb1 Qd3+ $11) 34... Ka7
+35. Qxd7+ Nb7 36. Qc6 Qb3+ 37. Kb1 Qd1+ 38. Bc1 $18) 29. Qxe6 Rxe6 30. Bg4 Rf6
+$11) 27... Nb3+ 28. Kd1 Bxg3 $1 29. Rf7 (29. hxg3 Qg6 $1 30. Bc1 Qb1 31. Qxg5
+Nxc1 32. Qxc1 Qe4 $19) 29... Rd8 (29... Qe6 $6 30. Qxe6 Rxe6 31. Bg4 Rd6 32.
+Bxg5 Rxh2 33. Rxh2 Bxh2 34. Rh7 Bg3 35. Be7 $14) 30. Bxg5 (30. Qxg3 Qg6 $19)
+30... Qg6 31. Qf5 (31. Rf5 Rde8 $19) 31... Qxf5 32. Rxf5 Rdf8 33. Rxf8+ {
+Not even a great deal of chess phantasy can help in the position, where white
+simply misses the whole piece.} (33. Rxd5 Nb6 34. Bg4+ Kc7 35. Rf5 Rxf5 36.
+Bxf5 Rxh2 $19) 33... Nxf8 34. Bf3 (34. h4 Nh7 35. Rg1 Nxg5 36. hxg5 Bf2 $19)
+34... Bh4 35. Be3 (35. Bxh4 Rxh4 36. Bxd5 Nxd4 $1 $19) 35... Nd7 36. Bxd5 Re8
+37. Bh6 Ndc5 $1 38. Bf7 Re7 39. Bh5 Nd3 0-1
+
+[Event "Bundesliga 0304"]
+[Site "Germany"]
+[Date "2003.11.22"]
+[Round "3.3"]
+[White "Berndt, Stephan"]
+[Black "Glek, Igor V"]
+[Result "0-1"]
+[ECO "C11"]
+[WhiteElo "2462"]
+[BlackElo "2555"]
+[PlyCount "78"]
+[EventDate "2003.11.01"]
+[Source "ChessBase"]
+[SourceDate "2004.01.13"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 c5 6. Nf3 Nc6 7. Be3 a6 8. Qd2 b5
+9. dxc5 Bxc5 10. Bxc5 Nxc5 11. Qf2 Qb6 12. Bd3 b4 13. Ne2 a5 14. O-O Ba6 15.
+Kh1 Ne7 16. b3 h6 17. Rad1 Rb8 18. Bxa6 Nxa6 19. Nfd4 Nc5 20. f5 Ne4 21. Qf3
+O-O 22. Nf4 Nc6 23. Nxc6 Qxc6 24. fxe6 fxe6 25. Qg4 Qxc2 26. Qxe6+ Kh7 27. Qg6+
+Kh8 28. Qg4 Nf2+ 29. Rxf2 Qxf2 30. Ng6+ Kh7 31. Nxf8+ Rxf8 32. h3 Rf5 33. e6
+Re5 34. Kh2 Qf6 35. Rd3 Re4 36. Qf3 Qxe6 37. Qg3 Re2 38. Rd4 Re3 39. Qf4 Re4
+0-1
+
+[Event "Amber-rapid 14th"]
+[Site "Monte Carlo"]
+[Date "2005.03.21"]
+[Round "3"]
+[White "Svidler, Peter"]
+[Black "Morozevich, Alexander"]
+[Result "0-1"]
+[ECO "C11"]
+[WhiteElo "2735"]
+[BlackElo "2741"]
+[PlyCount "76"]
+[EventDate "2005.03.19"]
+[Source "ChessBase"]
+[SourceDate "2005.05.01"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 c5 6. Nf3 Nc6 7. Be3 a6 8. Qd2 b5
+9. Be2 Qb6 10. Nd1 b4 11. O-O a5 12. c3 Be7 13. Bf2 O-O 14. f5 bxc3 15. bxc3
+cxd4 16. cxd4 Ba6 17. Bxa6 Qxa6 18. Ne3 Bb4 19. Qd1 Rac8 20. Ng5 Nxd4 21. Qxd4
+Bc3 22. Qh4 h6 23. f6 hxg5 24. Qxg5 Nxf6 25. exf6 Bxf6 26. Qh5 Bxa1 27. Rxa1
+Qd3 28. h3 Rb8 29. Ng4 Rb1+ 30. Rxb1 Qxb1+ 31. Kh2 f6 32. Bc5 Rc8 33. Bd6 Qh7
+34. Nxf6+ gxf6 35. Qg4+ Kf7 36. Qa4 Qg8 37. h4 Rc4 38. Qd7+ Kg6 0-1
+
+[Event "EU-Cup 21st"]
+[Site "Saint Vincent"]
+[Date "2005.09.22"]
+[Round "5.1"]
+[White "Agopov, Mikael"]
+[Black "Glek, Igor V"]
+[Result "0-1"]
+[ECO "C11"]
+[WhiteElo "2389"]
+[BlackElo "2575"]
+[PlyCount "70"]
+[EventDate "2005.09.18"]
+[Source "ChessBase"]
+[SourceDate "2006.01.31"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 c5 6. Nf3 Nc6 7. Be3 a6 8. Qd2 b5
+9. dxc5 Bxc5 10. Nd4 Nxd4 11. Bxd4 b4 12. Na4 Qa5 13. b3 Bxd4 14. Qxd4 Bb7 15.
+a3 bxa3+ 16. c3 Bc6 17. Rxa3 Bb5 18. b4 Qc7 19. Nb2 O-O 20. Bd3 Bxd3 21. Nxd3
+a5 22. O-O axb4 23. Rxa8 Rxa8 24. cxb4 Qc4 25. Qxc4 dxc4 26. Nb2 Nb6 27. Rc1 h6
+28. g4 Nd5 29. b5 c3 30. Nd1 Ra3 31. b6 Rb3 32. b7 Rxb7 33. Nxc3 Nxf4 34. Re1
+Rb2 35. Kh1 Nd3 0-1
+
+[Event "Turin ol (Men) 37th"]
+[Site "Turin"]
+[Date "2006.05.24"]
+[Round "4"]
+[White "Macieja, Bartlomiej"]
+[Black "Nakamura, Hikaru"]
+[Result "0-1"]
+[ECO "C11"]
+[WhiteElo "2584"]
+[BlackElo "2664"]
+[PlyCount "80"]
+[EventDate "2006.05.21"]
+[Source "ChessBase"]
+[SourceDate "2006.07.31"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 c5 6. Nf3 Nc6 7. Be3 a6 8. Qd2 b5
+9. a3 g5 10. Nxg5 cxd4 11. Bxd4 Nxd4 12. Qxd4 Bc5 13. Qd2 Qb6 14. Nd1 f6 15.
+exf6 Nxf6 16. Bd3 O-O 17. Rf1 Ra7 18. Nf3 Ng4 19. g3 e5 20. fxe5 Ne3 21. Nxe3
+Bxe3 22. Qg2 Raf7 23. g4 Kh8 24. Rd1 d4 25. Nd2 Bf2+ 26. Rxf2 Rxf2 27. Qxf2
+Rxf2 28. Kxf2 Qh6 29. Nf1 Qh4+ 30. Ng3 Bxg4 31. Rh1 Qg5 32. Nf1 Qf4+ 33. Ke1
+Qxe5+ 34. Kf2 Qf4+ 35. Ke1 Qc1+ 36. Kf2 Bd1 37. Ng3 Qd2+ 38. Ne2 Bxc2 39. Bxc2
+Qxc2 40. Rc1 Qf5+ 0-1
+
+[Event "Morelia/Linares 24th"]
+[Site "Morelia/Linares"]
+[Date "2007.03.10"]
+[Round "14"]
+[White "Svidler, Peter"]
+[Black "Morozevich, Alexander"]
+[Result "0-1"]
+[ECO "C11"]
+[WhiteElo "2728"]
+[BlackElo "2741"]
+[Annotator "Marin,M"]
+[PlyCount "56"]
+[EventDate "2007.02.17"]
+[Source "ChessBase"]
+[SourceDate "2007.03.30"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 c5 6. Nf3 Nc6 7. Be3 a6 8. Qd2 b5
+9. a3 Bb7 10. dxc5 {A rare and possibly not best move. White's desire to clear
+the d4-square for his pieces is understandable, but theprize to pay is
+relatively high: Black wins time for his development.} 10... Bxc5 {In most of
+he games where this line was played, Black captured with the knight. With his
+move, Morozevich shows that he treasures the dynamic factors (rapid
+development) higher than static ones (the exchange of the dark-squared bishops)
+.} 11. Bxc5 Nxc5 12. Bd3 b4 {In such situations, it is far from clear whether
+the move a3 slows down Black's attack or just facilitates it.} 13. Ne2 ({
+After this volunatry retreat, the second aspect mentioned in the previous
+comment seems to become valid. Svidler probably disliked the fact thatafter} 
+13. axb4 Nxb4 {Black threatens not only ...Nbxd3+ followed by the fork on b3,
+but also ...d4. However, both threats could be parried with} 14. Be2 {
+. True, this would leave the e4-square poorly defended, but we should also
+take into account that Black's knight's jump to b4 has left the d4-square to
+White's mercy.}) 13... Qb6 14. Qe3 $6 ({Slightly carelessly. With a black
+bishop on b7, White's main concern should be to maintain the d4-square safely
+blocked. Therefore,} 14. Nfd4 {Should have been preferred.}) 14... d4 $1 {
+The tendency of such pawns to sacrifice themselves for the sake of the other
+pieces is known from Nimzovich' time.} 15. Nfxd4 Nxd4 16. Qxd4 bxa3 17. Rxa3
+Rd8 {The g2-pawn is not entirely eadible yet, because of Rg1 followed by Rxg7.
+However, the activity of the black bishop along the h1-a8 diagonal is quite
+annoying for White.} 18. Qe3 Qxb2 19. Qxc5 $6 ({White sacrifices the echange,
+but gets no adequate compensation for it. True, after} 19. O-O {Black has a
+great position, but White is very much in the game still. It is hard to say
+whether Svidler overestimated his attacking chances after the game move or
+simply disliked his position in general.}) 19... Qb1+ 20. Kd2 Qxh1 21. Nc3 Qxh2
+22. Ra4 Qxg2+ {Although Black is temporarily deprived of the right to castle,
+it is the white king who is in danger.} 23. Kc1 Rc8 24. Qb4 Qg1+ 25. Nd1 Bf3
+26. Rxa6 Qc5 27. Qa4+ Kf8 28. Ra5 Qg1 0-1
+
+[Event "Amber-blindfold 16th"]
+[Site "Monte Carlo"]
+[Date "2007.03.29"]
+[Round "11"]
+[White "Svidler, Peter"]
+[Black "Morozevich, Alexander"]
+[Result "0-1"]
+[ECO "C11"]
+[WhiteElo "2728"]
+[BlackElo "2741"]
+[PlyCount "38"]
+[EventDate "2007.03.17"]
+[Source "ChessBase"]
+[SourceDate "2007.05.09"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 c5 6. Nf3 Nc6 7. Be3 a6 8. Qd2 b5
+9. a3 Bb7 10. Bd3 Qc7 11. O-O O-O-O 12. Nd1 cxd4 13. Nxd4 g5 14. Nxc6 Qxc6 15.
+Bd4 gxf4 16. Qxf4 Rg8 17. Ne3 f6 18. exf6 e5 19. f7 Rxg2+ 0-1
+
+[Event "Wch Blitz 5th"]
+[Site "Moscow"]
+[Date "2010.11.17"]
+[Round "20"]
+[White "Carlsen, Magnus"]
+[Black "Nakamura, Hikaru"]
+[Result "0-1"]
+[ECO "C11"]
+[WhiteElo "2802"]
+[BlackElo "2741"]
+[PlyCount "67"]
+[EventDate "2010.11.16"]
+[Source "ChessBase"]
+[SourceDate "2010.11.26"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 c5 6. Nf3 Nc6 7. Be3 a6 8. Qd2 b5
+9. a3 g5 10. fxg5 cxd4 11. Nxd4 Ncxe5 12. Bd3 Bb7 13. O-O Bg7 14. Nce2 Ng4 15.
+Kh1 Nxe3 16. Qxe3 Qe7 17. Ng3 Be5 18. c3 Rg8 19. h4 h6 20. Ngf5 exf5 21. Nxf5
+Qc5 22. Qxc5 Nxc5 23. Nxh6 Rh8 24. Bc2 f6 25. Rae1 Rxh6 26. gxh6 Ne4 27. Kg1
+Ke7 28. Rf5 Rh8 29. Rh5 Kf7 30. g4 Bf4 31. Bb3 Nd2 32. Bd1 Rxh6 33. Rxh6 Bxh6
+34. Bc2 0-1
+

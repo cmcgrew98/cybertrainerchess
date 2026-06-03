@@ -1,0 +1,1165 @@
+[Event "Berlin"]
+[Site "?"]
+[Date "1851.??.??"]
+[Round "?"]
+[White "Mayet"]
+[Black "Anderssen, A."]
+[Result "0-1"]
+[ECO "C64"]
+[Annotator "McGrew 2018"]
+[PlyCount "24"]
+[EventDate "1851.??.??"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Bc5 4. c3 Nf6 5. Bxc6 dxc6 6. O-O (6. Nxe5 Nxe4 7.
+d4 Be7 $11) 6... Bg4 7. h3 h5 8. hxg4 hxg4 9. Nxe5 $4 (9. d4 $14) 9... g3 $4 (
+9... Nxe4 $1 10. Qxg4 (10. Qb3 Rh1+ 11. Kxh1 Qh4+ 12. Kg1 Bxf2+ 13. Rxf2 Qxf2+
+14. Kh1 Qf1+ 15. Kh2 g3+ 16. Kh3 Qf5+ 17. Kh4 Qg5+ 18. Kh3 Nf2# (18... Qh5#))
+10... Bxf2+ 11. Rxf2 Rh1+ 12. Kxh1 Nxf2+ 13. Kg1 Nxg4 14. Nxg4 Qh4 15. Nf2 Qe7
+16. Kf1 O-O-O 17. d4 Re8 18. Bd2 Qe2+ 19. Kg1 Re6 $19) 10. d4 Nxe4 11. Qg4 $4 (
+11. fxg3) 11... Bxd4 12. Qxe4 Bxf2+ 0-1
+
+[Event "New Orleans"]
+[Site "?"]
+[Date "1858.??.??"]
+[Round "?"]
+[White "Morphy, P."]
+[Black "Amateur"]
+[Result "1-0"]
+[SetUp "1"]
+[FEN "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/1NBQKBNR w Kkq - 0 1"]
+[PlyCount "35"]
+[EventDate "1858.??.??"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Ng5 d5 5. exd5 Nxd5 6. Nxf7 Kxf7 7. Qf3+ Ke6
+8. Nc3 Nd4 9. Bxd5+ Kd6 10. Qf7 Be6 11. Bxe6 Nxe6 12. Ne4+ Kd5 13. c4+ Kxe4 14.
+Qxe6 Qd4 15. Qg4+ Kd3 16. Qe2+ Kc2 17. d3+ Kxc1 18. O-O# 1-0
+
+[Event "Philadelphia"]
+[Site "?"]
+[Date "1860.??.??"]
+[Round "?"]
+[White "Amateur"]
+[Black "Derrickson, G."]
+[Result "0-1"]
+[ECO "C55"]
+[Annotator "McGrew 2018"]
+[PlyCount "34"]
+[EventDate "1860.??.??"]
+
+1. e4 e5 2. Bc4 Nf6 3. Nf3 Nc6 4. O-O Bc5 5. d3 d6 6. Bg5 Bg4 7. h3 h5 $6 {
+A coffeehouse move that should not work. White must, however, respond with
+precision.} (7... Bh5 $11) 8. hxg4 $2 (8. c3 Qd7 9. hxg4 hxg4 10. Nh4 g3 11.
+Nf5 gxf2+ 12. Rxf2 Bxf2+ 13. Kxf2 O-O-O 14. Nd2 Ne7 15. Nxe7+ Qxe7 16. Qf3 $18)
+8... hxg4 9. Nh2 (9. Nh4 Rh5 $17) 9... g3 $2 (9... Rh5 $1) 10. Nf3 (10. Ng4
+Nxg4 11. Qxg4 $1 gxf2+ 12. Rxf2 Qd7 13. Qg3 $16 (13. Qxd7+ Kxd7 $15)) 10... Ng4
+11. Bxd8 Bxf2+ 12. Rxf2 gxf2+ 13. Kf1 Rh1+ 14. Ke2 Rxd1 15. Nfd2 Nd4+ 16. Kxd1
+Ne3+ 17. Kc1 Ne2# 0-1
+
+[Event "Berlin"]
+[Site "?"]
+[Date "1863.??.??"]
+[Round "?"]
+[White "Neumann, GR."]
+[Black "Dufresne, J."]
+[Result "1-0"]
+[ECO "C30"]
+[PlyCount "33"]
+[EventDate "1863.??.??"]
+
+1. e4 e5 2. f4 Bc5 3. Nf3 d6 4. Bc4 Nf6 5. Nc3 O-O 6. d3 Ng4 7. Rf1 Nxh2 8. Rh1
+Ng4 9. Qe2 Bf2+ 10. Kf1 Nc6 11. f5 Bc5 12. Ng5 Nh6 13. Qh5 Qe8 14. Nxh7 Kxh7
+15. Bxh6 g6 16. Qxg6+ fxg6 17. Bxf8# 1-0
+
+[Event "Berlin"]
+[Site "?"]
+[Date "1865.??.??"]
+[Round "?"]
+[White "Zuckertort, J."]
+[Black "Anderssen, A."]
+[Result "1-0"]
+[ECO "C60"]
+[Annotator "McGrew 2018"]
+[PlyCount "23"]
+[EventDate "1865.??.??"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nge7 4. c3 d6 5. d4 Bd7 6. O-O Ng6 7. Ng5 (7. d5)
+7... h6 8. Nxf7 Kxf7 9. Bc4+ Ke7 $4 (9... Ke8 10. Qh5 Qf6 11. f4 exd4 12. f5
+Nce5 13. fxg6 Bg4 14. Qxg4 Nxg4 15. Rxf6 Nxf6 16. cxd4 Nxe4 $17) 10. Qh5 $1 $18
+Qe8 $4 (10... Qc8) 11. Qg5+ hxg5 12. Bxg5# 1-0
+
+[Event "London"]
+[Site "?"]
+[Date "1866.??.??"]
+[Round "?"]
+[White "Steinitz, W."]
+[Black "Belaiev"]
+[Result "1-0"]
+[ECO "C39"]
+[PlyCount "39"]
+[EventDate "1866.??.??"]
+
+1. e4 e5 2. f4 exf4 3. Nf3 g5 4. h4 g4 5. Ne5 Nf6 6. Bc4 d5 7. exd5 Bd6 8. d4
+Nh5 9. Nc3 Qe7 10. Bb5+ Kd8 11. O-O Bxe5 12. dxe5 Qxh4 13. Rxf4 Nxf4 14. Bxf4
+g3 15. Qf3 Rg8 16. e6 fxe6 17. Bxg3 Qg5 18. Qf7 e5 19. Qxg8+ Qxg8 20. Bh4+ 1-0
+
+[Event "Vienna"]
+[Site "?"]
+[Date "1872.??.??"]
+[Round "?"]
+[White "Hamppe, L."]
+[Black "Meitner, P."]
+[Result "1/2-1/2"]
+[ECO "C25"]
+[PlyCount "36"]
+[EventDate "1872.??.??"]
+
+1. e4 e5 2. Nc3 Bc5 3. Na4 Bxf2+ 4. Kxf2 Qh4+ 5. Ke3 Qf4+ 6. Kd3 d5 7. Kc3 Qxe4
+8. Kb3 Na6 9. a3 Qxa4+ 10. Kxa4 Nc5+ 11. Kb4 a5+ 12. Kxc5 Ne7 13. Bb5+ Kd8 14.
+Bc6 b6+ 15. Kb5 Nxc6 16. Kxc6 Bb7+ 17. Kb5 Ba6+ 18. Kc6 Bb7+ 1/2-1/2
+
+[Event "Paris"]
+[Site "?"]
+[Date "1878.??.??"]
+[Round "?"]
+[White "Mackenzie, G."]
+[Black "Mason, J."]
+[Result "1-0"]
+[ECO "C01"]
+[PlyCount "43"]
+[EventDate "1878.??.??"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. exd5 exd5 5. Nf3 Bd6 6. Bd3 O-O 7. O-O Nc6 8.
+Bg5 Ne7 9. Bxf6 gxf6 10. Nh4 Kg7 11. Qh5 Rh8 12. f4 c6 13. Rf3 Ng6 14. Raf1 Qc7
+15. Ne2 Bd7 16. Ng3 Rag8 17. Qh6+ Kxh6 18. Nhf5+ Bxf5 19. Nxf5+ Kh5 20. g4+
+Kxg4 21. Rg3+ Kh5 22. Be2# 1-0
+
+[Event "Match"]
+[Site "?"]
+[Date "1888.??.??"]
+[Round "?"]
+[White "Delmar, E."]
+[Black "Lipschuetz, S."]
+[Result "0-1"]
+[ECO "C45"]
+[PlyCount "32"]
+[EventDate "1888.??.??"]
+
+1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Nf6 5. Nxc6 bxc6 6. Bd3 d5 7. e5 Ng4 8.
+O-O Bc5 9. h3 Nxe5 10. Re1 Qf6 11. Qe2 O-O 12. Qxe5 Qxf2+ 13. Kh1 Bxh3 14. gxh3
+Qf3+ 15. Kh2 Bd6 16. Qxd6 Qf2+ 0-1
+
+[Event "Havana"]
+[Site "?"]
+[Date "1888.??.??"]
+[Round "?"]
+[White "Steinitz, W."]
+[Black "Golmayo, C."]
+[Result "1-0"]
+[ECO "C11"]
+[PlyCount "37"]
+[EventDate "1888.??.??"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 c5 6. dxc5 Bxc5 7. Nf3 O-O 8. Bd3
+Nc6 9. h4 f6 10. Ng5 fxg5 11. Bxh7+ Kxh7 12. hxg5+ Kg8 13. Qh5 Ndxe5 14. fxe5
+Rf5 15. g4 Rxe5+ 16. Kd1 Be3 17. Bxe3 Rxe3 18. Nb5 Rf3 19. g6 1-0
+
+[Event "Nuremberg"]
+[Site "?"]
+[Date "1892.??.??"]
+[Round "?"]
+[White "Tarrasch, S."]
+[Black "Taubenhaus, S."]
+[Result "1-0"]
+[ECO "C54"]
+[PlyCount "39"]
+[EventDate "1892.??.??"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. d3 Bc5 5. c3 d6 6. Be3 Bb6 7. Nbd2 Be6 8. Bb5
+O-O 9. Qe2 Ne7 10. d4 Ng6 11. O-O Nh5 12. g3 Bg4 13. h3 Bxh3 14. Ng5 Bxf1 15.
+Qxh5 h6 16. Nxf1 hxg5 17. Bxg5 Ne7 18. Ne3 exd4 19. Nd5 f6 20. Bc4 1-0
+
+[Event "Hastings"]
+[Site "?"]
+[Date "1894.??.??"]
+[Round "?"]
+[White "Allies"]
+[Black "Blackburne, JH."]
+[Result "0-1"]
+[ECO "C22"]
+[PlyCount "34"]
+[EventDate "1894.??.??"]
+
+1. e4 e5 2. d4 exd4 3. Qxd4 Nc6 4. Qe3 g6 5. Bd2 Bg7 6. Nc3 Nge7 7. O-O-O O-O
+8. f4 d5 9. exd5 Nb4 10. Bc4 Bf5 11. Bb3 Nexd5 12. Nxd5 Nxd5 13. Qf3 Qf6 14. c3
+Nb4 15. Bc4 Qa6 16. g4 Qxa2 17. Be3 Bxc3 0-1
+
+[Event "Vienna"]
+[Site "?"]
+[Date "1895.??.??"]
+[Round "?"]
+[White "Fleissig, B."]
+[Black "Schlechter, C."]
+[Result "0-1"]
+[ECO "A00"]
+[Annotator "McGrew 2018"]
+[PlyCount "34"]
+[EventDate "1895.??.??"]
+
+1. b4 e6 2. Bb2 Nf6 3. a3 c5 4. b5 d5 5. d4 Qa5+ 6. Nc3 Ne4 7. Qd3 cxd4 8. Qxd4
+Bc5 9. Qxg7 Bxf2+ 10. Kd1 d4 11. Qxh8+ Ke7 12. Qxc8 dxc3 13. Bc1 Nd7 $4 (13...
+Qxb5) 14. Qxa8 $4 (14. Qxb7 $1) 14... Qxb5 15. Bf4 Qd5+ 16. Kc1 Be3+ 17. Bxe3
+Nf2 0-1
+
+[Event "Nuremberg"]
+[Site "?"]
+[Date "1896.??.??"]
+[Round "?"]
+[White "Janowski, D."]
+[Black "Schallopp, E."]
+[Result "1-0"]
+[ECO "D21"]
+[Annotator "McGrew 2018"]
+[PlyCount "33"]
+[EventDate "1896.??.??"]
+
+1. d4 d5 2. c4 dxc4 3. Nf3 c5 4. e3 cxd4 5. exd4 Bg4 (5... Be6) 6. Bxc4 e6 7.
+Qa4+ Nc6 8. Ne5 Qxd4 9. Nxc6 Qe4+ 10. Be3 bxc6 11. Nc3 Qxg2 {Apparently Black
+is in control here, with all of his weak points covered. But Janowski now
+finds an "impossible" move!} 12. Bd5 $3 exd5 13. Qxc6+ Kd8 14. Qxa8+ Kd7 15.
+Qb7+ Ke6 16. Qc6+ (16. Kd2) 16... Bd6 17. Bf4 1-0
+
+[Event "Nuremberg"]
+[Site "?"]
+[Date "1896.??.??"]
+[Round "?"]
+[White "Winawer, S."]
+[Black "Steinitz, W."]
+[Result "1-0"]
+[ECO "C22"]
+[Annotator "McGrew 2018"]
+[PlyCount "39"]
+[EventDate "1896.??.??"]
+
+1. e4 e5 2. d4 exd4 3. Qxd4 Nc6 4. Qe3 Nf6 5. Nc3 Bb4 6. Bd2 O-O 7. O-O-O Re8
+8. Bc4 $6 (8. Qf4) 8... Bxc3 9. Bxc3 Nxe4 10. Qf4 Nf6 11. Nf3 d6 12. Ng5 Be6
+13. Bd3 $6 (13. Nxe6) 13... h6 14. h4 $2 (14. Nxe6) 14... Nd5 $2 (14... Ne5)
+15. Bh7+ Kh8 16. Rxd5 Bxd5 17. Be4 f6 $4 (17... Rxe4 18. Nxe4 Ne5 $11) 18. Bxd5
+fxg5 19. hxg5 Ne5 20. g6 1-0
+
+[Event "London"]
+[Site "?"]
+[Date "1899.??.??"]
+[Round "?"]
+[White "Tchigorin, M."]
+[Black "Schlechter, C."]
+[Result "1-0"]
+[ECO "C33"]
+[Annotator "McGrew 2018"]
+[PlyCount "33"]
+[EventDate "1899.??.??"]
+
+1. e4 e5 2. f4 exf4 3. Bc4 Nf6 4. Nc3 Nc6 5. Nf3 Bb4 6. O-O O-O 7. e5 Ng4 8. d4
+d6 9. h3 Ne3 10. Bxe3 fxe3 11. Nd5 Ba5 (11... Be6) 12. exd6 Qxd6 $2 (12... Be6
+13. c3) 13. Ng5 Qg6 (13... Kh8) (13... Bd2) 14. Nxf7 (14. Rxf7 Rxf7 15. Ne7+)
+14... Rxf7 (14... Be6) 15. Ne7+ Nxe7 16. Bxf7+ Qxf7 17. Rxf7 1-0
+
+[Event "Moscow"]
+[Site "?"]
+[Date "1899.??.??"]
+[Round "?"]
+[White "Tchigorin, M."]
+[Black "Allies"]
+[Result "0-1"]
+[ECO "C29"]
+[PlyCount "38"]
+[EventDate "1899.??.??"]
+
+1. e4 e5 2. Nc3 Nf6 3. f4 d5 4. d3 exf4 5. Bxf4 Bb4 6. e5 d4 7. exf6 dxc3 8.
+Qe2+ Be6 9. b3 gxf6 10. Qe4 Nc6 11. Nf3 Qd7 12. a3 O-O-O 13. axb4 Bd5 14. Qe2
+Rde8 15. Be3 Bxf3 16. Qxf3 Nd4 17. Qf2 Rxe3+ 18. Kd1 Qg4+ 19. Kc1 Qf4 0-1
+
+[Event "New York blindfold"]
+[Site "?"]
+[Date "1900.??.??"]
+[Round "?"]
+[White "Pillsbury, HN."]
+[Black "Howell, CS."]
+[Result "1-0"]
+[ECO "C25"]
+[Annotator "McGrew 2018"]
+[PlyCount "39"]
+[EventDate "1900.??.??"]
+
+1. e4 e5 2. Nc3 Nc6 3. f4 exf4 4. Nf3 g5 5. h4 g4 6. Ng5 h6 7. Nxf7 Kxf7 8. d4
+d5 9. Bxf4 Bg7 10. Be3 $2 (10. Nxd5) 10... Bf6 11. g3 dxe4 12. Bc4+ Kg7 13. O-O
+Bxd4 $4 (13... Nxd4 $11) 14. Rf7+ Kg6 15. h5+ Kxh5 16. Rg7 Ne5 17. Kg2 Ng6 18.
+Qh1+ Nh4+ 19. Qxh4+ Qxh4 20. Bf7# 1-0
+
+[Event "Brunn"]
+[Site "?"]
+[Date "1905.??.??"]
+[Round "?"]
+[White "Brach, J."]
+[Black "Dvorak, F."]
+[Result "1-0"]
+[ECO "B43"]
+[Annotator "McGrew 2018"]
+[PlyCount "27"]
+[EventDate "1905.??.??"]
+
+{A remarkably smooth performance by White.} 1. e4 c5 2. Nf3 e6 3. Nc3 a6 4. d4
+cxd4 5. Nxd4 Bc5 $6 6. Be3 Qf6 $4 7. Nxe6 $1 Bxe3 8. Nc7+ Kf8 (8... Kd8 9. fxe3
+Ra7 (9... Kxc7 10. Nd5+ $18) 10. N7d5 $18) 9. fxe3 Ra7 10. Bc4 Nh6 11. Rf1 Qh4+
+12. g3 Qxh2 13. Qd6+ Kg8 14. Ne6 1-0
+
+[Event "Vienna"]
+[Site "?"]
+[Date "1905.??.??"]
+[Round "?"]
+[White "Amateur"]
+[Black "Loewy, L."]
+[Result "0-1"]
+[ECO "C29"]
+[PlyCount "34"]
+[EventDate "1905.??.??"]
+
+1. e4 e5 2. Nc3 Nf6 3. f4 d5 4. fxe5 Nxe4 5. Nf3 Nc6 6. Bd3 f5 7. exf6 Nxf6 8.
+O-O Bc5+ 9. Kh1 O-O 10. Bb5 Ng4 11. Bxc6 bxc6 12. d4 Bd6 13. h3 Ba6 14. hxg4
+Bxf1 15. Qxf1 Rxf3 16. Qe1 Qh4+ 17. Qxh4 Rf1# 0-1
+
+[Event "New York"]
+[Site "?"]
+[Date "1908.??.??"]
+[Round "?"]
+[White "Rubinstein, S."]
+[Black "Phillips, HM."]
+[Result "1-0"]
+[ECO "C21"]
+[PlyCount "39"]
+[EventDate "1908.??.??"]
+
+1. e4 e5 2. d4 exd4 3. c3 dxc3 4. Bc4 d6 5. Qb3 Qf6 6. Nxc3 c6 7. Nf3 Nd7 8.
+Bg5 Qg6 9. h4 h5 10. O-O-O Nc5 11. Qb4 d5 12. Bxd5 Nd3+ 13. Rxd3 Bxb4 14. Bxf7+
+Kxf7 15. Ne5+ Ke6 16. Nxg6 Rh7 17. f4 Nf6 18. f5+ Kf7 19. Rd8 b5 20. Rhd1 1-0
+
+[Event "British ch"]
+[Site "?"]
+[Date "1908.??.??"]
+[Round "?"]
+[White "Palmer, W."]
+[Black "Gunsberg, I."]
+[Result "1-0"]
+[ECO "D31"]
+[PlyCount "39"]
+[EventDate "1908.??.??"]
+
+1. d4 d5 2. c4 e6 3. Nc3 Be7 4. Nf3 c6 5. e4 dxe4 6. Nxe4 Nf6 7. Bd3 Nbd7 8.
+O-O Nxe4 9. Bxe4 Nf6 10. Bc2 O-O 11. Qd3 g6 12. Bh6 Re8 13. Ne5 Nd7 14. f4 c5
+15. d5 Bf6 16. Rae1 Bxe5 17. fxe5 exd5 18. Rxf7 Nxe5 19. Rg7+ Kh8 20. Rxe5 1-0
+
+[Event "Munich"]
+[Site "?"]
+[Date "1909.??.??"]
+[Round "?"]
+[White "Spielmann, R."]
+[Black "Tartakower, S."]
+[Result "0-1"]
+[ECO "C60"]
+[PlyCount "36"]
+[EventDate "1909.??.??"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nge7 4. Nc3 g6 5. d4 exd4 6. Nxd4 Bg7 7. Be3 O-O 8.
+h4 d5 9. exd5 Nxd5 10. Nxc6 bxc6 11. Bxc6 Nxe3 12. fxe3 Rb8 13. Qxd8 Rxd8 14.
+O-O Rxb2 15. Nd5 Ba6 16. Rad1 Rd6 17. Rf2 Kf8 18. Ba4 c6 0-1
+
+[Event "Breslau"]
+[Site "?"]
+[Date "1909.??.??"]
+[Round "?"]
+[White "Lasker, A."]
+[Black "Lasker, Ed"]
+[Result "0-1"]
+[ECO "C55"]
+[PlyCount "38"]
+[EventDate "1909.??.??"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. d3 Bc5 5. Bg5 d6 6. h3 Be6 7. Bb5 a6 8. Bxc6+
+bxc6 9. d4 exd4 10. Nxd4 Bxd4 11. Qxd4 c5 12. Qc3 Nxe4 13. Qxg7 Qxg5 14. Qxh8+
+Kd7 15. Qxa8 Qc1+ 16. Ke2 Qxc2+ 17. Ke3 Qxf2+ 18. Kd3 c4+ 19. Kxe4 f5# 0-1
+
+[Event "Match"]
+[Site "?"]
+[Date "1910.??.??"]
+[Round "?"]
+[White "Reti, R."]
+[Black "Sterk, K."]
+[Result "1-0"]
+[ECO "C66"]
+[PlyCount "39"]
+[EventDate "1910.??.??"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. O-O d6 5. d4 Bd7 6. Nc3 Be7 7. Bg5 exd4 8.
+Nxd4 O-O 9. Bxc6 bxc6 10. Qd3 Ng4 11. Bxe7 Qxe7 12. f4 f5 13. Rae1 fxe4 14.
+Nxe4 Qh4 15. h3 Nf6 16. Ng5 d5 17. Nge6 Bxe6 18. Rxe6 c5 19. Nf5 Qh5 20. Rxf6
+1-0
+
+[Event "Abbazia"]
+[Site "?"]
+[Date "1912.??.??"]
+[Round "?"]
+[White "Lowtzky, M."]
+[Black "Nyholm, G."]
+[Result "0-1"]
+[ECO "C34"]
+[PlyCount "40"]
+[EventDate "1912.??.??"]
+
+1. e4 e5 2. f4 exf4 3. Nf3 Nf6 4. Nc3 d5 5. e5 Nh5 6. d4 g5 7. Be2 g4 8. O-O
+Rg8 9. Ne1 Bh6 10. Bd3 Be6 11. Bxh7 Rh8 12. Qd3 Nc6 13. a3 Qh4 14. Bf5 O-O-O
+15. Bxe6+ fxe6 16. Na4 Bg5 17. h3 gxh3 18. Qxh3 Ng3 19. Rf2 Qg4 20. Rxf4 Bxf4
+0-1
+
+[Event "Abbazia"]
+[Site "?"]
+[Date "1912.??.??"]
+[Round "?"]
+[White "Flamberg, A."]
+[Black "Duras, O."]
+[Result "0-1"]
+[ECO "C33"]
+[PlyCount "34"]
+[EventDate "1912.??.??"]
+
+1. e4 e5 2. f4 exf4 3. Bc4 Nc6 4. d4 Nf6 5. e5 d5 6. Be2 Ne4 7. Bxf4 f6 8. Nf3
+fxe5 9. Nxe5 Nxe5 10. Bxe5 Bb4+ 11. c3 O-O 12. Bf3 Qg5 13. Nd2 Rxf3 14. gxf3
+Qh4+ 15. Ke2 Qf2+ 16. Kd3 Nxd2 17. cxb4 Nc4 0-1
+
+[Event "Correspondence"]
+[Site "?"]
+[Date "1913.??.??"]
+[Round "?"]
+[White "Nimzovich, A."]
+[Black "Fluess, G."]
+[Result "1-0"]
+[ECO "C50"]
+[PlyCount "33"]
+[EventDate "1913.??.??"]
+
+1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6 4. Bc4 Bc5 5. d3 d6 6. Bg5 h6 7. Bh4 g5 8. Bg3
+Bg4 9. h4 Nh5 10. hxg5 Nd4 11. Bxe5 Bxf3 12. gxf3 dxe5 13. Rxh5 Rg8 14. f4 exf4
+15. Qg4 Nxc2+ 16. Kd2 Nxa1 17. Bxf7+ 1-0
+
+[Event "Prague"]
+[Site "?"]
+[Date "1913.??.??"]
+[Round "?"]
+[White "Opocensky, K."]
+[Black "Hrdina, J."]
+[Result "1-0"]
+[ECO "C49"]
+[PlyCount "37"]
+[EventDate "1913.??.??"]
+
+1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6 4. Bb5 Bb4 5. O-O O-O 6. d3 d6 7. Bg5 Ne7 8. Nh4
+c6 9. Bc4 Ng6 10. Nxg6 hxg6 11. f4 Qb6+ 12. Kh1 Ng4 13. Qe1 Ne3 14. f5 Nxc4 15.
+f6 Bg4 16. Qh4 Bh5 17. g4 Ne3 18. gxh5 Nxf1 19. h6 1-0
+
+[Event "Correspondence"]
+[Site "?"]
+[Date "1915.??.??"]
+[Round "?"]
+[White "Edgar, R."]
+[Black "Lott, T."]
+[Result "1-0"]
+[ECO "A83"]
+[PlyCount "37"]
+[EventDate "1915.??.??"]
+
+1. d4 f5 2. e4 fxe4 3. Nc3 Nf6 4. Bg5 e6 5. Bxf6 Qxf6 6. Nxe4 Qg6 7. Bd3 Qxg2
+8. Qh5+ g6 9. Qe5 Qxh1 10. Qxh8 Qxg1+ 11. Kd2 Qxa1 12. Nf6+ Ke7 13. Nd5+ exd5
+14. Qxh7+ Kd6 15. Qxg6+ Ke7 16. Qg5+ Kf7 17. Bg6+ Kg8 18. Qf6 Bb4+ 19. c3 1-0
+
+[Event "Match"]
+[Site "?"]
+[Date "1916.??.??"]
+[Round "?"]
+[White "Tarrasch, S."]
+[Black "Mieses, J."]
+[Result "1-0"]
+[ECO "C10"]
+[PlyCount "39"]
+[EventDate "1916.??.??"]
+
+1. e4 e6 2. d4 d5 3. Nc3 dxe4 4. Nxe4 Nd7 5. Nf3 Ngf6 6. Bd3 Be7 7. O-O Nxe4 8.
+Bxe4 Nf6 9. Bd3 b6 10. Ne5 O-O 11. Nc6 Qd6 12. Qf3 Bd7 13. Nxe7+ Qxe7 14. Bg5
+Rac8 15. Rfe1 Rfe8 16. Qh3 Qd6 17. Bxf6 gxf6 18. Qh6 f5 19. Re3 Qxd4 20. c3 1-0
+
+[Event "Warsaw"]
+[Site "?"]
+[Date "1917.??.??"]
+[Round "?"]
+[White "Belsitzmann, J."]
+[Black "Rubinstein, A."]
+[Result "0-1"]
+[ECO "C48"]
+[PlyCount "32"]
+[EventDate "1917.??.??"]
+
+1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6 4. Bb5 Nd4 5. Bc4 Bc5 6. Nxe5 Qe7 7. Nd3 d5 8.
+Nxd5 Qxe4+ 9. Ne3 Bd6 10. O-O b5 11. Bb3 Bb7 12. Ne1 Qh4 13. g3 Qh3 14. c3 h5
+15. cxd4 h4 16. Qe2 Qxh2+ 0-1
+
+[Event "London"]
+[Site "?"]
+[Date "1918.??.??"]
+[Round "?"]
+[White "Brown, CW."]
+[Black "Gibbs, F."]
+[Result "1-0"]
+[ECO "C55"]
+[PlyCount "29"]
+[EventDate "1918.??.??"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. O-O Nf6 5. d4 exd4 6. e5 d5 7. exf6 dxc4 8.
+Re1+ Kf8 9. Bg5 gxf6 10. Bh6+ Kg8 11. Nc3 Bg4 12. Ne4 Bb6 13. Qe2 Ne5 14. Nxe5
+Bxe2 15. Nd7 1-0
+
+[Event "Correspondence"]
+[Site "?"]
+[Date "1920.??.??"]
+[Round "?"]
+[White "Brunnemer, J."]
+[Black "Failing"]
+[Result "1-0"]
+[ECO "B45"]
+[PlyCount "35"]
+[EventDate "1920.??.??"]
+
+1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e6 6. Be2 Bb4 7. O-O Bxc3 8.
+bxc3 Nxe4 9. Bf3 Nxc3 10. Qd3 Nd5 11. Bxd5 exd5 12. Re1+ Kf8 13. Nf5 d6 14.
+Nxg7 Ne5 15. Nh5 Be6 16. Rxe5 dxe5 17. Ba3+ Ke8 18. Qb5+ 1-0
+
+[Event "Budapest"]
+[Site "?"]
+[Date "1921.??.??"]
+[Round "?"]
+[White "Kostich, B."]
+[Black "Steiner, A."]
+[Result "1-0"]
+[ECO "A50"]
+[PlyCount "35"]
+[EventDate "1921.??.??"]
+
+1. d4 Nf6 2. Nf3 b6 3. g3 Bb7 4. Bg2 g6 5. O-O Bg7 6. c4 O-O 7. Nc3 d6 8. Qc2
+Nbd7 9. Rd1 Re8 10. e4 e5 11. dxe5 dxe5 12. Bg5 c6 13. Bxf6 Bxf6 14. Bh3 Re7
+15. Rd6 Qc7 16. Rad1 Rd8 17. Qd2 Bc8 18. Rxf6 1-0
+
+[Event "Correspondence"]
+[Site "?"]
+[Date "1922.??.??"]
+[Round "?"]
+[White "Imbaud"]
+[Black "Strumilo"]
+[Result "1-0"]
+[ECO "B02"]
+[PlyCount "39"]
+[EventDate "1922.??.??"]
+
+1. e4 d5 2. exd5 Nf6 3. Nc3 Nxd5 4. Bc4 Nb6 5. Bb3 Nc6 6. Nf3 e5 7. d3 Bg4 8.
+h3 Bh5 9. Nxe5 Bxd1 10. Bxf7+ Ke7 11. Bg5+ Kd6 12. Ne4+ Kxe5 13. f4+ Kd4 14.
+Rxd1 Ke3 15. O-O Nd4 16. Rde1+ Ne2+ 17. Rxe2+ Kxe2 18. Bh5+ Ke3 19. Rf3+ Kd4
+20. Bf7 1-0
+
+[Event "London"]
+[Site "?"]
+[Date "1923.??.??"]
+[Round "?"]
+[White "Whitehead"]
+[Black "Maroczy, G."]
+[Result "0-1"]
+[ECO "C11"]
+[PlyCount "36"]
+[EventDate "1923.??.??"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. Nce2 c5 6. c3 Nc6 7. f4 Qb6 8. Nf3
+f6 9. g3 cxd4 10. cxd4 fxe5 11. fxe5 Bb4+ 12. Kf2 O-O 13. Be3 Ndxe5 14. dxe5
+Rxf3+ 15. Kxf3 Nxe5+ 16. Kf4 Qd6 17. Bh3 Bd7 18. Bd4 Rf8+ 0-1
+
+[Event "New York"]
+[Site "?"]
+[Date "1923.??.??"]
+[Round "?"]
+[White "Field, O."]
+[Black "Tenner, O."]
+[Result "0-1"]
+[ECO "C58"]
+[PlyCount "36"]
+[EventDate "1923.??.??"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Ng5 d5 5. exd5 Na5 6. d3 h6 7. Nf3 e4 8. Qe2
+Nxc4 9. dxc4 Bc5 10. Nfd2 O-O 11. O-O Bg4 12. Qe1 Qd7 13. Nb3 Bf3 14. Bf4 Qg4
+15. Bg3 Nh5 16. Nxc5 Nf4 17. Nxe4 Qh3 18. gxh3 Nxh3# 0-1
+
+[Event "Warsaw"]
+[Site "?"]
+[Date "1924.??.??"]
+[Round "?"]
+[White "Przepiorka, D."]
+[Black "Gottesdiener, J."]
+[Result "1-0"]
+[ECO "A81"]
+[PlyCount "39"]
+[EventDate "1924.??.??"]
+
+1. d4 f5 2. g3 e6 3. Bg2 Nf6 4. Nh3 d5 5. O-O Bd6 6. c4 c6 7. Qd3 O-O 8. Nc3
+Kh8 9. Bf4 Bxf4 10. Nxf4 Qe7 11. f3 Nbd7 12. cxd5 exd5 13. e4 fxe4 14. fxe4 Nb6
+15. Rae1 dxe4 16. Bxe4 Nxe4 17. Rxe4 Qd6 18. Re5 Nd7 19. Rh5 Nf6 20. Ne4 1-0
+
+[Event "Vienna"]
+[Site "?"]
+[Date "1926.??.??"]
+[Round "?"]
+[White "Spielmann, R."]
+[Black "Wahle, R."]
+[Result "1-0"]
+[ECO "C01"]
+[PlyCount "33"]
+[EventDate "1926.??.??"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. exd5 exd5 5. Bg5 Be7 6. Bd3 Nc6 7. Nge2 Nb4 8.
+Ng3 Nxd3+ 9. Qxd3 g6 10. O-O c6 11. Rae1 O-O 12. Rxe7 Qxe7 13. Qf3 Kg7 14. Nce4
+dxe4 15. Nxe4 Qe6 16. Bxf6+ Kg8 17. Qf4 1-0
+
+[Event "Amsterdam"]
+[Site "?"]
+[Date "1926.??.??"]
+[Round "?"]
+[White "Euwe, M."]
+[Black "Colle, E."]
+[Result "0-1"]
+[ECO "E38"]
+[PlyCount "38"]
+[EventDate "1926.??.??"]
+
+1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 c5 5. Nf3 Nc6 6. dxc5 Bxc5 7. Bg5 Be7 8.
+O-O-O Qa5 9. a3 a6 10. e3 b6 11. Be2 Bb7 12. Nb1 b5 13. cxb5 axb5 14. Qd3 Rc8
+15. Nc3 Bxa3 16. Bxf6 gxf6 17. Kb1 Bxb2 18. Na2 Ne5 19. Nxe5 Bd5 0-1
+
+[Event "New York"]
+[Site "?"]
+[Date "1926.??.??"]
+[Round "?"]
+[White "Lasker, Ed"]
+[Black "Winkelman, B."]
+[Result "1-0"]
+[ECO "D60"]
+[PlyCount "29"]
+[EventDate "1926.??.??"]
+
+1. Nf3 Nf6 2. d4 d5 3. c4 e6 4. Bg5 Nbd7 5. e3 Be7 6. Nc3 O-O 7. Bd3 a6 8. Ne5
+dxc4 9. Nxc4 b5 10. Na5 c5 11. Nc6 Qe8 12. Qf3 Nb6 13. Ne4 Nfd5 14. Nxe7+ Nxe7
+15. Nf6+ 1-0
+
+[Event "simul"]
+[Site "?"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Canal, E."]
+[Black "Amateur"]
+[Result "1-0"]
+[ECO "B01"]
+[Annotator "McGrew 2018"]
+[PlyCount "27"]
+
+1. e4 d5 2. exd5 Qxd5 3. Nc3 Qa5 4. d4 c6 5. Nf3 Bg4 6. Bf4 e6 7. h3 Bxf3 8.
+Qxf3 Bb4 9. Be2 Nd7 10. a3 O-O-O $4 11. axb4 Qxa1+ 12. Kd2 Qxh1 13. Qxc6+ bxc6
+14. Ba6# 1-0
+
+[Event "London"]
+[Site "?"]
+[Date "1927.??.??"]
+[Round "?"]
+[White "Thomas, GA."]
+[Black "Winter, W."]
+[Result "0-1"]
+[ECO "E38"]
+[PlyCount "34"]
+[EventDate "1927.??.??"]
+
+1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 c5 5. dxc5 Na6 6. a3 Bxc3+ 7. Qxc3 Nxc5 8.
+b4 Nce4 9. Qd3 d5 10. cxd5 Nxf2 11. Kxf2 Ng4+ 12. Kg3 Qf6 13. Nf3 Qxa1 14. Bd2
+Nf6 15. e4 exd5 16. exd5 O-O 17. Bc3 Qxc3 0-1
+
+[Event "Kecskemet"]
+[Site "?"]
+[Date "1927.??.??"]
+[Round "?"]
+[White "Nimzovich, A."]
+[Black "Gilg, K."]
+[Result "1-0"]
+[ECO "B30"]
+[PlyCount "39"]
+[EventDate "1927.??.??"]
+
+1. e4 c5 2. Nf3 Nc6 3. Bb5 Qc7 4. c3 a6 5. Ba4 Nf6 6. Qe2 e5 7. O-O Be7 8. d4
+cxd4 9. cxd4 Nxd4 10. Nxd4 exd4 11. e5 d3 12. Qe3 Nd5 13. Qg3 g6 14. Bb3 Nb4
+15. Bxf7+ Kd8 16. Bh6 Nc2 17. Nc3 Nd4 18. Qxd3 Qxe5 19. Rfe1 Qf6 20. Rxe7 1-0
+
+[Event "Amsterdam"]
+[Site "?"]
+[Date "1929.??.??"]
+[Round "?"]
+[White "Weenink, H."]
+[Black "Schelfhout, W."]
+[Result "1-0"]
+[ECO "B40"]
+[PlyCount "27"]
+[EventDate "1929.??.??"]
+
+1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Bb4 6. Bd3 Nc6 7. Nxc6 bxc6 8.
+e5 Nd5 9. Qg4 g6 10. O-O f5 11. exf6 Bxc3 12. Bxg6+ Kf8 13. Bh6+ Kg8 14. f7#
+1-0
+
+[Event "Carlsbad"]
+[Site "?"]
+[Date "1929.??.??"]
+[Round "?"]
+[White "Capablanca, JR."]
+[Black "Mattison, H."]
+[Result "1-0"]
+[ECO "E38"]
+[PlyCount "39"]
+[EventDate "1929.??.??"]
+
+1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 c5 5. dxc5 Nc6 6. Nf3 Bxc5 7. Bf4 d5 8. e3
+Qa5 9. Be2 Bb4 10. O-O Bxc3 11. bxc3 O-O 12. Rab1 Qa3 13. Rfd1 b6 14. cxd5 Nxd5
+15. Ng5 f5 16. Bf3 Qc5 17. c4 Ndb4 18. Qb3 e5 19. a3 Na6 20. Bxc6 1-0
+
+[Event "New York"]
+[Site "?"]
+[Date "1929.??.??"]
+[Round "?"]
+[White "Hanauer, M."]
+[Black "Bartha, F."]
+[Result "1-0"]
+[ECO "D30"]
+[PlyCount "39"]
+[EventDate "1929.??.??"]
+
+1. d4 Nf6 2. Nf3 e6 3. c4 d5 4. Bg5 Nbd7 5. e3 Be7 6. Nbd2 O-O 7. Bd3 a6 8. O-O
+c5 9. Qe2 Re8 10. Rfd1 cxd4 11. exd4 dxc4 12. Nxc4 b5 13. Nce5 Bb7 14. Bxf6
+gxf6 15. Nxf7 Kxf7 16. Ne5+ fxe5 17. Qh5+ Kg7 18. Qxh7+ Kf8 19. Qh6+ Kg8 20.
+Bh7+ 1-0
+
+[Event "Paris"]
+[Site "?"]
+[Date "1929.??.??"]
+[Round "?"]
+[White "Gudju, I."]
+[Black "Bogdanovsky, V."]
+[Result "1-0"]
+[ECO "C56"]
+[PlyCount "37"]
+[EventDate "1929.??.??"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. d4 exd4 5. O-O Nxe4 6. Re1 d5 7. Nc3 Be6 8.
+Nxe4 dxc4 9. Neg5 Qd5 10. Nxf7 Kxf7 11. Ng5+ Kg8 12. Nxe6 Rc8 13. Bh6 Bb4 14.
+Nxg7 Ne5 15. Re2 d3 16. c3 Nf7 17. Nh5 Qf5 18. Re8+ Rxe8 19. Qg4+ 1-0
+
+[Event "Rotterdam"]
+[Site "?"]
+[Date "1929.??.??"]
+[Round "?"]
+[White "Landau, S."]
+[Black "Ten Kate"]
+[Result "1-0"]
+[ECO "D66"]
+[PlyCount "39"]
+[EventDate "1929.??.??"]
+
+1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 e6 5. Bg5 Be7 6. e3 Nbd7 7. Rc1 O-O 8. Bd3
+b6 9. cxd5 Nxd5 10. Nxd5 cxd5 11. Bxe7 Qxe7 12. Rc7 Qb4+ 13. Qd2 Qxd2+ 14. Kxd2
+a6 15. Rhc1 Rd8 16. R1c6 h6 17. Rd6 Kf8 18. Ne5 Ke8 19. Nc6 a5 20. Bb5 1-0
+
+[Event "Budapest"]
+[Site "?"]
+[Date "1933.??.??"]
+[Round "?"]
+[White "Meszaros, G."]
+[Black "Wessel, I."]
+[Result "0-1"]
+[ECO "B74"]
+[PlyCount "38"]
+[EventDate "1933.??.??"]
+
+1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 d6 6. Be2 g6 7. O-O Bg7 8.
+Be3 O-O 9. Nb3 a6 10. a4 Be6 11. Nd4 Nxd4 12. Bxd4 Qa5 13. f4 Rac8 14. Bf3 Rc4
+15. Re1 Ng4 16. Ne2 Rxd4 17. Nxd4 Qxe1+ 18. Qxe1 Bxd4+ 19. Kh1 Nf2+ 0-1
+
+[Event "Ujpest"]
+[Site "?"]
+[Date "1934.??.??"]
+[Round "?"]
+[White "Frydman, P."]
+[Black "Vidmar, M."]
+[Result "1-0"]
+[ECO "D13"]
+[PlyCount "37"]
+[EventDate "1934.??.??"]
+
+1. d4 d5 2. Nf3 Nf6 3. c4 c6 4. cxd5 cxd5 5. Nc3 Nc6 6. Bf4 e6 7. e3 Be7 8. Bd3
+O-O 9. O-O a6 10. Rc1 Bd7 11. Ne5 Rc8 12. a3 Na5 13. Qf3 b5 14. Qh3 Nc4 15.
+Nxd5 g6 16. Nxe7+ Qxe7 17. Bxc4 Rxc4 18. Rxc4 bxc4 19. Bg5 1-0
+
+[Event "Liebwerda"]
+[Site "?"]
+[Date "1934.??.??"]
+[Round "?"]
+[White "Pitschak, R."]
+[Black "Flohr, S."]
+[Result "0-1"]
+[ECO "A29"]
+[PlyCount "38"]
+[EventDate "1934.??.??"]
+
+1. c4 e5 2. Nc3 Nf6 3. g3 d5 4. cxd5 Nxd5 5. Bg2 Nb6 6. Nf3 Nc6 7. O-O Be7 8.
+d3 O-O 9. Be3 Bg4 10. h3 Bh5 11. Rc1 Qd7 12. Na4 Bxf3 13. Bxf3 Qxh3 14. Bxc6
+bxc6 15. Rxc6 Nd5 16. Qe1 f5 17. Bc5 f4 18. Bxe7 fxg3 19. fxg3 Ne3 0-1
+
+[Event "Bad Lovisa"]
+[Site "?"]
+[Date "1934.??.??"]
+[Round "?"]
+[White "Krogius, R."]
+[Black "Niemala, I."]
+[Result "1-0"]
+[ECO "E00"]
+[PlyCount "35"]
+[EventDate "1934.??.??"]
+
+1. d4 Nf6 2. c4 e6 3. Bg5 d5 4. e3 Nbd7 5. Nf3 Be7 6. Nbd2 O-O 7. Bd3 b6 8. Qc2
+Bb7 9. cxd5 exd5 10. Ne5 Nxe5 11. dxe5 Ne4 12. h4 Nxg5 13. hxg5 g6 14. f4 c5
+15. Qd1 c4 16. Rxh7 cxd3 17. Kf2 f6 18. Qh1 1-0
+
+[Event "Riga"]
+[Site "?"]
+[Date "1934.??.??"]
+[Round "?"]
+[White "Strautmanis, A."]
+[Black "Hasenfuss, V."]
+[Result "1-0"]
+[ECO "C10"]
+[PlyCount "39"]
+[EventDate "1934.??.??"]
+
+1. e4 e6 2. d4 d5 3. Nc3 dxe4 4. Nxe4 Nd7 5. Nf3 Ngf6 6. Bd3 Be7 7. O-O b6 8.
+Ne5 Bb7 9. Nxf6+ gxf6 10. Nxf7 Kxf7 11. Qh5+ Kg8 12. Re1 Nf8 13. Bh6 f5 14. Re3
+Qe8 15. Rg3+ Ng6 16. Bc4 Bf8 17. Qxf5 Bxh6 18. Bxe6+ Kg7 19. Qe5+ Kf8 20. Qf6+
+1-0
+
+[Event "Sopron"]
+[Site "?"]
+[Date "1934.??.??"]
+[Round "?"]
+[White "Spielmann, R."]
+[Black "Fuss, I."]
+[Result "1-0"]
+[ECO "E11"]
+[PlyCount "39"]
+[EventDate "1934.??.??"]
+
+1. d4 Nf6 2. Nf3 e6 3. c4 Bb4+ 4. Nbd2 Ne4 5. e3 Nxd2 6. Bxd2 Bxd2+ 7. Qxd2 d5
+8. Rc1 c6 9. Bd3 Nd7 10. O-O O-O 11. e4 dxe4 12. Bxe4 Nf6 13. Bb1 b6 14. Qf4
+Bb7 15. Ne5 Qc7 16. Rc3 Nh5 17. Bxh7+ Kxh7 18. Rh3 Kg8 19. Rxh5 f6 20. Rh8+ 1-0
+
+[Event "Correspondence"]
+[Site "?"]
+[Date "1935.??.??"]
+[Round "?"]
+[White "Menke, G."]
+[Black "Keres, P."]
+[Result "0-1"]
+[ECO "C11"]
+[Annotator "McGrew 2018"]
+[PlyCount "28"]
+[EventDate "1935.??.??"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. Nf3 c5 6. dxc5 Bxc5 7. Bb5 a6 8.
+Bxd7+ Nxd7 9. O-O b5 10. a3 Bb7 11. Bf4 d4 (11... f6) 12. Na2 (12. Nxd4 Qh4 13.
+Nce2 Rd8 14. Qd3 Nb6 15. c3 O-O $44) 12... Rg8 (12... Rc8) 13. Nxd4 (13. Bg3)
+13... Qh4 14. Ne2 $4 g5 (14... g5 15. Bc1 (15. Bg3 Qe4) 15... Qe4) 0-1
+
+[Event "Warsaw"]
+[Site "?"]
+[Date "1935.??.??"]
+[Round "?"]
+[White "Tartakower, S."]
+[Black "Steiner, L."]
+[Result "1-0"]
+[ECO "E18"]
+[PlyCount "39"]
+[EventDate "1935.??.??"]
+
+1. d4 Nf6 2. Nf3 e6 3. g3 b6 4. Bg2 Bb7 5. O-O Be7 6. c4 O-O 7. Nc3 d5 8. Ne5
+Qc8 9. cxd5 exd5 10. Qb3 c6 11. Bd2 Na6 12. Rac1 Nc7 13. e4 Rd8 14. Rfe1 c5 15.
+dxc5 bxc5 16. exd5 Ncxd5 17. Bg5 Rb8 18. Bxf6 Bxf6 19. Nxf7 c4 20. Nxd8 1-0
+
+[Event "Nottingham"]
+[Site "?"]
+[Date "1936.??.??"]
+[Round "?"]
+[White "Alekhine, A."]
+[Black "Botvinnik, M."]
+[Result "1/2-1/2"]
+[ECO "B72"]
+[PlyCount "36"]
+[EventDate "1936.??.??"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6 6. Be2 Bg7 7. Be3 Nc6 8.
+Nb3 Be6 9. f4 O-O 10. g4 d5 11. f5 Bc8 12. exd5 Nb4 13. d6 Qxd6 14. Bc5 Qf4 15.
+Rf1 Qxh2 16. Bxb4 Nxg4 17. Bxg4 Qg3+ 18. Rf2 Qg1+ 1/2-1/2
+
+[Event "Orebro simul"]
+[Site "?"]
+[Date "1937.??.??"]
+[Round "?"]
+[White "Fine, R."]
+[Black "Pettersson/Ekelund"]
+[Result "0-1"]
+[ECO "D17"]
+[PlyCount "40"]
+[EventDate "1937.??.??"]
+
+1. d4 Nf6 2. c4 c6 3. Nc3 d5 4. Nf3 dxc4 5. a4 Bf5 6. Ne5 Nbd7 7. Nxc4 Qc7 8.
+g3 e5 9. dxe5 Nxe5 10. Bf4 Nfd7 11. Qb3 Be6 12. e3 Nf3+ 13. Kd1 Qd8 14. Kc1 Nc5
+15. Qd1 Qxd1+ 16. Kxd1 O-O-O+ 17. Ke2 Bg4 18. h3 Rd2+ 19. Nxd2 Nd4+ 20. Ke1
+Nc2# 0-1
+
+[Event "Birmingham"]
+[Site "?"]
+[Date "1937.??.??"]
+[Round "?"]
+[White "Silverman, J."]
+[Black "Eliskases, E."]
+[Result "1-0"]
+[ECO "C33"]
+[PlyCount "39"]
+[EventDate "1937.??.??"]
+
+1. e4 e5 2. f4 exf4 3. Bc4 Nf6 4. Nc3 c6 5. Nf3 d5 6. exd5 cxd5 7. Bb3 Bd6 8.
+O-O O-O 9. d4 Be6 10. Ne5 Bxe5 11. dxe5 Qb6+ 12. Kh1 Ng4 13. Qe2 d4 14. Nd5
+Bxd5 15. Bxd5 Ne3 16. Bxe3 dxe3 17. Rxf4 Nc6 18. Qh5 Qxb2 19. Bxf7+ Kh8 20.
+Qxh7+ 1-0
+
+[Event "Jurata"]
+[Site "?"]
+[Date "1937.??.??"]
+[Round "?"]
+[White "Schaechter, N."]
+[Black "Woitsekovsky, A."]
+[Result "0-1"]
+[ECO "E33"]
+[PlyCount "34"]
+[EventDate "1937.??.??"]
+
+1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 Nc6 5. Nf3 O-O 6. Bg5 Re8 7. a3 Bxc3+ 8.
+Qxc3 Qe7 9. Bh4 d6 10. g4 e5 11. d5 e4 12. Nd2 Ne5 13. h3 Nxd5 14. Bxe7 Nxc3
+15. Bxd6 Nd3+ 16. exd3 exd3+ 17. Ne4 d2+ 0-1
+
+[Event "Jurata"]
+[Site "?"]
+[Date "1937.??.??"]
+[Round "?"]
+[White "Yagielsky"]
+[Black "Woitsekovsky, A."]
+[Result "0-1"]
+[ECO "C13"]
+[Annotator "McGrew 2018"]
+[PlyCount "32"]
+[EventDate "1937.??.??"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. Bg5 Be7 5. Bxf6 Bxf6 6. e5 Be7 7. Qg4 O-O 8.
+Nf3 f5 (8... c5 {is also okay right away.}) 9. Qh3 (9. exf6 Bxf6) (9. Qg3 c5)
+9... c5 10. Ne2 Qa5+ (10... Nc6) 11. c3 Nc6 12. dxc5 Bxc5 (12... Qc7 13. Qg3
+Bxc5) 13. Nc1 (13. Nf4) (13. b4 Nxb4 14. cxb4 Bxb4+ 15. Kd1 Bd7 $19) 13...
+Bxf2+ 14. Kxf2 Qb6+ 15. Kg3 $4 (15. Ke1 Qxb2 16. Nb3 a5 17. Rd1 Qxa2 18. Nbd4
+Qb2 19. Be2 Qxc3+ 20. Kf2 a4 $15) 15... Nxe5 16. Nxe5 Qe3+ (16... Qe3+ 17. Kh4
+Qf4+ $19) 0-1
+
+[Event "Paris"]
+[Site "?"]
+[Date "1937.??.??"]
+[Round "?"]
+[White "Bernstein, O."]
+[Black "Tartakower, S."]
+[Result "0-1"]
+[ECO "C41"]
+[Annotator "McGrew 2018"]
+[PlyCount "26"]
+[EventDate "1937.??.??"]
+
+1. e4 e5 2. Nf3 d6 3. d4 Nf6 4. dxe5 Nxe4 5. Bc4 Be6 6. Bxe6 fxe6 7. Qe2 d5 8.
+Qb5+ $6 (8. O-O) 8... Nc6 9. Nd4 $2 (9. Qxb7 Nb4 10. Qb5+) 9... Qd7 (9... Bc5
+$2) 10. Qxb7 Bb4+ 11. c3 (11. Nc3 Nxd4 12. O-O) 11... Nxd4 12. Qxa8+ Kf7 13.
+Qxh8 Qb5 0-1
+
+[Event "Hastings"]
+[Site "?"]
+[Date "1938.??.??"]
+[Round "?"]
+[White "Tylor, TH."]
+[Black "Milner-Barry, PS."]
+[Result "0-1"]
+[ECO "C48"]
+[Annotator "McGrew 2018"]
+[PlyCount "40"]
+[EventDate "1938.??.??"]
+
+1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6 4. Bb5 Nd4 5. Ba4 Bc5 6. Nxe5 O-O 7. Nd3 Bb6 8.
+e5 Ne8 9. Nd5 d6 10. c3 Qh4 (10... Qg5) 11. Ne3 Qe4 12. Nb4 dxe5 (12... Nf5)
+13. cxd4 $2 (13. d3) 13... exd4 14. Qc2 Qe5 15. f4 Qxf4 16. Nc4 Qh4+ 17. Kf1 d3
+18. Nxd3 Bf5 19. Nxb6 axb6 20. Bb3 Rd8 (20... Rd8 21. Bc4 Nd6 22. Bb3 Rfe8 $19)
+0-1
+
+[Event "New York State ch"]
+[Site "?"]
+[Date "1940.??.??"]
+[Round "?"]
+[White "Chernev, I."]
+[Black "Jackson, ES."]
+[Result "1-0"]
+[ECO "D05"]
+[Annotator "McGrew 2018"]
+[PlyCount "37"]
+[EventDate "1940.??.??"]
+
+1. d4 d5 2. Nf3 Nf6 3. e3 e6 4. Bd3 Bd6 5. Nbd2 O-O 6. O-O Nbd7 7. Qe2 c5 8. c3
+e5 9. e4 exd4 10. cxd4 dxe4 11. Nxe4 Nxe4 12. Qxe4 Nf6 13. Qh4 cxd4 14. Bg5 h6
+15. Bxh6 gxh6 16. Qxh6 Re8 17. Rae1 (17. Ng5 Be6 18. Bh7+ Nxh7 19. Qxh7+ Kf8
+20. Qh6+ Ke7 (20... Kg8) 21. Nxe6 Rh8) 17... Be6 18. Ng5 Bf4 19. Rxe6 1-0
+
+[Event "Amsterdam"]
+[Site "?"]
+[Date "1940.??.??"]
+[Round "?"]
+[White "Kmoch, H."]
+[Black "Prins, L."]
+[Result "1-0"]
+[ECO "D97"]
+[PlyCount "33"]
+[EventDate "1940.??.??"]
+
+1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. Nf3 Bg7 5. Qb3 dxc4 6. Qxc4 O-O 7. e4 b6 8. e5
+Be6 9. exf6 Bxc4 10. fxg7 Kxg7 11. Bxc4 Nc6 12. Be3 Nb4 13. O-O Nc2 14. Rad1
+Nxe3 15. fxe3 c5 16. Ng5 e6 17. Rxf7+ 1-0
+
+[Event "Los Angeles simul"]
+[Site "?"]
+[Date "1940.??.??"]
+[Round "?"]
+[White "Horowitz, IA."]
+[Black "Amateur"]
+[Result "1-0"]
+[ECO "C25"]
+[PlyCount "27"]
+[EventDate "1940.??.??"]
+
+1. e4 e5 2. Nc3 Nc6 3. Bc4 Bc5 4. Qg4 Qf6 5. Nd5 Qxf2+ 6. Kd1 Kf8 7. Nh3 Qd4 8.
+d3 Bb6 9. Rf1 Nf6 10. Rxf6 d6 11. Qxg7+ Kxg7 12. Bh6+ Kg8 13. Rg6+ hxg6 14.
+Nf6# 1-0
+
+[Event "US ch prelim"]
+[Site "?"]
+[Date "1940.??.??"]
+[Round "?"]
+[White "Reinfeld, F."]
+[Black "Battell, JS."]
+[Result "1-0"]
+[ECO "D25"]
+[PlyCount "33"]
+[EventDate "1940.??.??"]
+
+1. Nf3 d5 2. d4 Nf6 3. c4 dxc4 4. e3 c5 5. Bxc4 cxd4 6. exd4 Qc7 7. Qb3 Be6 8.
+Bxe6 Qxc1+ 9. Ke2 Qxh1 10. Bxf7+ Kd8 11. Qxb7 Qc1 12. Qxa8 Qxb2+ 13. Nbd2 Ne4
+14. Qxe4 Qxa1 15. Qd5+ Kc7 16. Qc5+ Kd8 17. Be6 1-0
+
+[Event "Rio de Janeiro"]
+[Site "?"]
+[Date "1942.??.??"]
+[Round "?"]
+[White "Gomes, C."]
+[Black "Neto, C."]
+[Result "0-1"]
+[ECO "C46"]
+[PlyCount "36"]
+[EventDate "1942.??.??"]
+
+1. e4 e5 2. Nf3 Nc6 3. Nc3 Bc5 4. Bc4 d6 5. d3 Bg4 6. Be3 Nd4 7. Bxd4 Bxd4 8.
+h3 Bh5 9. Nb5 Bb6 10. Qe2 Ne7 11. O-O a6 12. Na3 Ng6 13. g3 Qf6 14. Kg2 Rg8 15.
+c3 Nh4+ 16. gxh4 g5 17. Rg1 Bxf3+ 18. Qxf3 gxh4+ 0-1
+
+[Event "Brussels"]
+[Site "?"]
+[Date "1942.??.??"]
+[Round "?"]
+[White "Defosse, M."]
+[Black "Frank"]
+[Result "0-1"]
+[ECO "E43"]
+[PlyCount "36"]
+[EventDate "1942.??.??"]
+
+1. d4 Nf6 2. Nf3 e6 3. c4 b6 4. Nc3 Bb7 5. e3 Bb4 6. Qc2 Ne4 7. Bd3 f5 8. a3
+Bxc3+ 9. bxc3 O-O 10. O-O Rf6 11. Nd2 Rh6 12. g3 Qh4 13. Nf3 Ng5 14. gxh4 Nxf3+
+15. Kg2 Ne1+ 16. Kg3 Rg6+ 17. Kf4 Rg4+ 18. Ke5 Nf3# 0-1
+
+[Event "Detroit simul"]
+[Site "?"]
+[Date "1945.??.??"]
+[Round "?"]
+[White "Denker, AS."]
+[Black "Gonzalez"]
+[Result "1-0"]
+[ECO "C21"]
+[Annotator "McGrew 2018"]
+[PlyCount "35"]
+[EventDate "1945.??.??"]
+
+1. e4 e5 2. d4 exd4 3. c3 dxc3 4. Bc4 cxb2 5. Bxb2 Bb4+ 6. Kf1 Nf6 7. e5 Ng8 $2
+(7... d5) 8. Qg4 (8. Qb3 Qe7 9. Nc3 Bxc3 10. Qxc3) 8... Bf8 9. Qf3 Nh6 10. Nc3
+Be7 11. Nd5 O-O 12. Nf6+ Kh8 13. Nh3 (13. Qe4 gxf6 14. exf6 Bxf6 15. Bd3) 13...
+Bxf6 14. exf6 g6 15. Qf4 Nf5 16. Ng5 Nd6 17. Nxf7+ Nxf7 18. Qh6 1-0
+
+[Event "Vienna"]
+[Site "?"]
+[Date "1946.??.??"]
+[Round "?"]
+[White "Galia, K."]
+[Black "Gruenfeld, E."]
+[Result "1-0"]
+[ECO "B33"]
+[Annotator "McGrew 2018"]
+[PlyCount "35"]
+[EventDate "1946.??.??"]
+
+1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5 6. Ndb5 d6 7. a4 a6 8. Na3
+Be6 9. Bc4 Bxc4 (9... Be7 $11) 10. Nxc4 Nxe4 $2 (10... Nd4 11. a5 Rc8 12. Nb6
+$16) 11. Nxe4 d5 12. Bg5 f6 13. Bxf6 (13. Qh5+ g6 14. Nxf6+) 13... gxf6 14.
+Qxd5 Be7 $4 (14... Qxd5 15. Nxf6+) 15. Ned6+ Bxd6 16. Nxd6+ Ke7 17. O-O-O Nd4
+18. Rxd4 1-0
+
+[Event "Correspondence"]
+[Site "?"]
+[Date "1946.??.??"]
+[Round "?"]
+[White "Rather, JC."]
+[Black "Sandrin, A."]
+[Result "1-0"]
+[ECO "C42"]
+[PlyCount "35"]
+[EventDate "1946.??.??"]
+
+1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6 4. Nf3 Nxe4 5. d4 d5 6. Bd3 Bd6 7. O-O Bg4 8. c4
+c6 9. Nbd2 Nxd2 10. Re1+ Ne4 11. Bxe4 dxe4 12. Rxe4+ Be6 13. Bg5 f6 14. Rxe6+
+Kf7 15. d5 fxg5 16. dxc6 Nxc6 17. Rxd6 Qa5 18. c5 1-0
+

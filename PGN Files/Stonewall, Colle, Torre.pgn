@@ -1,0 +1,104 @@
+[Event "?"]
+[Site "?"]
+[Date "2015.11.21"]
+[Round "?"]
+[White "Overview"]
+[Black "?"]
+[Result "*"]
+[ECO "D00"]
+[Annotator "McGrew 2015"]
+[PlyCount "11"]
+[EventDate "2015.11.21"]
+[SourceDate "2015.11.21"]
+
+{What we are about to examine is a flexible system where White keeps his
+options open and adapts to Black's choice of pawn formation.} 1. d4 d5 (1...
+Nf6 {This move became popular early in the 20th century when Black devised a
+number of ways of fighting against White's big center in the d-pawn openings
+without (usually) playing a quick ...d5 himself. One obvious point relevant to
+our choice of openings is that Black reserves the right to play ...d6, in
+which case a Stonewall setup is not reasonable.} 2. Nf3 {This is the most
+flexible way for White to proceed. If he commits too quickly to a Stonewall,
+Black will just play ...d6 and White's pieces will not be well placed. In
+particular, Black might prepare and execute the thrust ...e5 right in the
+teeth of White's Stonewall structure -- not something White wants to see
+happen!} 2... d5 {With this order of moves, Black suceeds in making White
+commit to Nf3 earlier than in the 1.d4 d5 2.e3 lines. Against most other 2nd
+moves, White will bring out his darksquare Bishop.} (2... e6 3. Bg5 {is the mai
+n line of the Torre Attack, named for the Mexican master who used this system
+regularly in the 1920s.}) (2... g6 3. Bg5 {is another line of the Torre Attack,
+useful against Black's "King's Indian" pawn structure.}) (2... c5 {
+With this move, Black offers to play the Benoni Defense.} 3. c3 $5 {American GM
+Gata Kamsky often plays this simple move, keeping his d-pawn on a dark square
+and keeping open his options for the development of his minor pieces and the
+placement of his e-pawn.} (3. d5 {is the most common response, and it is good
+-- but it leads to positions of great complexity that Black has probably
+studied deeply.})) {When Black has combined ...Nf6 with ...d5, White should
+simply head for a Colle System with} 3. e3 {Now Black has several options:} (3.
+Bf4 {is also a very reasonable move, initiating a setup known as the London
+System. Usually White follows up with typical "Colle" moves like e3, Bd3 (or
+perhaps Be2 if Black has pinned with ...Bg4), Nbd2, c3, and 0-0.}) (3. Bg5 {
+does not work well here because Black has a surprisingly strong way to lash
+out against the Bishop:} 3... Ne4 $1 (3... e6 {would be much more cooperative,
+after which White could count on a pleasant position with} 4. e3 Be7 5. Bd3 c5
+6. c3 O-O 7. Nbd2 {etc.})) 3... e6 {Black continues to copy White's setup.} (
+3... Bf5 {
+White should treat this move just like 2...Bf5 -- either with c4 or with Bd3.}
+4. c4 (4. Bd3 Bxd3 (4... e6 5. Bxf5 exf5 6. Qd3 $14) 5. cxd3 $14) 4... c6 5.
+Nc3 {With this move, White sets up a formation that the current World Champion,
+Magnus Carlsen, has used multiple times with devastating effect.} {
+Carlsen's idea is very simple: after} 5... e6 {he plays} 6. Nh4 {
+to win the Bishop pair.} 6... Bg6 (6... Bg4 $6 {
+is worse, since White gets the Bishop pair anyway after} 7. Qb3 Qc7 (7... Qb6)
+8. h3 Bh5 9. g4 Bg6 10. Nxg6 hxg6 11. Bg2 $1 {(defending the Rook on h1 so
+that Black cannot exploit the pin on the h-file with ...Nxg4) and White has
+some nice extra space on the kingside.}) (6... Bd6 {
+is an even worse way to lose the Bishop pair, since White continues with} 7.
+Nxf5 exf5 8. cxd5 cxd5 9. Bd3 $14 {when Black's pawns are rather weak.}) 7.
+Nxg6 hxg6 8. Bd3 Nbd7 9. O-O Bd6 10. h3 dxc4 11. Bxc4 {White has a little
+extra space -- not much -- and the pair of Bishops. In Carlsen's hands, that
+is enough of an advantage that he has consistently been able to outplay the
+world's best players from this sort of position.}) (3... Bg4 {It looks very
+natural for Black to pin the Knight. But in this precise position, where White
+has not yet played Bd3, there is a tactical problem with the pin.} 4. h3 $1 Bh5
+({Giving up the Bishop pair with} 4... Bxf3 5. Qxf3 {
+is not what Black had in mind.}) 5. g4 $1 Bg6 6. Ne5 $1 {White does not
+normally go chasing a piece in this fashion, but here there is a very specific
+idea that makes it a good plan.} 6... Nbd7 7. h4 $1 {Here it is! It turns out
+that Black's Bishop does not have enough retreat squares. The only way to save
+the piece is to open up the h7 square, but that idea allows White to shatter
+Black's pawn structure.} 7... h5 (7... Nxe5 8. dxe5 Nd7 9. h5 Be4 10. f3 Bxf3
+11. Qxf3 Nxe5 12. Qf4) (7... h6 8. Nxg6 fxg6 {
+and now White has a very pleasant choice of ways to torment Black.} 9. Bd3 (9.
+f4) (9. Qd3)) 8. Nxg6 fxg6 9. Bd3 $1 Kf7 10. g5 $1 Ng8 11. Qf3+ Ke8 12. Bxg6#)
+4. Bd3 c5 5. c3 Nc6 6. Nbd2 {is a normal Colle. White might have preferred a
+Stonewall against this deployment, but the Colle is quite good here as well.})
+2. e3 e6 {This move, played so early, is a little bit cooperative on Black's
+part. However, it does let us see what is happening in this sort of position.}
+(2... Nf6 {By putting a Knight here first rather than blocking in his
+lightsquare Bishop with ...e6, Black preserves more options.} 3. Bd3 c5 4. c3 (
+4. b3) 4... Nc6 5. Nf3 (5. f4 Bg4 6. Nf3) 5... Bg4 6. Nbd2) (2... Bf5 {
+This move gives White two different possible ways to continue.} 3. c4 {
+This move gives the game a bit of a Queens Gambit feel. The idea is that
+Black's Bishop will be missed on the queenside, a fact that White will take
+advantage of by playing a quick Qb3 attacking b7.} (3. Bd3 Bxd3 4. cxd3 {
+Now White will continue with Nf3, 0-0, possibly Nc3 or Nbd2, and e4.}) 3... c6
+4. Nc3 (4. Qb3) 4... e6 5. Nf3 {Simple chess.} ({
+GM Zdenko Kozul has made a specialty out of the odd-looking move} 5. g4 $5 Bg6
+6. h4 h5 7. g5) 5... Nf6 6. Nh4 {transposes into Carlsen's system, seen above.}
+) 3. Bd3 {The Colle System and the Stonewall Attack have several features in
+common, and this is one of them. The N/b1 will go to d2 and the other Knight
+will go to f3 -- the question is whether White will play f4 first. In this
+position, where Black has voluntarily locked in his own lightsquare Bishop
+with ...e6, a Stonewall Attack formation is particularly strong.} 3... Nf6 (
+3... f5 $5 {is an interesting try for a Dutch Stonewall -- actually not a bad
+idea in this position. Black is a tempo down vis a vis the situation with
+colors reversed in the Stonewall Attack, but a single tempo doesn't matter
+quite so much in a stable pattern like this. There is room for exploration
+here.}) 4. Nd2 c5 5. c3 Nc6 {This is a perfect example of the sort of position
+where White should play a Stonewall. Black has played ...d5 (so he cannot
+control the e5 square with ...d6), but he has also played ...e6. That means
+that it would create darksquare weaknesses for him also to play ...g6, and he
+cannot get his B/c8 out to oppose White's Bishop (with ...f5) or to pin
+White's Knight (with ...Bg4).} 6. f4 *
+

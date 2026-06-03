@@ -1,0 +1,275 @@
+[Event "Semmering"]
+[Site "Semmering"]
+[Date "1926.??.??"]
+[Round "?"]
+[White "Janowski, Dawid Markelowicz"]
+[Black "Michel, Walter"]
+[Result "1-0"]
+[ECO "D00"]
+[Annotator "McGrew 2015"]
+[PlyCount "29"]
+[EventDate "1926.??.??"]
+[Source "ChessBase"]
+[SourceDate "1999.07.01"]
+
+1. d4 Nf6 2. Bg5 {Wait, this isn't a Stonewall! Patience -- in a few more
+moves, the classic pawn structure will appear on the board ...} 2... d5 3. e3
+e6 4. Bd3 c5 5. c3 Nbd7 6. f4 {That is more like it -- the only difference, of
+course, is that White's Bishop is outside of the wall. In this case, that
+gives Black one extra idea, since White's b-pawn is weaker than it would
+normally be.} 6... Qb6 {Black promptly probes at the weak point.} 7. Qc2 {
+Janowski puts his Queen on her most natural square. There is, however, a
+drawback to this: Black can push away White's Bishop and then jump into e4.} (
+7. Qc1 {would enable White to meet} 7... c4 {with} 8. Bc2 {
+keeping an eye on the e4 square. Then White could meet} 8... Ng4 {with} 9. b3 {
+when the position is difficult for both sides.}) (7. b3 {is another way of
+meeting Black's blunt attack. White sometimes worries about moves like this
+because later White's lack of control of squares on the c-file -- particularly
+c3 -- may give Black some extra options. But at the moment it is not clear how
+Black can exploit that small weakening of the pawn structure.}) 7... c4 {
+Very logical: Black plays to dominate the e4 square.} 8. Be2 Ne4 9. Bh4 {
+Preserving the Bishop and keeping both the d-pawn and the f-pawn focused on e5.
+} 9... f5 {Black opts for a Double Stonewall, perhaps reasoning that as he was
+the first to occupy the central strong point, this should favor him. However,
+the fact that White has his "bad" Bishop out whereas Black's is still buried
+on c8 is a factor that counts on the other side.} (9... Bd6 10. Nd2 Ndf6 11.
+Bxf6 Nxf6 {looks better, when Black has approximate equality despite his
+locked-in Bishop. White's weak e-pawn gives Black some mini-threats, e.g.} 12.
+Ngf3 Ng4 {when White must resort to the undeveloping move} 13. Nf1 {
+It is hard to believe that Black stands any worse here.}) 10. Nf3 Qa5 11. Ne5
+b5 $2 {Black is blind to what is happening on the other side of the board.} 12.
+Nd2 $2 {And White also misses a first opportunity here!} (12. Bh5+ $1 {
+wins on the spot. I suspect that Janowski did not see how White can get his
+Knight back out of the cornerafter} 12... g6 13. Nxg6 Ndf6 14. Bxf6 Nxf6 15.
+Nxh8+ Nxh5 {However, White has a nice tactical resource in} 16. g4 $1 Nf6 (
+16... fxg4 $4 17. Qxh7 {is immediately fatal.}) 17. g5 $1 Nd7 ({Or} 17... Ng4
+18. h3 $1 Nxe3 19. Qe2 $1 $18 {trapping Black's Knight.}) 18. Qe2 $18 {
+and White's Queen comes in at h5, after which the Knight swings back out of
+the corner at f7.}) 12... Nxd2 13. Bh5+ $1 {There we go!} 13... g6 14. Nxg6 Nb6
+{Falling on his sword.} 15. Ne5# 1-0
+
+[Event "Vienna"]
+[Site "Vienna"]
+[Date "1928.??.??"]
+[Round "10"]
+[White "Lichtenstein, Bernhard"]
+[Black "Glass, Eduard"]
+[Result "1-0"]
+[ECO "D02"]
+[Annotator "McGrew 2015"]
+[PlyCount "43"]
+[EventDate "1928.??.??"]
+[Source "ChessBase"]
+[SourceDate "1999.07.01"]
+
+1. d4 d5 2. Nf3 Nf6 3. Ne5 e6 4. Bg5 {
+Another case of a Stonewall with the Bishop outside the pawn chain.} 4... Be7
+5. e3 c5 6. c3 O-O 7. Nd2 b6 {It is tempting to find a place for the
+lightsquare Bishop like this, but the pawn on b6 takes away the possibility of
+...Qb6. Black never gets any counterplay against White's queenside pawns, and
+that means that White has a free hand to pursue the attack on the other wing.}
+8. f4 Bb7 $6 ({The only logical follow-up I can see to Black's ...b6 is to
+trade off White's good Bishop with} 8... Ba6) 9. Qc2 Nbd7 10. Be2 (10. Bd3 {
+would invite} 10... c4 {-- though I am not sure Black should want to lock up
+the position like that, removing all of his central pressure on White's pawn
+structure.}) 10... h6 11. h4 $5 {This kind of "passive" sacrifice, leaving the
+attacked piece to be taken on this square, is well known in such positions.
+Usually, however, White's Queen is ready to come to h6 in a single bound --
+and that spells doom for Black. Here, matters are more complex.} 11... hxg5 12.
+hxg5 Ne4 {
+The only possible move. Black keeps the diagonal from c2 to h7 blockaded.} 13.
+Nxe4 dxe4 14. O-O-O Nxe5 $2 {This move leaves Black without any chances at all.
+} (14... cxd4 {looks at first blush like a winning defensive try. But White
+has a truly insane response -- clear everything out of the way in the service
+of getting the Queen to f2, from which she can hop to g4 to deliver mate.} 15.
+Ba6 $3 Bxa6 (15... d3 16. Qf2 Nxe5 17. Bxb7 d2+ 18. Rxd2 Nd3+ 19. Rxd3 Qxd3 20.
+Qh4 Qxe3+ 21. Kb1 Qd3+ 22. Ka1 f5 23. Qh5 $18) 16. Nc6 $1 (16. Qf2 {
+doesn't work yet because of} 16... Nxe5 17. Qh4 f5 $19) 16... Qe8 17. Qf2 {
+Now Black doesn't have a Knight to take on e5.} 17... f5 $3 {
+Only this move holds the position.} (17... f6 18. g6 $3 {
+wins since Black cannot take the pawn.} 18... f5 19. Qg3 Nf6 20. Nxe7+ $1 Qxe7
+21. Qh4 {and White mates on h8 in a few moves.}) 18. Qh4 (18. g6 {
+doesn't actually threaten mate since White's Queen cannot use the h4 square.})
+18... Be2 $1 19. Rxd4 Kf7 $1 {Black's position looks precarious, but White has
+sacrificed both of his Bishops to get this far, and it appears now that he had
+better take equality with} 20. g6+ Kxg6 21. Nxe7+ Kf7 22. Nc6 Nf6 23. Ne5+ Ke7
+24. Qg5 $11 {and White will give perpetual check with his Knight at e5 and g6.}
+) 15. dxe5 {Hitting the Queen. Now Black's Knight can never come to the aid of
+the King, so White can organize his attack with no counterplay to worry about.}
+15... Qe8 16. Rh3 f6 17. Bc4 Bd5 18. Rxd5 $1 {The White Bishop is really the
+star piece here, so sacrificing the exchange on d5 makes a lot of sense.} 18...
+b5 (18... exd5 19. Bxd5+ Rf7 20. g6 $18 {is crushing.}) 19. gxf6 bxc4 20. Qxe4
+exd5 21. Qh7+ Kf7 22. Qxg7+ (22. Qxg7+ Ke6 23. Qg4+ $1 {forces the King back
+to the kingside, after which White delivers the knockout blow with} 23... Kf7
+24. Rh7#) 1-0
+
+[Event "Plymouth ch-MI op"]
+[Site "Plymouth"]
+[Date "1984.??.??"]
+[Round "?"]
+[White "Hutchings, C."]
+[Black "Herzog, M."]
+[Result "1-0"]
+[ECO "A45"]
+[Annotator "McGrew 2015"]
+[PlyCount "27"]
+[EventDate "1984.??.??"]
+[Source "ChessBase"]
+[SourceDate "2002.11.25"]
+
+{This game gives a wonderful illustration of White's main attacking plan in
+the Stonewall.} 1. d4 Nf6 2. e3 e6 3. Bd3 c5 4. c3 Nc6 (4... b6 5. Nd2 Ba6 $5 {
+would be an interesting try here.}) 5. Nd2 {
+White takes a grip on e4 before Black can even think of putting a Knight there.
+} 5... b6 6. f4 Bb7 7. Ngf3 Bd6 {It looks wrong to put a Bishop on d6 rather
+than a pawn. Black really needs a pawn there to keep White's Knight out of e5.}
+8. O-O O-O 9. Ne5 Nd5 10. Rf3 {Lifting the Rook up into the attack.} 10... cxd4
+$2 {Black may have thought that he had another move to think about the
+kingside, but White ignores the center and blasts away on the wing.} 11. Bxh7+
+$1 {The standard sacrifice. Black is utterly lost.} 11... Kh8 (11... Kxh7 12.
+Rh3+ Kg8 13. Qh5 {is deadly because White's Queen is being assisted by the
+Rook, which means that there are two focal points for the mate -- one at h7
+and one at h8. Notice how the Knight on e5 keeps an eye on the f7 square,
+whether Black has a pawn there or not.} 13... f6 14. Qh8#) 12. Rh3 g5 13. Bd3+
+Kg7 14. Qh5 1-0
+
+[Event "Wch Seniors (Women) 03rd"]
+[Site "Bad Wildbad"]
+[Date "1993.??.??"]
+[Round "9"]
+[White "Kick Woerthmueller, Ines"]
+[Black "Franz, Irma"]
+[Result "1-0"]
+[ECO "D00"]
+[Annotator "McGrew 2015"]
+[PlyCount "33"]
+[EventDate "1993.11.??"]
+[Source "ChessBase"]
+[SourceDate "1996.11.15"]
+
+1. d4 d5 2. e3 e6 3. c3 c6 4. Bd3 Nf6 5. Nd2 Nbd7 6. f4 c5 7. Ngf3 c4 $2 {
+A pointless move -- White's Bishop will be just as strong on c2 as on d3, and
+Black will have no pressure on White's center.} 8. Bc2 Be7 9. O-O Nb6 10. Ne5
+O-O 11. Rf3 {Now White is set to try one of a number of plans depending on how
+Black continues.} 11... g6 {Black decides to try to lock up the kingside,
+closing the vital diagonal leading to h7.} (11... Bd7 {is a fairly meaningless
+move that lets us see some of White's other plans in action.} 12. Rh3 (12. g4 {
+This is another well-known way to proceed, booting Black's Knight out of f6.}
+12... Rc8 13. g5 Ne8 (13... Nh5 14. Rh3 g6 15. Rxh5 gxh5 16. Qxh5 f5 17. gxf6
+Rxf6 18. Qxh7+ Kf8 19. Qh8#) 14. Bxh7+ Kxh7 15. Rh3+ Kg8 16. Qh5 f6 17. Qh7#)
+12... Rc8 $2 13. Bxh7+ $1 Nxh7 14. Qh5 $1 $18 {A pattern worth remembering.})
+12. g4 Kg7 13. g5 Ng8 ({He had to try} 13... Nfd7) 14. Rh3 f5 15. Qe1 {
+Black is so tangled up -- look at the Knight on g8! -- that he has no decent
+defense against White's plan ofQh4xh7#} 15... Nd7 16. Qh4 Nxe5 $4 (16... h6 17.
+Ndf3 h5 18. Nxg6 $1 Kxg6 19. Qxh5+ Kg7 20. Qh7#) 17. Qxh7# 1-0
+
+[Event "Moscow ol (Women)"]
+[Site "Moscow"]
+[Date "1994.??.??"]
+[Round "9"]
+[White "Geldyeva, Mekhri"]
+[Black "Garcia, P."]
+[Result "1-0"]
+[ECO "A45"]
+[WhiteElo "2115"]
+[Annotator "McGrew 2015"]
+[PlyCount "35"]
+[EventDate "1994.11.01"]
+[Source "ChessBase"]
+[SourceDate "1998.11.10"]
+
+1. d4 Nf6 2. e3 e6 3. Bd3 c5 4. c3 Nc6 5. f4 cxd4 {This is a good example of a
+situation where the exchange of pawns is premature. In a few moves, White will
+make good use of the open e-file to create some non-standard tactical patterns.
+} 6. exd4 Be7 7. Nf3 b6 8. O-O Bb7 9. Nbd2 O-O 10. Ne5 Qc7 11. Qe2 $1 {
+This is a very good move. The Queen looks at Black's e-pawn "through" the
+Knight on e5.    If that comment makes no sense to you right now, proceed for
+a few more moves and all will become clear.} 11... Rfe8 $2 {Black is weakening
+his f7 pawn by moving away from its defense like this, but no doubt he had
+visions of ...d6 and ...e5 when the Rook would be powerful standing opposite
+White's Queen.} 12. Ndf3 d6 13. Nxf7 $1 {Surprise! This sacrificial pattern is
+known from other openings, but it is rare in the Stonewall.} 13... Kxf7 14.
+Ng5+ $1 Kg8 15. Qxe6+ Kh8 {Now White has a chance to wrap things up with a
+pretty combination known as a Smothered Mate.} 16. Nf7+ Kg8 17. Nh6+ Kh8 18.
+Qg8+ 1-0
+
+[Event "Rio de Janeiro-ch 21st"]
+[Site "Rio de Janeiro"]
+[Date "1996.11.20"]
+[Round "5"]
+[White "Figueiredo, Francisco Marques"]
+[Black "Linhares, Obaldine"]
+[Result "1-0"]
+[ECO "A46"]
+[WhiteElo "1793"]
+[BlackElo "1787"]
+[Annotator "McGrew 2015"]
+[PlyCount "33"]
+[EventDate "1996.11.16"]
+[Source "ChessBase"]
+[SourceDate "2005.11.24"]
+
+1. d4 b5 2. e3 Bb7 3. Nf3 a6 4. Bd3 Nf6 5. Nbd2 e6 6. O-O c5 7. c3 c4 8. Bc2 d5
+$2 {This is a very weak move, imprisoning Black's lightsquare Bishop and
+yielding the e5 square to White's pieces without a fight. No doubt Black
+thought that the compensating virtue of taking control of e4 was worth these
+concessions. But it is not.} 9. Ne5 Bd6 10. f4 O-O 11. g4 {
+The standard plan in action.} 11... Nfd7 12. g5 f6 $2 {
+Too slow. Now a little accurate calcuation gives White everything he needs.}
+13. Bxh7+ $1 Kxh7 14. Qh5+ Kg8 15. g6 $1 {
+The standard trick, locking the door on the Black King.} 15... Rf7 16. Nxf7 Qc7
+17. Qh8# 1-0
+
+[Event "Hassloch op-B"]
+[Site "Hassloch"]
+[Date "1997.??.??"]
+[Round "3"]
+[White "Thome, Volker"]
+[Black "Randrianasolo, Astrid"]
+[Result "1-0"]
+[ECO "D00"]
+[Annotator "McGrew 2015"]
+[PlyCount "29"]
+[EventDate "1997.??.??"]
+[Source "ChessBase"]
+[SourceDate "2000.11.22"]
+
+1. d4 d5 2. e3 Nf6 3. Bd3 e6 4. f4 c5 5. c3 Nc6 6. Nd2 Bd7 7. Ngf3 cxd4 8. exd4
+Bd6 9. Ne5 O-O 10. O-O Rb8 {Black begins a positional plan for a minority
+attack on the queenside. This is a great strategic idea, but tactically it is
+far too slow.} 11. Rf3 {
+White doesn't mess around -- it's time to wheel up the heavy artillery!} 11...
+b5 12. Rh3 b4 $4 {
+Black is fixated on the queenside. That's not where things are happening!} (
+12... g6 {was necessary to slow down the attack.}) 13. Bxh7+ $1 {Once White
+a Rook on h3, this pattern is often possible. White must just check to make
+sure Black cannot defend the Knight where it will stand on h7.} 13... Nxh7 (
+13... Kh8 14. Bg6+ Kg8 {
+allows a very nice tactical trick based on the position of Black's Queen:} 15.
+Bxf7+ $1 Rxf7 16. Rh8+ $1 Kxh8 17. Nxf7+ $18 {etc.}) 14. Qh5 $1 {Now if Black
+has his other Knight on d7, he could play ...Ndf6! and stop the attack cold.
+But he does not -- so he is getting mated.} 14... Re8 15. Qxf7+ $1 {
+Setting up a pretty mate.} (15. Qxf7+ Kh8 16. Ng6#) 1-0
+
+[Event "CXG RSa mem-B"]
+[Site "Rio de Janeiro"]
+[Date "1999.??.??"]
+[Round "10"]
+[White "Carvalho, Carlos Alberto"]
+[Black "Cunha, Luiz Fco"]
+[Result "1-0"]
+[ECO "D00"]
+[WhiteElo "2050"]
+[BlackElo "2000"]
+[Annotator "McGrew 2015"]
+[PlyCount "43"]
+[EventDate "1999.??.??"]
+[Source "ChessBase"]
+[SourceDate "1999.11.16"]
+
+1. d4 Nf6 2. Nd2 d5 3. e3 e6 4. Bd3 c5 5. c3 Nc6 6. f4 Be7 7. Ngf3 O-O 8. O-O
+b6 9. Ne5 Bb7 10. Qf3 Qc7 11. g4 Rad8 ({This was the last chance for} 11... g6)
+12. g5 Ne8 13. Bxh7+ Kxh7 14. Qh5+ Kg8 15. Rf3 g6 16. Qh6 Ng7 17. Rh3 Nh5 18.
+Nxg6 fxg6 19. Qxg6+ Ng7 20. Rh8+ $1 {A nice trick.} 20... Kxh8 21. Qh6+ Kg8 22.
+g6 1-0
+

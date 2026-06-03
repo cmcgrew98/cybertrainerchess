@@ -1,0 +1,17 @@
+[Event "Reykjavik op"]
+[Site "Reykjavik"]
+[Date "2013.02.20"]
+[Round "3"]
+[White "Murray, Michael A"]
+[Black "Miedema, David"]
+[Result "0-1"]
+[ECO "C00"]
+[WhiteElo "2017"]
+[BlackElo "2364"]
+[Annotator "McGrew 2017"]
+[PlyCount "92"]
+[EventDate "2013.02.19"]
+[Source "Chessbase"]
+[SourceDate "2013.02.28"]
+
+1. Nc3 d5 {What's this?! Patience -- we will transpose into a recognizable French Defense in a few moves here.} 2. e4 e6 3. Nf3 Nf6 4. e5 Nfd7 5. d4 {Now everything is back to normal.} 5... c5 6. dxc5 Nc6 {It is useful to force White to play the move Bf4 before deciding how to regain the pawn on c5.} 7. Bf4 Nxc5 {This capture is a little less popular than 7...Bxc5, but I think it is perfectly reasonable. In this variation, Black can leave his pawn chain in place (though sometimes he may choose to play ...f6 or even ...f5) and expand on the queenside.} 8. Bd3 Be7 {This quiet move is actually part of a clever plan for activity on either side of the board.} 9. Qe2 a6 10. O-O {Here is a second interesting feature of this variation: when White has castled, Black can sometimes lash out on the kingside as well.} 10... g5 $5 11. Bd2 {A reasonable retreat. White keeps the pawn on g5 under observation.} (11. Bg3 {would put the Bishop in the path of the oncoming pawns after} 11... h5 12. h3 Bd7 {and Black will probably develop with ...Qb6, ...Nxd3, and ...g4.}) 11... Nd7 $1 {Black prepares to round up White's e-pawn with ...g4 and ...Ndxe5.} 12. h3 h5 {Black flings the pawns forward anyway. Notice that Black keeps his Queen on d8 because it is part of the defensive battery supporting the pawn on g5.} 13. g4 b5 14. Rae1 Bb7 15. Nxd5 {Desperation. Black ignores him.} 15... hxg4 16. hxg4 Ndxe5 $19 {White is completely busted.} 17. Nxe5 Qxd5 {Taking this Knight sets Black up with mate threats on h1 -- either the Queen or the Rook might deliver the mate.} 18. f3 {White blocks the dangerous diagonal.} 18... Qd4+ $1 {A nice little tactical point that becomes clear in two more moves.} 19. Kg2 Nxe5 20. Qxe5 Qxg4+ $1 {Oh! White walked his King into a pin, and Black swapped off the Knight so that the Bishop would set up this little trick. Clever!} 21. Qg3 Qxg3+ {Black cashes in. He's won a pawn and is ready to exploit that material advantage in the endgame.} 22. Kxg3 O-O-O 23. Bc3 Bd6+ 24. Be5 (24. Kg4 $2 {This move looks good for White until you realize how few squares the King has.} 24... f5+ 25. Kxg5 Rhg8+ $1 26. Kh5 (26. Kf6 Bd5 {and White has no defense against the coming 27...Rdf8#}) 26... Bd5 27. Rg1 Bg3 $1 28. Ref1 Rd7 29. Kh6 Bf4+ 30. Kh5 Rh7#) 24... Bxe5+ 25. Rxe5 Rd5 {Black is happy to trade off pieces -- every exchange of pieces brings him closer to a simple victory in the endgame.} 26. Rxd5 Bxd5 27. a4 bxa4 28. Bxa6+ Kc7 29. Bb5 Rh4 30. Ra1 f5 31. Rxa4 Kb6 32. c4 (32. Rxh4 $2 gxh4+ $19 {This is check, so Black wins the Bishop on b5.}) 32... f4+ 33. Kg2 Bb7 34. Bd7 g4 $1 {Making use of the pin.} 35. Rb4+ (35. c5+ Kxc5 36. Rxf4 gxf3+ 37. Kg3 Rxf4 38. Kxf4 f2 {and White cannot stop the pawn from queening.}) 35... Kc7 36. Rxb7+ Kxb7 37. fxg4 e5 38. Bf5 Kc6 39. b4 Kd6 40. c5+ Kd5 41. Bc8 e4 42. Bb7+ Kd4 43. c6 Rxg4+ 44. Kf1 Rg7 45. b5 Ke3 46. b6 f3 0-1

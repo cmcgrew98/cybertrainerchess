@@ -1,0 +1,182 @@
+[Event "Reykjavik op"]
+[Site "Reykjavik"]
+[Date "2013.02.20"]
+[Round "3"]
+[White "Murray, Michael A"]
+[Black "Miedema, David"]
+[Result "0-1"]
+[ECO "C00"]
+[WhiteElo "2017"]
+[BlackElo "2364"]
+[Annotator "McGrew 2017"]
+[PlyCount "92"]
+[EventDate "2013.02.19"]
+[Source "Chessbase"]
+[SourceDate "2013.02.28"]
+
+1. Nc3 d5 {What's this?! Patience -- we will transpose into a recognizable French Defense in a few moves here.} 2. e4 e6 3. Nf3 Nf6 4. e5 Nfd7 5. d4 {Now everything is back to normal.} 5... c5 6. dxc5 Nc6 {It is useful to force White to play the move Bf4 before deciding how to regain the pawn on c5.} 7. Bf4 Nxc5 {This capture is a little less popular than 7...Bxc5, but I think it is perfectly reasonable. In this variation, Black can leave his pawn chain in place (though sometimes he may choose to play ...f6 or even ...f5) and expand on the queenside.} 8. Bd3 Be7 {This quiet move is actually part of a clever plan for activity on either side of the board.} 9. Qe2 a6 10. O-O {Here is a second interesting feature of this variation: when White has castled, Black can sometimes lash out on the kingside as well.} 10... g5 $5 11. Bd2 {A reasonable retreat. White keeps the pawn on g5 under observation.} (11. Bg3 {would put the Bishop in the path of the oncoming pawns after} 11... h5 12. h3 Bd7 {and Black will probably develop with ...Qb6, ...Nxd3, and ...g4.}) 11... Nd7 $1 {Black prepares to round up White's e-pawn with ...g4 and ...Ndxe5.} 12. h3 h5 {Black flings the pawns forward anyway. Notice that Black keeps his Queen on d8 because it is part of the defensive battery supporting the pawn on g5.} 13. g4 b5 14. Rae1 Bb7 15. Nxd5 {Desperation. Black ignores him.} 15... hxg4 16. hxg4 Ndxe5 $19 {White is completely busted.} 17. Nxe5 Qxd5 {Taking this Knight sets Black up with mate threats on h1 -- either the Queen or the Rook might deliver the mate.} 18. f3 {White blocks the dangerous diagonal.} 18... Qd4+ $1 {A nice little tactical point that becomes clear in two more moves.} 19. Kg2 Nxe5 20. Qxe5 Qxg4+ $1 {Oh! White walked his King into a pin, and Black swapped off the Knight so that the Bishop would set up this little trick. Clever!} 21. Qg3 Qxg3+ {Black cashes in. He's won a pawn and is ready to exploit that material advantage in the endgame.} 22. Kxg3 O-O-O 23. Bc3 Bd6+ 24. Be5 (24. Kg4 $2 {This move looks good for White until you realize how few squares the King has.} 24... f5+ 25. Kxg5 Rhg8+ $1 26. Kh5 (26. Kf6 Bd5 {and White has no defense against the coming 27...Rdf8#}) 26... Bd5 27. Rg1 Bg3 $1 28. Ref1 Rd7 29. Kh6 Bf4+ 30. Kh5 Rh7#) 24... Bxe5+ 25. Rxe5 Rd5 {Black is happy to trade off pieces -- every exchange of pieces brings him closer to a simple victory in the endgame.} 26. Rxd5 Bxd5 27. a4 bxa4 28. Bxa6+ Kc7 29. Bb5 Rh4 30. Ra1 f5 31. Rxa4 Kb6 32. c4 (32. Rxh4 $2 gxh4+ $19 {This is check, so Black wins the Bishop on b5.}) 32... f4+ 33. Kg2 Bb7 34. Bd7 g4 $1 {Making use of the pin.} 35. Rb4+ (35. c5+ Kxc5 36. Rxf4 gxf3+ 37. Kg3 Rxf4 38. Kxf4 f2 {and White cannot stop the pawn from queening.}) 35... Kc7 36. Rxb7+ Kxb7 37. fxg4 e5 38. Bf5 Kc6 39. b4 Kd6 40. c5+ Kd5 41. Bc8 e4 42. Bb7+ Kd4 43. c6 Rxg4+ 44. Kf1 Rg7 45. b5 Ke3 46. b6 f3 0-1
+
+[Event "Brasschaat op"]
+[Site "Brasschaat"]
+[Date "2013.08.19"]
+[Round "3"]
+[White "De Vleeschauwer, Maarten"]
+[Black "Gergacz, Attila"]
+[Result "0-1"]
+[ECO "C11"]
+[WhiteElo "2030"]
+[BlackElo "2370"]
+[Annotator "McGrew 2017"]
+[PlyCount "60"]
+[EventDate "2013.08.17"]
+[Source "Chessbase"]
+[SourceDate "2013.08.30"]
+
+1. e4 e6 2. Nc3 {Usually White plays 2.d4 and only then 3.Nc3, but this move order is pretty common as well.} 2... d5 3. Nf3 Nf6 4. e5 Nfd7 5. d4 {
+Now we are back in the normal French Defense lines.} 5... c5 {Black attacks White's central pawn chain at the base.} 6. dxc5 Nc6 {By putting
+pressure on White's e-pawn, Black more or less forces White to bring out his Bishop to f4. That is not a bad move, but it does limit White's options a bit.}
+7. Bf4 Nxc5 {There is nothing wrong with the other capture, but this move is interesting and creates problems for White to solve immediately.} 8. Qd2 a6 9.
+O-O-O $6 {It is a mistake for White to commit his King so soon to the queenside, where Black can fling forward his pawns and drive White's pieces
+away from the defense of the King. In just a few moves, White's position is critical.} 9... b5 10. h4 (10. Bg5 {is covered in the game Kalinina-Drasko, Cappelle la Grande 2013.}) 10... b4 $1 {Black drives White's Knight away from the control of the e4 square.} 11. Ne2 Ne4 $1 {Perfect! The Knight settles in on e4, attacking both the Queen and the pawn on f2.} 12. Qe3 {White has to move the Queen somewhere.} 12... Qa5 {Black continues to bring out pieces with a gain of time. This move puts the
+Queen on a very active square, but it also attacks the undefended pawn on a2.} 13. Kb1 {Again, White does not have much choice.} 13... Bc5 14. Nfd4 Nxd4 15.
+Nxd4 Rb8 (15... Nc3+ $1 {already works:} 16. bxc3 bxc3 17. Nb3 (17. Rd3 Rb8+ 18. Kc1 {and now Black has various ways to win, such as} (18. Ka1 $4 {
+gets mated immediately:} 18... Rb2 $1 19. Rxc3 Qxa2#) 18... Qb6 19. Kd1 Bd7 20. Ke1 Ba4 $19) 17... Bxe3 $1 18. Nxa5 Bxf4 $19 {Black has won a pawn, and White's King is still very exposed.}) 16. Ka1 Nc3 $1 17. bxc3 bxc3 18. Bc4 dxc4 19. Rb1 Rb2 $1 20. Rxb2 cxb2+ 21. Kb1 Bb7 22. Rd1 c3 $6 {This move is attractive, but it is not Black's fastest way to win.} (22... O-O 23. f3 Bb4 $19) 23. Qg3 (23. Nb3 {would prolong the game a bit:} 23... Bxe3 24. Nxa5 Bxf4 25. Nxb7 Ke7 26. Nc5 Rc8 27. Nd3 Bd2 $19 {and Black is obviously winning, but it will take some time to break down White's position.}) 23... Bxd4 24. Rxd4 Bd5 25. a4 Ba2+ (25... Qc5 {is winning immediately, threatening ...Qa3-a1#}) 26. Kxa2 b1=Q+ 27. Kxb1 Qb6+ 28. Kc1 Qxd4 29. Bg5 h6 30. Qe3 Qc4 0-1
+
+
+[Event "Chigorin Memorial 21st"]
+[Site "St Petersburg"]
+[Date "2013.10.11"]
+[Round "7"]
+[White "Savitskiy, Sergey"]
+[Black "Popilski, Gil"]
+[Result "0-1"]
+[ECO "C00"]
+[WhiteElo "2354"]
+[BlackElo "2486"]
+[Annotator "McGrew 2017"]
+[PlyCount "40"]
+[EventDate "2013.10.05"]
+[Source "Chessbase"]
+[SourceDate "2013.10.19"]
+
+1. e4 e6 2. Nf3 {Yet another odd move order!} 2... d5 3. Nc3 Nf6 4. e5 (4. exd5 {is nothing for Black to fear. After} 4... exd5 5. d4 {White has simply transposed into the harmless Exchange Variation.}) 4... Nfd7 5. d4 {Here we are back in normal French Defense territory once again.} 5... c5 {If White does not take this pawn, Black will capture on d4.} 6. dxc5 Nc6 7. Bf4 Nxc5 8. Be2 a6 {Black gets ready to expand on the queenside with ...b5 and perhaps ...b4 to chase away White's Knight from c3.} 9. O-O d4 $5 {Very aggressive, active play by Black. In theory, this pawn could become a weakness. But right now Black has it adequately defended.} 10. Nb1 b5 11. a3 (11. c3 {would be fine if Black had to take the pawn, but of course he would just win a piece with} 11... d3 $1 $19) 11... Bb7 12. Re1 {Black has been waiting for White to make this move.} 12... Be7 {This move anticipates White's next, completely natural move -- and sets a trap into which White tumbles headlong.} 13. Nbd2 $4 {Missing the point.} 13... g5 $1 14. Bg3 g4 $1 {The point: this Knight has no good retreats!} 15. Nb3 gxf3 16. Bxf3 Qd7 17. Nxc5 Bxc5 18. b4 Be7 19. Qd3 h5 20. h3 Rc8 {A piece down with no threats, White decides to call it a day.} 0-1
+
+[Event "Cappelle op 29th"]
+[Site "Cappelle la Grande"]
+[Date "2013.02.25"]
+[Round "3"]
+[White "Kalinina, Olga"]
+[Black "Drasko, Milan"]
+[Result "0-1"]
+[ECO "C00"]
+[WhiteElo "2279"]
+[BlackElo "2459"]
+[Annotator "McGrew 2017"]
+[PlyCount "60"]
+[EventDate "2013.02.23"]
+[Source "Chessbase"]
+[SourceDate "2013.03.08"]
+
+1. e4 e6 2. Nf3 d5 3. Nc3 Nf6 4. e5 Nfd7 5. d4 c5 6. dxc5 Nc6 {Black usually plays this move, attacking e5 a second time, before he decides how to recapture on c5.} 7. Bf4 Nxc5 {Although this is not the main line of the Classical French, it is a good move played by strong players.} 8. Qd2 a6 {Preparing for ...b5.} 9. O-O-O $6 {Black's plan of development is very much directed against queenside castling by White. What happens next is rather breathtaking, as the attack unfolds with startling speed.} 9... b5 $1 10. Bg5 Qc7 (10... Qa5 {looks more accurate to me, though perhaps it is objectively about the same, e.g.} 11. Kb1 b4 (11... Bb7 12. Be3 Qc7 13. Ne2 Rc8 14. Ng3 h5 15. Bxc5 Bxc5 16. Qg5 g6 17. Bd3 Be7 18. Qf4 h4 19. Ne2 Rh5 $15 {-0.55/18}) 12. Ne2 Ne4 13. Qe1 (13. Qe3 Bc5 14. Ned4 (14. Nfd4 Qb6 15. Bf4 Nxd4 16. Nxd4 Nc3+ 17. bxc3 bxc3+ 18. Bb5+ axb5 19. Qxc3 b4 $19 {-2.78/18}) 14... Qb6 {and Black has an overwhelming attack.} 15. Ka1 Nxd4 16. Nxd4 Nxg5 17. Qxg5 Bxd4
+18. Qxg7 Rf8 19. f4 Be3 $19 {-3.16/18}) 13... Rb8 (13... Nxg5 14. Nxg5 h6 15. Nf3 Bc5 16. Ned4 Nxd4 17. Nxd4 Qc7 18. g4 O-O 19. h4 a5 $15 {-0.68/18}) 14. Ka1
+Nxg5 15. Nxg5 h6 16. Nf3 Bc5 17. Nf4 O-O 18. g4 Bd7 19. Rg1 Qb6 $17) 11. Qe3 (11. a3 Rb8 12. b4 Nd7 13. Qe3 h6 14. Bf4 Nb6 15. Nd4 Nxd4 16. Qxd4 Rb7 17. Be3
+Be7 18. h4 Nc4 19. Bxc4 bxc4 $17 {-0.84/18}) 11... b4 {A key move. Black is chasing the White Knight away from the defense of the e4 square so that his own Knight can go there without being immediately exchanged off.} 12. Ne2 Ne4 {All according to plan.} 13. Bf4 Qa5 {The Queen makes it to the proper square. Now White's a-pawn is under fire.} 14. Kb1 {Protecting a2.} 14... Bc5 $1 {With this move, Black forces White to interpose a Knight on d4 -- otherwise, Black's Knight on e4 will fork White's
+Rooks when it takes on f2.} 15. Nfd4 Nxd4 {The point of this exchange of Knights is to pull White's other Knight away from the e2 square so that it will no longer help to defend the critical c3 square, where Black is preparing a sacrifice.} 16. Nxd4 Nc3+ $1 {Black is investing a whole piece for just a pawn, but the returns on this investment are huge.} 17. bxc3 bxc3 {Now Black threatens, among other things, 18...Rb8+ 19.Ka1 Rb2 and mate on a2 cannot be stopped.} 18. Nb3 {White gives back the piece immediately in order to stop the attack. Since the Knight is forking Black's Bishop and Queen, Black's reply is forced.} 18... Bxe3 {The secret of Black's tactical play here lies in the fact that the Bishop on f4 is hanging, which means that Black will regain the sacrificed piece and remain a pawn ahead with the pair of Bishops.} 19. Nxa5 Bxf4 20. Re1 Bd7 {Keeping the White Knight out of c6.} 21. Nb3 a5 22. g3 Bg5 {Black chooses this retreat square because he is planning to play ...Be7, bringing the Bishop back into the game on the queenside.} 23. Nd4 Rb8+ 24. Ka1 Be7 25. Nb5 Bxb5 26. Rb1 {Pinning the Bishop to the undefended Rook -- but
+Black has an adequate response.} 26... Bb4 $1 27. a3 Bc4 28. axb4 axb4 29. Rd1 Kd7 {Black's plan is to double Rooks on the a-file and deliver checkmate on a1. Simple -- but unstoppable except at ruinous cost in material.} 30. Kb1 Ra8 0-1
+
+[Event "ROM-ch U12"]
+[Site "Calimanesti"]
+[Date "2013.04.03"]
+[Round "3"]
+[White "Zlatea, Cezar Stelian"]
+[Black "Deac, Bogdan Daniel"]
+[Result "0-1"]
+[ECO "C11"]
+[WhiteElo "1736"]
+[BlackElo "2169"]
+[Annotator "McGrew 2017"]
+[PlyCount "102"]
+[EventDate "2013.04.02"]
+[Source "Chessbase"]
+[SourceDate "2013.04.16"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. Nf3 c5 6. dxc5 Nc6 7. Bf4 Nxc5 {There is our slightly unusual recapture. Ultimately, Black would be very happy if this Knight could be stationed at e4. However, at the moment, White's Knight on c3 would simply take it, leaving Black with a weak pawn on e4 when he recaptures. So Black must be patient and keep his plans flexible.} 8. Bd3 Be7 9. O-O O-O (9... Nxd3 {first is also reasonable.}) 10. Re1 Nxd3 {This is a good example of mental flexibility. With White castled kingside, Black does not have a chance for a massive attack. So he takes the Bishop off, which means his own kingside will be more secure since White has been deprived of the strong Bishop.} 11. Qxd3 Bd7 {This move looks so minimal that you might wonder why it is played at all. The first answer is that it frees the c8 square for the Rook on a8. The second answer is that Black has a plan to activate this Bishop on the kingside.} (11... a6 {is also reasonable right
+away, for the reasons mentioned in the note to Black's 13th move.}) 12. a3 Rc8 {As advertised.} 13. g3 a6 {It is useful for Black to keep a White Knight out of the b5 square, from which it might have leapt into d6.} 14. h4 f5 15. Rad1 {This move looks a bit careless to me.} (15. exf6 {(en passant!)} 15... Bxf6 {is also possible here. White should try to clamp down on the e5 square, where he has enough pieces to keep Black tied down.}) 15... Be8 $1 {Here is the real point behind ...f5: Black wants to get his bad Bishop out on h5 and perhaps to trade it for a White Knight.} 16. Bg5 Bh5 {Now Black's pieces are beginning to look very active and the White position seems like it has stalled.} 17. Bxe7 Qxe7 18. Rd2 {Black now has several reasonable plans.} 18... h6 (18... f4 {Black could make this push right away. In a few moves, he does it anyway.}) (18... Na5 {This is a reasonable move as well, looking for an outpost for the Knight on c4. White could stop that plan by playing} 19. b3 {But then the Knight on c3 and the pawn on a3 are weakened, e.g.} 19... Bxf3 20. Qxf3 Qxa3 $17) 19. Nd4 Nxd4 20. Qxd4 f4 $1 {Black decides that his best chances lie on the kingside, so he plays to open up lines there.} 21. Nxd5 $2 {White panics. This piece sacrifice is unnecessary and unsound.} 21... exd5 22. Qxd5+ Kh8 {For his piece, White obtains two pawns, a check, and a passed e-pawn. It isn't enough.} 23. e6 Rcd8 24. Qa5 {Only this square works to defend the Rook on d2.} 24... Rxd2 {Black trades down, since his extra piece will be of more value in a simplified position.} 25. Qxd2 fxg3 26. fxg3 Qc5+ 27. Qe3 Qxe3+ {Following the same policy: Black
+swaps off anything that might cause him trouble.} 28. Rxe3 Re8 {Black stops the pawn, which he will shortly win. White will then be down a piece for a pawn and should lose, but he is stubborn and makes Black play it out.} 29. Re5 Bd1 30. c3 Re7 {With this move, Black stops the White pawn on the e6 square -- a light square -- and prepares to attack it a second time with the Bishop.} 31. Kf2 Bb3 {As promised. Now the pawn falls.} 32. Ke3 Rxe6 {Taking with the Rook is right because it forces White into an exchange of Rooks. Every exchange of pieces brings Black closer to victory.} 33. Rxe6 Bxe6 34. Kd4 Bd7 {Black gets eady to put the Bishop on c6, where the Bishop and pawn will defend one another. Then Black's King can walk over to g4 and Black can begin to eat the kingside pawns.} 35. c4 Kh7 36. b4 Kg6 37. Ke5 Kh5 38. Kf4 g5+ 39. hxg5 hxg5+ 40. Kf3 Bc6+ 41. Kf2 Kg4 42. c5 {If it were White's move now, White would have to start losing pawns. Black therefore cleverly "loses" a move with his Bishop} 42... Ba4 43. Kg2 Bb5 44. Kf2 Bc6 {This is the same position we had at move 42, but now it is White's turn to move!} 45. a4 Bxa4 46. Kg2 Bb5 47. Kh2 Kf3 (47... Bc6 {also wins easily.}) 48. Kh3 g4+ 49. Kh2 Bc4 50. Kg1 Kxg3 51. Kh1 Kf2 {Black will checkmate White quickly here.} (51... Kf2 52. Kh2 Bf1 53. c6 g3+ 54. Kh1 Bg2#) 0-1
+
+[Event "IND-ch (Women) 39th"]
+[Site "Jalgaon"]
+[Date "2012.10.25"]
+[Round "2"]
+[White "Saranya, J."]
+[Black "Gomes, Mary Ann"]
+[Result "0-1"]
+[ECO "C11"]
+[WhiteElo "2166"]
+[BlackElo "2381"]
+[Annotator "McGrew 2017"]
+[PlyCount "66"]
+[EventDate "2012.10.24"]
+[Source "ChessBase"]
+[SourceDate "2012.11.22"]
+
+1. e4 e6 2. Nf3 d5 3. Nc3 Nf6 4. e5 Nfd7 5. d4 c5 6. dxc5 Nc6 7. Bf4 Nxc5 {Our pet move.} 8. Qd2 {It looks like White might be planning to castle queenside, so Black prepares a pawn rush there.} 8... a6 9. O-O-O {And so it begins!} 9... b5 $1 {With this move, Black gains a good deal of space on the queenside and prepares the ...b4 idea.} 10. Kb1 b4 $1 {Forcing White's Knight away from the defense of the e4 square ...} 11. Ne2 Ne4 $1 {... so that a Black Knight can settle there.} 12. Qe3 Bc5 $1 {
+A standard idea: Black tries to pull White's Knight away from e2.} 13. Nfd4 {White is stubborn and keeps that Knight on e2, but Black builds up more pressure on the pinned Knight at d4.} (13. Ned4 Qb6 {sets up a threat of 14... Nc3+, since White does not have a Knight on e2 to cover the c3 square.}) 13... Qb6 14. Ka1 Na5 {Shifting position. Black decides that this Knight will be stronger at c4, where it hits e3 and b2.} 15. f3 Nc4 {As advertised. White's King is already looking terribly beleaguered.} 16. Qg1 Nc3 $1 {This sacrifice is completely sound. Black has an overwhelming amount of material around White's King.} 17. bxc3 Na3 (17... bxc3 {looks very strong, but White can respond with} 18. Rb1 {when it is not clear how the attack should be continued.}) 18. Qe3 (18. c4 {buys White a little time, but Black's attack remains terribly strong. Here is a possible variation, just to illustrate Black's ideas in this position.} 18... dxc4 19. Rc1 Bb7 20. Be3 Rc8 21. Kb2 O-O 22. Qf2 c3+ 23. Ka1 Nc4 24. Bg5 Bd5 25. Qh4 Qa5 26. Nb3 Qa3 27. Rb1 Nd2 $1 28. Qe1 Bxb3 29. cxb3 Rfd8 30. Bxd8 Nxb1 31. Qxb1 Rxd8 $19 {and Black mates in a few more moves, with threats including ...Rd2, ...Rd1, and ...Bd4.}) 18... Nxc2+ $1 {Black picks up the Queen for two minor pieces. Since she sacrificed one piece going in, that is a net of three pieces for the Queen. But Black also has extra pawns, and the White King is terribly exposed.} 19. Nxc2 Bxe3 20. Bxe3 Qc7 21. Bd4 a5 22. Ne3 Ba6 23. Nf4
+O-O 24. Rc1 b3 25. axb3 Rfb8 26. Rb1 Bc4 27. Bxc4 dxc4 28. bxc4 Qc6 29. Rb5 Rxb5 30. cxb5 Qxb5 31. Rb1 Qa4+ 32. Kb2 Rb8+ 33. Kc1 Qa3+ {White is going to lose a Rook.} (33... Qa3+ 34. Kc2 Qa2+ 35. Kd3 Qxb1+ {etc.}) 0-1
+
+[Event "Amsterdam SPA op-A 2nd"]
+[Site "Amsterdam"]
+[Date "2012.07.17"]
+[Round "4"]
+[White "Go, Benjamin"]
+[Black "Van Lommel, Patrick"]
+[Result "0-1"]
+[ECO "C11"]
+[WhiteElo "2164"]
+[BlackElo "2120"]
+[Annotator "McGrew 2017"]
+[PlyCount "48"]
+[EventDate "2012.07.14"]
+[Source "ChessBase"]
+[SourceDate "2012.08.24"]
+
+1. e4 e6 2. Nf3 d5 3. Nc3 Nf6 4. e5 Nfd7 5. d4 c5 $1 {The standard pawn chain break.} 6. dxc5 Nc6 7. Bf4 Nxc5 {This is the sideline we are preparing.} 8. Qd2 Be7 9. O-O-O $6 {Castling queenside in this variation is always very risky for White.} 9... a6 $1 10. Qe3 b5 $1 11. Nd4 Bb7 12. Qg3 g6 {Black simply stops the threat to g7. He does not intend to castle.} 13. Be3 Rc8 {This is where the Rook belongs, generating pressure up the half-open c-file.} 14. f4 b4 $1 {The standard maneuver is to push the Knight away from c3, then drop a Knight on e4. Here, Black has other ideas.} 15. Nce2 Na5 {Black aims to drop this Knight on the c4 square.} (15... Ne4 {is also perfectly good.}) 16. Kb1 Qc7 (16... Qb6 {is also good.}) (16... Nc4 {could also be played immediately.}) 17. Qe1 Nc4 18. Nc1 Na4 (18... Ne4 {also looks strong. The truth is, Black's position is just better here, and he has many ways to improve the position of his pieces while White is huddling on his back rows trying not to lose.}) 19. Bxc4 (19. b3 Nc3+ 20. Ka1 Nxe3 {and Black wins a piece since White cannot recapture without losing his Rook on d1:} 21. Qxe3 Nxd1 $19) 19... dxc4 20. Qf2 Qa5 21. Rhe1 Bd5 $1 {Very strong.} (21... c3 $1 {is also very strong.} 22. Ncb3 Qc7 $19) 22. g4 Nxb2 $1 {A piece sacrifice that shatters White's defenses.} 23. Kxb2 Qa3+ 24. Kb1 c3 $1 {White is threatened by mate on b2, and his only defense against that allows a different mate.} (24... c3 25. Nd3 Qxa2+ 26. Kc1 Qa1#) 0-1
+
+[Event "Budapest FS07 FM-A"]
+[Site "Budapest"]
+[Date "2012.07.07"]
+[Round "1"]
+[White "Letay, Gyula"]
+[Black "Mester, Attila"]
+[Result "0-1"]
+[ECO "B02"]
+[WhiteElo "2014"]
+[BlackElo "2112"]
+[Annotator "McGrew 2017"]
+[PlyCount "62"]
+[EventDate "2012.07.07"]
+[Source "ChessBase"]
+[SourceDate "2012.08.24"]
+
+1. e4 Nf6 {What?! This is Alekhine's Defense. But the way White plays it, we transpose pretty quickly into a French.} 2. Nc3 d5 3. e5 Nfd7 4. d4 c5 5. dxc5 e6 6. Nf3 {Back to normal!} 6... Nc6 7. Bf4 Nxc5 8. Bb5 {This pin is unusual and not very good. Black is happy if White wants to exchange off his good Bishop.} 8... a6 9. Bxc6+ bxc6 10. O-O Be7 11. Nd4 Qc7 12. Qg4 g5 $5 {Sharp, strange tactics!} 13. Be3 (13. Bxg5 Rg8 14. f4 h6 {wins material for Black.}) 13... Nd7 14. Qh5 Nxe5 {The point: Black picks up White's last center pawn.} 15. Bxg5 Ng6 16. Bxe7 Nxe7 17. Rfe1 Ng6 18. g3 O-O 19. f4 Qb6 20. Nce2 c5 21. Nf3 Qxb2 22. c3 f6 23. g4 Ra7 24. f5 exf5 25. gxf5 Ne5 26. Nxe5 fxe5 27. f6 Rxf6 28. Qe8+ Rf8 29. Qxe5 Rg7+ 30. Ng3 Qf2+ 31. Kh1 Bb7 $1 {Oops! A deadly discovered check comes next.}
+0-1
+
+[Event "Northern California op"]
+[Site "Freemont"]
+[Date "2012.01.05"]
+[Round "6"]
+[White "Byambaa, Uyanga"]
+[Black "Kavutskiy, Konstantin"]
+[Result "0-1"]
+[ECO "C11"]
+[WhiteElo "2118"]
+[BlackElo "2315"]
+[Annotator "McGrew 2017"]
+[PlyCount "80"]
+[EventDate "2012.01.02"]
+[Source "ChessBase"]
+[SourceDate "2012.02.29"]
+
+1. e4 e6 2. Nf3 d5 3. Nc3 Nf6 {Even though White has not yet played d4, he will have to do it in a move or two. So Black simply follows the normal pattern of luring the pawn to e5 and preparing to hit back with ...c5.} 4. e5 (4. exd5 exd5 {is a toothless version of the Exchange Variation:} 5. d4 Bg4 6. Bg5 c6 7. Bd3 Bd6 8. O-O O-O $11) 4... Nfd7 5. d4 c5 {Now we are back in the main lines.} 6. dxc5 Nc6 7. Bf4 Nxc5 $5 {Black plays for piece activity rather than aiming to destroy White's last center pawn. For a while, at least, Black will leave his pawn on f7 and play around the central pawn chain.} 8. Bd3 Be7 9. O-O a6 {Queenside expansion is appropriate here to finish the activation of Black's pieces.} 10. Re1 b5 11. a3 Bb7 12. b4 Nxd3 13. cxd3 g5 14. Bg3 h5 15. h3 h4 16. Bh2 Qb6 17. d4 O-O-O {This move should not
+even be very surprising. The King is much safer here than he would be on the kingside, where things are about to get intense.} 18. Rc1 Rhg8 {No prizes for seeing what Black has coming next!} 19. g4 {White tries to stop it by getting his own pawn to g4 first. But Black tears through everything in his path.} 19... hxg3 20. Bxg3 g4 $1 {The Rook on g8 needs more scope, and this is the perfect way to get it.} 21. hxg4 Rxg4 {Black has opened a lot of lines against White's King.} 22. Kg2 Kb8 {This could seem like a strange move, but it is actually very logical. Black may want to use his N/c6 at some point in the attack -- perhaps to take a pawn on d4. However, with White's Rook on c1, Black's King would be vulnerable to a devastating discovered check. By moving the King off of the open file, Black ensures that he won't be caught by that kind of nasty surprise.} 23. Ne2 Rdg8 24. Rh1 a5 {This pawn advance works out, but it requires good judgment to see that it will not backfire. Black is attacking on the kingside: keeping queenside lines closed seems like a good idea!} (24... Qd8 {intending ...Qf8 is a safer way to play, bringing more firepower to the kingside.}) 25. bxa5 (25. Rh7 {would be a bit more active. But after} 25... axb4 26. axb4 R4g7 $15 {Black is still calling the shots.}) 25... Nxa5 26. a4 b4 {Now White has to worry about Black's queenside activity, particularly the use of the c4 square for the minor pieces.} 27. Rb1 Ba6 28. Rh7 R4g7 29. Rxg7 Rxg7 30. Nf4 b3 31. Nd3 Rg8 32. Nc1 Bc4 {This is a very unusual state of affairs: Black is threatening to advance his b-pawn, which is in front of his own King -- and pinned!} 33. Nd2 b2 34. Qc2 Ba3 {The Bishops do an amazing job of controling the squares the pawn needs.} 35. Qc3 bxc1=Q 36. Rxb6+ Nb7 37. Qf3 (37. Qxc1 Bxc1 {would leave Black a piece ahead.}) 37... Rh8 {Threatening ...Qh1#} 38. Rb1 Bf1+ 39. Kg1 Be2+ 40. Rxc1 Bxf3 {Black threatens both to capture the Rook on c1 and to deliver checkmate on h1.} 0-1
+
