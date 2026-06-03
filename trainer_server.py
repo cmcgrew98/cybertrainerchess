@@ -22,7 +22,8 @@ import chess.pgn
 import io
 
 CONFIG_FILE = "trainer_config.json"
-PORT        = 7332
+#PORT        = 7332
+PORT = int(os.environ.get("PORT", 7332))
 BUILD_TAG   = "CT-SRV-54"
 MAX_GAMES      = 100
 MAX_FILE_BYTES = 1024 * 1024  # 1MB = 100 games × ~10KB
@@ -1010,10 +1011,12 @@ def main():
     if ep and os.path.exists(ep):
         print(f"Starting engine: {ep}")
         threading.Thread(target=start_engine,args=(ep,),daemon=True).start()
-    print(f"Cyber Trainer running on http://localhost:{PORT}")
+   # print(f"Cyber Trainer running on http://localhost:{PORT}")
+    print(f"Cyber Trainer running on port {PORT}")
     print("Open http://localhost:7332 in your browser.")
     print("Press Ctrl+C to stop.\n")
-    server=ThreadedHTTPServer(("localhost",PORT),Handler)
+    #server=ThreadedHTTPServer(("localhost",PORT),Handler)
+    server=ThreadedHTTPServer(("0.0.0.0",PORT),Handler)
     try: server.serve_forever()
     except KeyboardInterrupt: print("\nServer stopped.")
     finally: _stop_engine()
